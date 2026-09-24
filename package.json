@@ -1,0 +1,26 @@
+{
+  "name": "driverlogin-lab",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Simulador y diagnóstico del flujo de sesión del chofer (driver_login / driver_logout) de la ticketera TCONTUR",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "diagnosticar": "node scripts/diagnosticar.js",
+    "escenarios": "node scripts/escenarios.js",
+    "anonimizar": "node scripts/anonimizar.js"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}

@@ -708,8 +708,12 @@ const LogReal = memo(function LogReal({ rep, linea, ir, seguir }) {
   const visibles = lista.slice(Math.max(0, k - 70), k + 50)
   const tActual = rep.entradas[linea]?.t
   useEffect(() => {
-    const el = caja.current?.querySelector('.l.actual')
-    if (el) el.scrollIntoView({ block: 'center', behavior: seguir ? 'auto' : 'smooth' })
+    // Centra la línea actual moviendo solo la caja del log: scrollIntoView arrastraría también la página.
+    const box = caja.current
+    const el = box?.querySelector('.l.actual')
+    if (!el) return
+    const top = el.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop
+    box.scrollTo({ top: top - (box.clientHeight - el.offsetHeight) / 2, behavior: seguir ? 'auto' : 'smooth' })
   }, [linea, solo, seguir])
   return (
     <div className="log-caja">

@@ -1,6 +1,7 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react'
-import { duracion, fechaLog, horaLog } from './log/leer.js'
+import { duracion, fechaLog, horaLog, parseStamp } from './log/leer.js'
 import { buscar, estadoEn, ladoTxt, tramoEn } from './log/reconstruir.js'
+import Recorrido from './Recorrido.jsx'
 
 const colorLado = lado => (lado == null ? 'var(--none)' : lado ? 'var(--b)' : 'var(--a)')
 const VELOCIDADES = [60, 300, 1200, 3600]
@@ -10,7 +11,11 @@ const ZOOMS = [
   ['30 min', 30 * 60_000],
   ['5 min', 5 * 60_000],
 ]
-const ESTADO_VIAJE = { R: 'en ruta', E: 'espera', X: 'fuera de ruta', T: 'terminado' }
+const PESTANAS = [
+  ['sesion', 'Sesión'],
+  ['recorrido', 'Recorrido'],
+]
+const ESTADO_VIAJE ={ R: 'en ruta', E: 'espera', X: 'fuera de ruta', T: 'terminado' }
 const TXT_CENTRAL = {
   confirmada: 'confirmada por la central',
   incierta: 'cierre enviado sin respuesta: no se sabe si la cerró',
@@ -22,7 +27,22 @@ export default function ReproduccionLog({ rep, onCerrar }) {
   const [jugando, setJugando] = useState(false)
   const [mult, setMult] = useState(300)
   const [zoom, setZoom] = useState('2 h')
+  const [vista, setVista] = useState('sesion')
+  const [rango, setRango] = useState([rep.desde, rep.hasta])
   const st = useMemo(() => estadoEn(rep, t), [rep, t])
+  // Vista recortada: barra de tiempo, carriles, hitos, hallazgos, Play y recorrido solo miran [desde, hasta].
+  const vr = useMemo(() => {
+    const [desde, hasta] = rango
+    const dentro = x => x.t >= desde && x.t <= hasta
+    return { ...rep, desde, hasta, hitos: rep.hitos.filter(dentro), hallazgos: rep.hallazgos.filter(dentro), log: rep }
+  }, [rep, rango])
+  const cambiarRango = (a, b) => {
+    const desde = Math.max(rep.desde, a)
+    const hasta = Math.min(rep.hasta, b)
+    if (!(hasta - desde >= 60_000)) return
+    setRango([desde, hasta])
+    setT(x => Math.max(desde, Math.min(hasta, x)))
+  }
 
   useEffect(() => {
     if (!jugando) return
@@ -33,33 +53,96 @@ export default function ReproduccionLog({ rep, onCerrar }) {
       prev = now
       setT(x => {
         const y = x + dt * mult
-        if (y >= rep.hasta) setJugando(false)
-        return Math.min(y, rep.hasta)
+        if (y >= vr.hasta) setJugando(false)
+        return Math.min(y, vr.hasta)
       })
       raf = requestAnimationFrame(loop)
     }
     raf = requestAnimationFrame(loop)
     return () => cancelAnimationFrame(raf)
-  }, [jugando, mult, rep])
+  }, [jugando, mult, vr])
 
   const ir = x => {
     setJugando(false)
-    setT(Math.max(rep.desde, Math.min(rep.hasta, x)))
+    setT(Math.max(vr.desde, Math.min(vr.hasta, x)))
   }
 
   return (
     <div className="app">
-      <PanelLog rep={rep} t={t} ir={ir} jugando={jugando} setJugando={setJugando} mult={mult} setMult={setMult} onCerrar={onCerrar} />
+      <PanelLog rep={vr} t={t} ir={ir} jugando={jugando} setJugando={setJugando} mult={mult} setMult={setMult} onCerrar={onCerrar} />
       <main className="main">
-        <EstadoLog rep={rep} st={st} />
-        <CircuitoLog rep={rep} st={st} />
-        <BarraTiempo rep={rep} t={t} ir={ir} />
-        <Carriles rep={rep} t={t} ir={ir} zoom={zoom} setZoom={setZoom} />
-        <div className="dos-col">
-          <Secuencia rep={rep} t={t} ir={ir} />
-          <LogReal rep={rep} linea={st.linea} ir={ir} seguir={jugando} />
+        <div className="barra-vista">
+          <div className="pestanas">
+            {PESTANAS.map(([k, txt]) => <button key={k} className={vista === k ? 'on' : ''} onClick={() => setVista(k)}>{txt}</button>)}
+          </div>
+          <Rango rep={rep} rango={rango} cambiar={cambiarRango} t={t} />
         </div>
+        {vista === 'sesion' ? (
+          <>
+            <EstadoLog rep={rep} st={st} />
+            <CircuitoLog rep={rep} st={st} />
+            <BarraTiempo rep={vr} t={t} ir={ir} />
+            <Carriles rep={vr} t={t} ir={ir} zoom={zoom} setZoom={setZoom} />
+            <div className="dos-col">
+              <Secuencia rep={rep} t={t} ir={ir} />
+              <LogReal rep={rep} linea={st.linea} ir={ir} seguir={jugando} />
+            </div>
+          </>
+        ) : (
+          <>
+            <BarraTiempo rep={vr} t={t} ir={ir} />
+            <Recorrido rep={rep} desde={vr.desde} hasta={vr.hasta} t={t} ir={ir} />
+            <LogReal rep={rep} linea={st.linea} ir={ir} seguir={jugando} />
+          </>
+        )}
       </main>
+    </div>
+  )
+}
+
+// ── rango de la vista (global para todas las pestañas) ─────────────────────────
+
+const aInput = ms => new Date(ms).toISOString().slice(0, 19)
+
+/** Un viaje por trip; si llegó su "salida", se nombra por la hora de salida programada (como la pide la plataforma). */
+function viajesDe(rep) {
+  const salida = new Map()
+  for (const e of rep.eventos) if (e.tipo === 'rx' && e.header === 'salida') salida.set(String(e.data.id), parseStamp(e.data.inicio))
+  const porTrip = new Map()
+  for (const v of rep.viaje) {
+    const x = porTrip.get(v.trip)
+    if (x) x.hasta = Math.max(x.hasta, v.hasta)
+    else porTrip.set(v.trip, { trip: v.trip, lado: v.lado, desde: v.desde, hasta: v.hasta, salida: salida.get(String(v.trip)) })
+  }
+  return [...porTrip.values()].sort((a, b) => a.desde - b.desde)
+}
+
+function Rango({ rep, rango, cambiar, t }) {
+  const viajes = useMemo(() => viajesDe(rep), [rep])
+  const [d, h] = rango
+  const completo = d === rep.desde && h === rep.hasta
+  const leer = (e, cual) => {
+    const x = parseStamp(e.target.value)
+    if (x != null) cual === 'd' ? cambiar(x, h) : cambiar(d, x)
+  }
+  return (
+    <div className={`rango ${completo ? '' : 'recortado'}`}>
+      <span className="rango-tit">Rango</span>
+      <input type="datetime-local" step="1" min={aInput(rep.desde)} max={aInput(rep.hasta)} value={aInput(d)} onChange={e => leer(e, 'd')} />
+      <span className="sutil">→</span>
+      <input type="datetime-local" step="1" min={aInput(rep.desde)} max={aInput(rep.hasta)} value={aInput(h)} onChange={e => leer(e, 'h')} />
+      <span className="sutil rango-dur">{duracion(h - d)}</span>
+      <button onClick={() => cambiar(t, h)} title={`Empezar el rango en ${horaLog(t)}`}>desde aquí</button>
+      <button onClick={() => cambiar(d, t)} title={`Terminar el rango en ${horaLog(t)}`}>hasta aquí</button>
+      <select value="" onChange={e => { const v = viajes.find(x => String(x.trip) === e.target.value); if (v) cambiar(v.desde, v.hasta) }}>
+        <option value="">Viaje…</option>
+        {viajes.map(v => (
+          <option key={v.trip} value={v.trip}>
+            {v.salida != null ? `salida ${fechaLog(v.salida) !== fechaLog(v.desde) ? `${fechaLog(v.salida).slice(0, 5)} ` : ''}${horaLog(v.salida).slice(0, 5)} · ` : ''}trip {v.trip} · {ladoTxt(v.lado)} · {horaLog(v.desde).slice(0, 5)}–{horaLog(v.hasta).slice(0, 5)}
+          </option>
+        ))}
+      </select>
+      <button disabled={completo} onClick={() => cambiar(rep.desde, rep.hasta)}>Todo</button>
     </div>
   )
 }
@@ -83,7 +166,8 @@ function PanelLog({ rep, t, ir, jugando, setJugando, mult, setMult, onCerrar }) 
           {info.versiones.map(v => <span key={v} className="chip">v{v}</span>)}
           {info.modelo && <span className="chip">{info.modelo}</span>}
         </div>
-        <p>{fechaLog(rep.desde)} · {horaLog(rep.desde)} → {horaLog(rep.hasta)} · {rep.entradas.length.toLocaleString()} líneas</p>
+        <p>{fechaLog(rep.log.desde)} · {horaLog(rep.log.desde)} → {horaLog(rep.log.hasta)} · {rep.entradas.length.toLocaleString()} líneas</p>
+        {(rep.desde !== rep.log.desde || rep.hasta !== rep.log.hasta) && <p>Viendo {horaLog(rep.desde)} → {horaLog(rep.hasta)} ({duracion(rep.hasta - rep.desde)})</p>}
       </div>
 
       <div className="controles">
@@ -150,6 +234,8 @@ function EstadoLog({ rep, st }) {
     alertas.push(`El bus va por el lado ${ladoTxt(viaje.lado)} (trip ${viaje.trip}) y el equipo vende con la sesión #${equipo.sesion} de lado ${ladoTxt(equipo.lado)}.`)
   if (equipo && central && equipo.sesion !== central.sesion)
     alertas.push(`El equipo usa la #${equipo.sesion} y la central ${central.estado === 'confirmada' ? 'tiene' : 'tendría'} la #${central.sesion}.`)
+  if (st.gps?.estado === 'mudo')
+    alertas.push(`GPS mudo desde las ${horaLog(st.gps.desde)} (${duracion(st.t - st.gps.desde)}): la app sigue usando esa posición para el lado y el paradero.`)
   if (esp) alertas.push(`Esperando la respuesta de driver_logout #${esp.sesion} (${duracion(st.t - esp.t)})…${esp.sinRespuesta ? ' no va a llegar.' : ''}`)
 
   return (
@@ -181,6 +267,9 @@ function EstadoLog({ rep, st }) {
           <div className="dato">Viaje: <b>{viaje ? ESTADO_VIAJE[viaje.estado] ?? viaje.estado : '—'}</b></div>
           <div className="dato">Paradero: <b>{st.paradero?.nombre ?? '—'}</b>{st.paradero && <span className="sutil"> ({horaLog(st.paradero.t)})</span>}</div>
           <div className="dato">Geocerca: <b>{st.marca?.nombre ?? '—'}</b>{st.marca && <span className="sutil"> ({horaLog(st.marca.t)})</span>}</div>
+          <div className="dato">
+            GPS: {st.ultimoFix ? <><b className={st.gps?.estado === 'mudo' ? 'mal' : 'ok'}>último fix hace {duracion(st.t - st.ultimoFix.t)}</b><span className="sutil"> ({horaLog(st.ultimoFix.t)})</span></> : <b className="mal">sin fix</b>}
+          </div>
         </div>
       </div>
       {alertas.map(a => <div key={a} className="alerta">⚠ {a}</div>)}
@@ -314,7 +403,7 @@ function CircuitoLog({ rep, st }) {
           <rect x={-16} y={4} width={24} height={4} rx={1.5} className="ventana" />
         </g>
         <text className="bus-tag" x={bx} y={bus.lado ? by - 20 : by + 25} fill={colorBus}>
-          {equipo ? `sesión #${equipo.sesion} ${ladoTxt(equipo.lado)}` : 'sin sesión'}{st.esperandoLogout ? ' · cerrando…' : ''}
+          {equipo ? `sesión #${equipo.sesion} ${ladoTxt(equipo.lado)}` : 'sin sesión'}{st.esperandoLogout ? ' · cerrando…' : ''}{st.gps?.estado === 'mudo' ? ' · GPS mudo' : ''}
         </text>
       </svg>
       <div className="leyenda">
@@ -413,7 +502,7 @@ const X1 = W - 8
 const AX = 22
 const LH = 24
 const GAP = 7
-const CARRILES = ['Viaje', 'Conexión', 'Equipo', 'Central', 'Mensajes', 'Boletos']
+const CARRILES = ['Viaje', 'Conexión', 'Equipo', 'Central', 'Mensajes', 'Boletos', 'GPS']
 const yDe = k => AX + k * (LH + GAP)
 const ALTO = yDe(CARRILES.length) + 4
 
@@ -582,6 +671,22 @@ function Carriles({ rep, t, ir, zoom, setZoom }) {
           )
         })}
 
+        {rep.gps.sinDatos && <text className="c-txt" fill="var(--muted)" x={X0 + 6} y={yDe(6) + 16}>el log no tiene líneas del callback de ubicación ni reports</text>}
+        {rep.gps.tramos.filter(dentro).map((s, k) => (
+          <g key={`g${k}`}>
+            <title>{`${s.estado === 'mudo' ? 'GPS mudo' : 'GPS dando posiciones'} · ${horaLog(s.desde)}–${horaLog(s.hasta)} (${duracion(s.hasta - s.desde)})${s.ultimoFix ? ` · último fix ${horaLog(s.ultimoFix.t)} (${s.ultimoFix.fuente})` : ''}`}</title>
+            {rect(s, 'r', yDe(6), { className: `c-gps ${s.estado}`, rx: 3 })}
+            {s.estado === 'mudo' && etiqueta(s, yDe(6), `sin GPS ${duracion(s.hasta - s.desde)}`, 'var(--err)')}
+          </g>
+        ))}
+        {v1 - v0 <= 3 * 3_600_000 && rep.gps.fixes.filter(f => f.t >= v0 && f.t <= v1).map((f, k) => <line key={`f${k}`} className="c-fix" x1={x(f.t)} x2={x(f.t)} y1={yDe(6) + LH - 6} y2={yDe(6) + LH} />)}
+        {rep.gps.rancios.filter(r => r.t >= v0 && r.t <= v1).map((r, k) => (
+          <g key={`rl${k}`} className="c-rancio" onPointerDown={e => { e.stopPropagation(); ir(r.t) }}>
+            <title>{`${horaLog(r.t)} lado ${ladoTxt(r.lado)} calculado con la posición de hace ${r.edad != null ? duracion(r.edad) : '?'} → driver_login lado ${ladoTxt(r.lado)}`}</title>
+            <path d={`M ${x(r.t)} ${yDe(6) + 3} l 7 9 l -7 9 l -7 -9 z`} />
+          </g>
+        ))}
+
         {t >= v0 && t <= v1 && (
           <g className="cursor">
             <line x1={x(t)} x2={x(t)} y1={AX - 14} y2={ALTO} />
@@ -596,6 +701,7 @@ function Carriles({ rep, t, ir, zoom, setZoom }) {
         <span><i className="l-cruce" /> sesión de otro lado que el viaje</span>
         <span>▲ enviado · ▼ recibido · <b className="mal">✕</b> sin respuesta / ignorado</span>
         <span><i className="l-boleto" /> boleto con sesión que la central ya no tenía</span>
+        <span><i className="l-gps" /> GPS da posiciones · <i className="l-gps mudo" /> GPS mudo (+7 min sin fix) · <b className="mal">◆</b> login con posición vieja</span>
       </div>
     </div>
   )
@@ -672,7 +778,7 @@ function resumen(m) {
 
 // ── log real ─────────────────────────────────────────────────────────────────
 
-const TAGS_SESION = /^(DRIVERAUTO|DriverSessionCoordinator|DriverLoginRepository|ParaderoManager|Arranque|GpsViewModel)$/
+const TAGS_SESION = /^(DRIVERAUTO|DriverSessionCoordinator|DriverLoginRepository|ParaderoManager|Arranque|GpsViewModel|LocationTrackingService)$/
 const esDeSesion = e =>
   TAGS_SESION.test(e.tag) ||
   (/^Protector/.test(e.tag) && /cerrando sesión|Bateria critica|ENERGY|NIGHT/.test(e.msg)) ||

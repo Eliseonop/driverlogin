@@ -93,6 +93,42 @@ describe('padrón 132 (v1.0.65): driver_logout sin respuesta', () => {
   })
 })
 
+describe('padrón 137 (v1.0.72): GPS mudo y login en lado B con la posición vieja', () => {
+  const rep = reconstruir(fs.readFileSync(new URL('./fixtures/137_2026-10-04_gps-mudo-login-lado-b.log', import.meta.url), 'utf8'), '137.log')
+  const b = hhmmss => parseStamp(`2026-10-04 ${hhmmss}`)
+  const mudo = rep.gps.tramos.find(s => s.estado === 'mudo')
+
+  it('el GPS deja de dar fixes antes de las 09:55 y no vuelve', () => {
+    expect(rep.gps.sinDatos).toBe(false)
+    expect(mudo.desde).toBeLessThan(b('09:55:00'))
+    expect(mudo).toMatchObject({ hasta: rep.hasta, termina: 'fin' })
+    expect(estadoEn(rep, b('09:40:00')).gps.estado).toBe('ok')
+    expect(estadoEn(rep, b('15:19:18')).gps.estado).toBe('mudo')
+  })
+
+  it('el login de las 15:19 decide B con la posición de hace más de 5 h y la central lo tenía en A', () => {
+    expect(rep.gps.rancios).toHaveLength(1)
+    const [r] = rep.gps.rancios
+    expect(r).toMatchObject({ lado: true, lat: -12.2247942, lng: -76.9033555 })
+    expect(r.edad).toBeGreaterThan(5 * 3_600_000)
+    expect(tramoEn(rep.viaje, r.t)).toMatchObject({ trip: 43272, lado: false })
+    const h = rep.hallazgos.find(x => x.titulo.startsWith('Login lado B con posición de hace'))
+    expect(h.nivel).toBe('error')
+    expect(h.detalle.join(' ')).toMatch(/sesión #40437 lado B/)
+  })
+
+  it('el hueco se reporta con device_status congelado y sin re-registro', () => {
+    const h = rep.hallazgos.find(x => x.titulo.startsWith('GPS mudo'))
+    expect(h.nivel).toBe('error')
+    expect(h.detalle.join(' ')).toMatch(/misma posición \(-12\.224794,-76\.903356\)/)
+    expect(h.detalle.join(' ')).toMatch(/Nadie re-registró el GPS/)
+  })
+
+  it('el login de las 09:47 con GPS vivo no es hallazgo', () => {
+    expect(rep.gps.rancios.some(r => r.t < b('10:00:00'))).toBe(false)
+  })
+})
+
 describe('log con los logs nuevos (1.0.69) y flujo normal', () => {
   const L = (h, tag, msg) => `2026-09-23 ${h} [${tag}] ${msg}`
   const S = 'SocketService'

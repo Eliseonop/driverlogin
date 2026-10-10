@@ -8,6 +8,8 @@ const ESPERA_LOGOUT = 60_000 // executeLogout: tope esperando la respuesta
 const ESPERA_LOGIN = 30_000
 const MISMO_MOMENTO = 2000
 const PROCESO_OP = 3000 // si en 3 s no hay rastro de procesamiento, la orden se ignoró
+const GPS_MUDO = 7 * 60_000 // en modo pulso el log solo deja rastro del callback cada 5 min
+const GPS_HALLAZGO = 10 * 60_000
 
 export const ladoTxt = l => (l == null ? '?' : l ? 'B' : 'A')
 const soles = centimos => `S/ ${(centimos / 100).toFixed(2)}`
@@ -376,9 +378,69 @@ function posicionesBus(eventos, cat, viaje) {
   return out.filter(p => p.dist < 1500).sort((a, b) => a.t - b.t)
 }
 
+// ── GPS ───────────────────────────────────────────────────────────────────────
+
+const coordTxt = (lat, lng) => `${Number(lat).toFixed(6)},${Number(lng).toFixed(6)}`
+
+/** Fixes nuevos (líneas del callback, reports y device_status que cambia de posición) y tramos ok / mudo. */
+function carrilGps(eventos, entradas, desde, hasta) {
+  const fixes = []
+  let ult = null
+  for (const e of eventos) {
+    if (e.tipo === 'fix') {
+      fixes.push({ t: e.t, i: e.i, fuente: e.fuente })
+      if (e.lat != null) ult = coordTxt(e.lat, e.lng)
+    } else if (e.tipo === 'tx' && e.header === 'report') {
+      for (const q of e.data.positions ?? []) {
+        fixes.push({ t: parseStamp(String(q.time ?? '')) ?? e.t, i: e.i, fuente: 'report' })
+        ult = coordTxt(q.lat, q.lng)
+      }
+    } else if (e.tipo === 'estado' && e.data.lat != null && Number(e.data.lat) !== 0) {
+      const c = coordTxt(e.data.lat, e.data.lng)
+      if (ult && c !== ult) fixes.push({ t: e.t, i: e.i, fuente: 'device_status' })
+      ult = c
+    }
+  }
+  fixes.sort((a, b) => a.t - b.t)
+  if (!fixes.length) return { fixes, tramos: [], sinDatos: true }
+
+  const arranques = []
+  for (const e of eventos) if (e.tipo === 'arranque' && e.t - (arranques.at(-1)?.t ?? -Infinity) > 60_000) arranques.push(e)
+  const puntos = [...fixes.map(f => ({ t: f.t, fix: f })), ...arranques.map(e => ({ t: e.t, arranque: e })), { t: hasta, fin: true }].sort((a, b) => a.t - b.t)
+  const tramos = []
+  let prev = { t: desde }
+  for (const p of puntos) {
+    const fin = p.arranque ? Math.max(prev.t, entradas[p.arranque.i - 1]?.t ?? p.t) : p.t
+    if (fin > prev.t) {
+      const mudo = fin - prev.t > GPS_MUDO
+      const ant = tramos.at(-1)
+      if (!mudo && ant?.estado === 'ok' && ant.hasta === prev.t) ant.hasta = fin
+      else tramos.push({ desde: prev.t, hasta: fin, estado: mudo ? 'mudo' : 'ok', ultimoFix: prev.fix ?? null, termina: p.fix ? 'fix' : p.arranque ? 'arranque' : 'fin' })
+    }
+    prev = p
+  }
+  return { fixes, tramos, sinDatos: false }
+}
+
+/** driver_login enviados con el lado calculado sobre una posición vieja. */
+function loginsRancios(eventos, msgs, gps) {
+  if (gps.sinDatos) return []
+  const lados = eventos.filter(e => e.tipo === 'ladoLogin' && e.lat != null && (e.lat !== 0 || e.lng !== 0))
+  const out = []
+  for (const m of msgs.filter(x => x.dir === 'tx' && x.header === 'driver_login')) {
+    const l = lados.filter(x => x.i < m.i && m.t - x.t <= 3000).at(-1)
+    if (!l) continue
+    const fix = gps.fixes[buscar(gps.fixes, l.t)]
+    const edad = fix ? l.t - fix.t : null
+    if (fix && edad <= GPS_MUDO) continue
+    out.push({ t: l.t, i: l.i, lado: l.lado, por: l.por, lat: l.lat, lng: l.lng, ultimoFix: fix ?? null, edad, login: m })
+  }
+  return out
+}
+
 // ── hitos y hallazgos ─────────────────────────────────────────────────────────
 
-function hitosDe(msgs, conexion, viaje, eventos) {
+function hitosDe(msgs, conexion, viaje, eventos, gps) {
   const h = []
   for (const m of msgs) {
     if (m.header === 'driver_login' && m.dir === 'rx') {
@@ -403,6 +465,10 @@ function hitosDe(msgs, conexion, viaje, eventos) {
       h.push({ t: e.t, i: e.i, tipo: 'arranque', texto: 'la app arranca' })
     }
   for (const e of eventos) if (e.tipo === 'terminal') h.push({ t: e.t, i: e.i, tipo: 'terminal', texto: `terminal → cerrar #${e.sesion}` })
+  for (const s of gps.tramos.filter(x => x.estado === 'mudo' && x.hasta - x.desde >= GPS_HALLAZGO)) {
+    h.push({ t: s.desde, tipo: 'gps', texto: 'GPS deja de dar posiciones' })
+    if (s.termina === 'fix') h.push({ t: s.hasta, tipo: 'gps-ok', texto: `GPS vuelve tras ${duracion(s.hasta - s.desde)}` })
+  }
   return h.sort((a, b) => a.t - b.t)
 }
 
@@ -492,6 +558,37 @@ function hallazgosDe(rep) {
     })
   }
 
+  for (const s of rep.gps.tramos.filter(x => x.estado === 'mudo' && x.hasta - x.desde >= GPS_HALLAZGO)) {
+    const dentro = x => x.t > s.desde && x.t < s.hasta
+    const d = [
+      s.ultimoFix ? `Último fix nuevo a las ${horaLog(s.ultimoFix.t)} (${s.ultimoFix.fuente}).` : 'Desde el arranque de la app no llegó ningún fix.',
+      s.termina === 'fix' ? `Volvió a las ${horaLog(s.hasta)}.` : s.termina === 'arranque' ? 'El tramo termina con un reinicio de la app.' : 'No volvió hasta el fin del log.',
+    ]
+    const st = rep.estados.filter(dentro)
+    const coords = new Set(st.map(e => coordTxt(e.data.lat, e.data.lng)))
+    if (st.length > 1 && coords.size === 1) d.push(`device_status mandó ${st.length} veces la misma posición (${[...coords][0]}): para la central el equipo estaba quieto.`)
+    const intentos = eventos.filter(e => dentro(e) && (e.tipo === 'gpsWatchdog' || e.tipo === 'gpsRestart')).length
+    d.push(intentos ? `Se re-registró el GPS ${intentos} ${intentos === 1 ? 'vez' : 'veces'} (watchdog / restart_gps).` : 'Nadie re-registró el GPS: sin watchdog de GPS ni restart_gps en el hueco.')
+    const wd = conexion.cortes.filter(dentro).length
+    if (wd) d.push(`${wd} reconexiones del socket por silencio en el hueco: sin reports el servidor no habla (consecuencia, no causa).`)
+    const bs = boletos.filter(dentro)
+    if (bs.length) d.push(`Se vendieron ${bs.length} boletos sin posición nueva.`)
+    out.push({ nivel: s.hasta - s.desde >= 30 * 60_000 ? 'error' : 'aviso', t: s.desde, titulo: `GPS mudo ${horaLog(s.desde)}–${horaLog(s.hasta)} (${duracion(s.hasta - s.desde)})`, detalle: d })
+  }
+
+  for (const r of rep.gps.rancios) {
+    const v = tramoEn(viaje, r.t)
+    const contra = v && v.lado !== r.lado
+    const s = r.login.respuesta?.data.sessions?.[0]
+    const d = [
+      `Lado ${ladoTxt(r.lado)} por ${r.por} con gps=${r.lat},${r.lng}${r.ultimoFix ? `: es la posición del fix de las ${horaLog(r.ultimoFix.t)}` : ''}.`,
+      'calculateLado solo mira que la posición no sea 0,0; no mira su antigüedad.',
+    ]
+    if (contra) d.push(`La central tenía el viaje ${v.trip} en lado ${ladoTxt(v.lado)} (direction=${v.lado}) y la app no lo compara.`)
+    if (s) d.push(`La central aceptó: sesión #${s.id} lado ${ladoTxt(s.direction)}.`)
+    out.push({ nivel: contra ? 'error' : 'aviso', t: r.t, i: r.i, titulo: `Login lado ${ladoTxt(r.lado)} con posición ${r.edad != null ? `de hace ${duracion(r.edad)}` : 'sin ningún fix previo'}`, detalle: d })
+  }
+
   for (const e of eventos.filter(x => x.tipo === 'loginBloqueado')) out.push({ nivel: 'aviso', t: e.t, i: e.i, titulo: `driver_login descartado (${horaLog(e.t)})`, detalle: ['Tras un logout forzado la app descarta el siguiente driver_login.'] })
   for (const e of eventos.filter(x => x.tipo === 'forzado')) out.push({ nivel: 'aviso', t: e.t, i: e.i, titulo: `Logout forzado ${e.motivo} (#${e.sesion})`, detalle: [] })
 
@@ -523,12 +620,14 @@ export function reconstruir(texto, archivo = 'log') {
   const equipo = carrilEquipo(eventos, mensajes, boletos, lados, desde, hasta)
   const central = carrilCentral(mensajes, lados, hasta)
   const posiciones = posicionesBus(eventos, cat, viaje)
-  const rep = { archivo, desde, hasta, entradas, eventos, info, cat, viaje, conexion, mensajes, boletos, equipo, central, posiciones }
-  rep.hitos = hitosDe(mensajes, conexion, viaje, eventos)
-  rep.hallazgos = hallazgosDe(rep)
+  const gps = carrilGps(eventos, entradas, desde, hasta)
+  gps.rancios = loginsRancios(eventos, mensajes, gps)
+  const rep = { archivo, desde, hasta, entradas, eventos, info, cat, viaje, conexion, mensajes, boletos, equipo, central, posiciones, gps }
   rep.marcas = eventos.filter(e => e.tipo === 'marca')
   rep.estados = eventos.filter(e => e.tipo === 'estado')
   rep.paraderosActuales = eventos.filter(e => e.tipo === 'paraderoActual')
+  rep.hitos = hitosDe(mensajes, conexion, viaje, eventos, gps)
+  rep.hallazgos = hallazgosDe(rep)
   return rep
 }
 
@@ -563,6 +662,8 @@ export function estadoEn(rep, t) {
     marca: ult(rep.marcas, 30 * 60_000),
     paradero: ult(rep.paraderosActuales, 10 * 60_000),
     estado: ult(rep.estados),
+    gps: tramoEn(rep.gps.tramos, t),
+    ultimoFix: ult(rep.gps.fixes),
     boletos: rep.boletos.slice(0, nb),
     linea: Math.max(0, buscar(rep.entradas, t)),
   }

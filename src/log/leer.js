@@ -70,6 +70,22 @@ function socket(msg) {
   return null
 }
 
+// Líneas que solo se escriben dentro de onLocationResult: prueban que llegó un fix nuevo.
+const FIX = /^(Posición a enviar|GPS desactivado - Pulso|Marca pre-login bufferizada|Fix impreciso descartado|Fallback: enviando)/
+const COORD = /lat:([-\d.]+) lng:([-\d.]+)/
+
+function gps(msg) {
+  let m
+  if ((m = FIX.exec(msg))) {
+    const c = COORD.exec(msg)
+    return { tipo: 'fix', fuente: m[1], lat: c ? +c[1] : null, lng: c ? +c[2] : null }
+  }
+  if ((m = /^🐕 GPS mudo (\d+)s/.exec(msg))) return { tipo: 'gpsWatchdog', mudo: +m[1] * 1000 }
+  if (msg.startsWith('✅ GPS volvió')) return { tipo: 'gpsVolvio' }
+  if (msg.startsWith('📍 Restart GPS')) return { tipo: 'gpsRestart' }
+  return null
+}
+
 /** Evento tipado de una entrada, o null si no aporta al flujo de sesión. */
 export function clasificar({ tag, msg }) {
   let m
@@ -84,6 +100,7 @@ export function clasificar({ tag, msg }) {
     if ((m = /^Restauración: sesión (\d+) lado=([AB]) restaurada/.exec(msg))) return { tipo: 'restauracion', resultado: 'restaurada', sesion: +m[1], lado: m[2] === 'B' }
     return null
   }
+  if (tag === 'LocationTrackingService') return gps(msg)
   if (tag === 'ParaderoManager') {
     if ((m = /^Paradero actual: (.*) \(id=(\d+)\)$/.exec(msg))) return { tipo: 'paraderoActual', nombre: m[1], id: +m[2] }
     if ((m = /^Paradero más cercano orden 1: (.*)$/s.exec(msg))) return { tipo: 'cercano', orden1: true, paradero: paraderoDesdeLog(parseKValue(m[1])) }
@@ -93,6 +110,7 @@ export function clasificar({ tag, msg }) {
   if (tag === 'DriverLoginRepository') {
     if ((m = /^Paradero mas cercano: (.*)$/s.exec(msg))) return { tipo: 'cercano', paradero: paraderoDesdeLog(parseKValue(m[1])) }
     if ((m = /^performLogin origen=(\w+)/.exec(msg))) return { tipo: 'performLogin', origen: m[1] }
+    if ((m = /^Lado login=([AB]) por (.*?) gps=([-\d.]+),([-\d.]+)/.exec(msg))) return { tipo: 'ladoLogin', lado: m[1] === 'B', por: m[2], lat: +m[3], lng: +m[4] }
     if ((m = /^Lado login=([AB]) por (.*?) gps=/.exec(msg))) return { tipo: 'ladoLogin', lado: m[1] === 'B', por: m[2] }
     if (msg.startsWith('driver_logout no enviado')) return { tipo: 'logoutNoEnviado' }
     if (msg.startsWith('driver_logout: conexión perdida')) return { tipo: 'logoutCortado' }

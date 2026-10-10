@@ -80,6 +80,8 @@ button.peligro { color: var(--err); }
 .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex: none; }
 .dato { color: var(--muted); line-height: 1.4; }
 .dato b { color: var(--ink); font-weight: 600; }
+.dato b.ok { color: var(--ok); }
+.dato b.mal { color: var(--err); }
 .historial { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
 .chip { font-size: 11px; font-family: var(--mono); padding: 1px 7px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: #f8fafc; }
 .chip.abierta { color: #fff; background: var(--c); border-color: var(--c); }
@@ -171,6 +173,8 @@ svg.mapa text { font-family: inherit; }
 .hito.descartada { background: var(--geo); }
 .hito.error, .hito.forzado, .hito.perdido { background: #f59e0b; }
 .hito.apagado, .hito.encendido { background: var(--apagado); }
+.hito.gps { background: #be123c; }
+.hito.gps-ok { background: color-mix(in srgb, var(--ok) 60%, #fff); }
 .tiempo-hora { font-family: var(--mono); font-size: 12.5px; font-weight: 600; }
 .tiempo-aviso { grid-column: 1 / -1; font-size: 12.5px; color: #5b21b6; }
 
@@ -243,6 +247,11 @@ svg.mapa text { font-family: inherit; }
 .c-msg text { font-size: 10px; font-weight: 800; fill: var(--err); }
 .c-boleto { stroke-width: 1.6; }
 .c-boleto.mal { stroke: var(--err); stroke-width: 2.2; }
+.c-gps.ok { fill: color-mix(in srgb, var(--ok) 22%, #fff); }
+.c-gps.mudo { fill: color-mix(in srgb, var(--err) 18%, #fff); stroke: var(--err); stroke-width: 1; stroke-dasharray: 4 3; }
+.c-fix { stroke: color-mix(in srgb, var(--ok) 70%, #000); stroke-width: 1; opacity: 0.6; }
+.c-rancio { cursor: pointer; }
+.c-rancio path { fill: var(--err); stroke: #fff; stroke-width: 1.2; }
 .cursor line { stroke: var(--ink); stroke-width: 1.5; pointer-events: none; }
 .cursor circle { fill: var(--ink); pointer-events: none; }
 .l-socket { width: 18px; height: 9px; border-radius: 2px; background: color-mix(in srgb, var(--ok) 16%, #fff); border: 1px solid color-mix(in srgb, var(--ok) 45%, #fff); }
@@ -250,6 +259,8 @@ svg.mapa text { font-family: inherit; }
 .l-rayada { width: 18px; height: 9px; border-radius: 2px; background: repeating-linear-gradient(45deg, var(--a) 0 3px, #9db7f0 3px 6px); }
 .l-cruce { width: 18px; height: 6px; background: repeating-linear-gradient(-45deg, var(--err) 0 2px, transparent 2px 5px); }
 .l-boleto { width: 3px; height: 12px; background: var(--err); }
+.l-gps { width: 18px; height: 9px; border-radius: 2px; background: color-mix(in srgb, var(--ok) 22%, #fff); }
+.l-gps.mudo { background: color-mix(in srgb, var(--err) 18%, #fff); border: 1px dashed var(--err); }
 .wd-txt { color: #f59e0b; }
 
 .dos-col { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 10px; }
@@ -301,3 +312,69 @@ svg.mapa text { font-family: inherit; }
 .marca-txt.logout, .marca-txt.error { fill: var(--err); }
 .marca-txt.descartada { fill: var(--geo); }
 .marca-txt.apagado { fill: var(--apagado); }
+
+/* ── pestañas del log ── */
+.barra-vista { display: flex; align-items: flex-end; justify-content: space-between; gap: 8px 14px; flex-wrap: wrap; border-bottom: 1px solid var(--line); flex: none; }
+.pestanas { display: flex; gap: 4px; }
+.rango { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 0 0 6px; font-size: 12px; }
+.rango input { width: auto; padding: 4px 6px; font-size: 12px; font-family: var(--mono); }
+.rango select { width: auto; padding: 4px 6px; font-size: 12px; }
+.rango button { padding: 4px 9px; font-size: 12px; }
+.rango-tit { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+.rango.recortado .rango-tit { color: var(--a); }
+.rango.recortado input { border-color: var(--a); }
+.rango-dur { min-width: 70px; }
+.pestanas button { border: 0; border-bottom: 2px solid transparent; border-radius: 8px 8px 0 0; background: transparent; padding: 8px 16px; font-weight: 600; color: var(--muted); }
+.pestanas button.on { color: var(--ink); border-bottom-color: var(--ink); background: var(--card); }
+
+/* ── recorrido ── */
+.recorrido { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 10px; height: calc(100vh - 215px); min-height: 460px; flex: none; }
+.recorrido.ancho { grid-template-columns: minmax(0, 1fr); }
+.tiles-gris { filter: grayscale(1) brightness(1.06) contrast(0.88); }
+.mapa-caja { position: relative; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--card); min-height: 0; }
+.mapa-leaflet { position: absolute; inset: 0; }
+.mapa-botones { position: absolute; left: 54px; top: 10px; z-index: 500; display: flex; gap: 6px; }
+.mapa-botones > * { background: var(--card); padding: 5px 9px; border-radius: 8px; border: 1px solid var(--line); font-size: 12px; box-shadow: 0 1px 3px rgb(0 0 0 / 0.12); }
+.leyenda-mapa { position: absolute; left: 10px; bottom: 10px; z-index: 500; display: flex; flex-wrap: wrap; gap: 10px; background: color-mix(in srgb, var(--card) 92%, transparent); padding: 5px 9px; border-radius: 8px; border: 1px solid var(--line); font-size: 11.5px; }
+.leyenda-mapa i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+.geo-lbl { background: transparent; border: 0; box-shadow: none; padding: 0; font-weight: 700; font-size: 11px; color: #0f172a; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff; }
+.geo-lbl::before { display: none; }
+.sin-etiquetas .geo-lbl { display: none; }
+.leaflet-popup-content { font: 12px/1.45 Inter, system-ui, sans-serif; }
+.leaflet-popup-content td { padding: 1px 8px 1px 0; }
+.recorrido-lado { display: flex; flex-direction: column; gap: 10px; overflow-y: auto; min-height: 0; }
+.veredicto ul { margin: 2px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 3px; line-height: 1.45; }
+.veredicto.central { border-left: 4px solid var(--err); }
+.veredicto.revisar { border-left: 4px solid #d97706; }
+.veredicto.ninguno { border-left: 4px solid var(--ok); }
+.tabla-geo { width: 100%; border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums; }
+.tabla-geo th { text-align: left; color: var(--muted); font-weight: 600; font-size: 11px; padding: 3px 4px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--card); }
+.tabla-geo td { padding: 3px 4px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tabla-geo td.nombre { white-space: normal; }
+.tabla-geo td.ok { color: var(--ok); }
+.tabla-geo td.mal { color: var(--err); font-weight: 650; }
+.tabla-geo td.sin { color: var(--muted); }
+.tabla-geo tbody tr { cursor: pointer; }
+.tabla-geo tbody tr:hover td { background: #f8fafc; }
+.tabla-geo tr.actual td { background: #fef9c3; }
+@media (max-width: 1100px) {
+  .recorrido { grid-template-columns: 1fr; height: auto; }
+  .mapa-caja { height: 60vh; }
+}
+
+/* ── buscador del recorrido ── */
+.buscador .fila input { flex: 1; }
+.atajos { display: flex; flex-wrap: wrap; gap: 4px; }
+.atajos button { padding: 3px 8px; font-size: 11.5px; border-radius: 999px; }
+.atajos button.on { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+.hallados { list-style: none; margin: 0; padding: 0; max-height: 260px; overflow-y: auto; border: 1px solid var(--line); border-radius: 8px; }
+.hallados li { display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; gap: 6px; align-items: baseline; padding: 4px 6px; border-bottom: 1px solid var(--line); cursor: pointer; font-size: 11.5px; }
+.hallados li:hover { background: #f5f3ff; }
+.hallados .h { font-family: var(--mono); }
+.hallados .m { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); }
+.hallados .m b { color: var(--ink); font-weight: 600; }
+.pin-num { background: #7c3aed; color: #fff; border-radius: 999px; padding: 0 6px; font-size: 10.5px; font-weight: 700; }
+.pin-busqueda { background: transparent; border: 0; }
+.pin-busqueda span { display: inline-block; background: #7c3aed; color: #fff; font: 700 11px/1 Inter, system-ui, sans-serif; padding: 5px 7px; border-radius: 12px 12px 12px 2px; border: 2px solid #fff; box-shadow: 0 1px 4px rgb(0 0 0 / 0.35); white-space: nowrap; }
+.pin-linea { margin-bottom: 4px; font-size: 11.5px; word-break: break-word; }
+.recorrido-lado[hidden] { display: none; }

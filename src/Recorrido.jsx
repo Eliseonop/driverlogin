@@ -2,7 +2,7 @@ import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { duracion, horaLog } from './log/leer.js'
-import { aCsv, buscarEnLog, desfase, estadoMarca, posicionEn, recortar, recorrido } from './log/recorrido.js'
+import { aCsv, buscarEnLog, desfase, estadoMarca, porQueSeCorta, posicionEn, recortar, recorrido } from './log/recorrido.js'
 
 const COLOR = { ok: '#16a34a', mal: '#dc2626', sin: '#94a3b8' }
 const COLOR_VIAJE = ['#2563eb', '#0d9488', '#ca8a04', '#0891b2', '#475569'] // sin morado: es el color de la búsqueda
@@ -22,7 +22,7 @@ const ATAJOS = [
 ]
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 
-export default function Recorrido({ rep, desde, hasta, t, ir }) {
+export default function Recorrido({ rep, desde, hasta, t, ir, log }) {
   const completo = useMemo(() => recorrido(rep), [rep])
   const r = useMemo(() => recortar(completo, desde, hasta), [completo, desde, hasta])
   const [foco, setFoco] = useState(null)
@@ -38,12 +38,26 @@ export default function Recorrido({ rep, desde, hasta, t, ir }) {
     ir(h.t)
     setFoco({ t: h.t, pin: h.n })
   }
+  const elegirCorte = c => {
+    ir(c.t)
+    setFoco({ t: c.t, corte: true })
+  }
   if (!r.pos.length)
-    return <div className="alerta">{completo.pos.length ? 'No hay posiciones enviadas en el rango elegido.' : 'Este log no tiene posiciones enviadas (report con positions): no hay recorrido que dibujar.'}</div>
+    return (
+      <>
+        <div className="alerta">{completo.pos.length ? 'No hay posiciones enviadas en el rango elegido.' : 'Este log no tiene posiciones enviadas (report con positions): no hay recorrido que dibujar.'}</div>
+        <div className="recorrido-solo-log">{log}</div>
+      </>
+    )
   return (
-    <div className={`recorrido ${ancho ? 'ancho' : ''}`}>
-      <Mapa r={r} t={t} ir={ir} foco={foco} hallados={busqueda.hallados} ancho={ancho} setAncho={setAncho} />
-      <div className="recorrido-lado" hidden={ancho}>
+    <div className="recorrido">
+      <div className={`recorrido-arriba ${ancho ? 'ancho' : ''}`}>
+        <Mapa r={r} t={t} ir={ir} foco={foco} hallados={busqueda.hallados} ancho={ancho} setAncho={setAncho} />
+        {!ancho && <div className="recorrido-log">{log}</div>}
+      </div>
+      <div className="recorrido-abajo">
+        <Apagados apagados={r.apagados} elegir={a => (ir(a.t), setFoco({ t: a.t, apagado: true }))} />
+        <Cortes cortes={r.cortes} t={t} elegir={elegirCorte} />
         <Buscador consulta={consulta} setConsulta={setConsulta} busqueda={busqueda} elegir={elegirPin} encuadrar={() => setFoco({ todos: Date.now() })} />
         <Cobertura r={r} rep={rep} desde={desde} hasta={hasta} />
         <Veredicto v={r.veredicto} />
@@ -69,6 +83,102 @@ export default function Recorrido({ rep, desde, hasta, t, ir }) {
           </div>
         )}
       </div>
+    </div>
+  )
+}
+
+const RAPIDA = 5000 // reconexión en menos de esto: el socket se cae y vuelve casi al instante
+const graveCorte = c => c.fuera >= 30_000 || c.vuelve == null
+
+/** Lista de cada caída del socket en el rango: hora, por qué, cuánto estuvo sin conexión y dónde estaba el bus. */
+function Cortes({ cortes, t, elegir }) {
+  const [rapidas, setRapidas] = useState(true)
+  const lista = rapidas ? cortes : cortes.filter(c => c.fuera >= RAPIDA)
+  const sinConexion = cortes.reduce((a, c) => a + c.fuera, 0)
+  const actual = lista.filter(c => c.t <= t).at(-1)
+  return (
+    <div className="card cortes">
+      <h3>
+        Cortes de conexión <span className="sutil">{cortes.length} en el rango · {duracion(sinConexion)} sin socket</span>
+      </h3>
+      {cortes.length === 0 ? (
+        <p className="nota">El socket no se cayó en este rango.</p>
+      ) : (
+        <>
+          <label className="check"><input type="checkbox" checked={rapidas} onChange={e => setRapidas(e.target.checked)} /> incluir las que reconectan en menos de 5 s</label>
+          <div className="cortes-tabla">
+            <table className="tabla-geo">
+              <thead><tr><th>Se cae</th><th>Por qué</th><th>Sin conexión</th><th>Vuelve</th><th>Señal</th><th>Bus</th></tr></thead>
+              <tbody>
+                {lista.map(c => (
+                  <tr key={c.t} className={`${c === actual ? 'actual' : ''} ${graveCorte(c) ? 'grave' : ''}`} onClick={() => elegir(c)}>
+                    <td>{horaLog(c.t)} <span className="sutil">SID {c.sid}</span></td>
+                    <td className="nombre">
+                      {porQueSeCorta(c)}
+                      {c.pista && <b className="mal"> · {c.pista}</b>}
+                      {c.intentos > 0 && <span className="sutil"> · {c.intentos} intentos fallidos{c.motivos.length ? `: ${c.motivos.join(' / ')}` : ''}</span>}
+                    </td>
+                    <td className={graveCorte(c) ? 'mal' : ''}>{duracion(c.fuera)}</td>
+                    <td>{c.vuelve != null ? `${horaLog(c.vuelve)}${c.sidNuevo ? ` SID ${c.sidNuevo}` : ''}` : <b className="mal">no vuelve</b>}</td>
+                    <td>{c.senal != null ? `${c.senal} dBm` : '—'}</td>
+                    <td>{c.p ? `${c.p.vel} km/h` : <span className="sutil">sin posición</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+
+function popupCorte(c) {
+  const fila = (a, b) => `<tr><td>${a}</td><td>${b}</td></tr>`
+  const lineas = c.lineas
+    .map(e => `<div class="${e.propia ? 'propia' : ''}"><span>${horaLog(e.t)}</span> [${esc(e.tag)}] ${esc(e.msg)}</div>`)
+    .join('')
+  return `<b style="color:${graveCorte(c) ? '#dc2626' : '#d97706'}">Se corta el socket SID ${c.sid} · ${horaLog(c.t)}</b><table>
+    ${fila('Por qué', `<b>${esc(porQueSeCorta(c))}</b>`)}
+    ${c.pista ? fila('Pista', `<b style="color:#dc2626">${esc(c.pista)}</b>`) : ''}
+    ${fila('Último msj. servidor', c.ultimoRx ? `${horaLog(c.ultimoRx)} (${duracion(c.t - c.ultimoRx)} antes)` : '—')}
+    ${fila('Sin conexión', `<b>${duracion(c.fuera)}</b>`)}
+    ${fila('Reconecta', c.vuelve != null ? `${horaLog(c.vuelve)}${c.sidNuevo ? ` · SID ${c.sidNuevo}` : ''}` : '<b>no vuelve hasta el fin del log</b>')}
+    ${c.intentos ? fila('Intentos fallidos', `${c.intentos}${c.motivos.length ? ` · ${esc(c.motivos.join(' / '))}` : ''}`) : ''}
+    ${fila('Equipo', `${c.senal != null ? `señal ${c.senal} dBm` : 'señal ?'} · batería ${c.bateria ?? '?'}%${c.online === false ? ' · <b>online=false</b>' : ''}`)}
+    ${c.p ? fila('Bus', `${horaLog(c.p.t)} · ${c.p.vel} km/h`) : ''}
+    </table><div class="pin-log">${lineas}</div><div class="sutil">El log de la derecha queda en esta línea.</div>`
+}
+
+function popupApagado(a) {
+  const color = a.tipo === 'reinicio' ? '#d97706' : '#7f1d1d'
+  return `<b style="color:${color}">⏻ ${esc(a.titulo)}</b><div class="sutil">${horaLog(a.t)} → vuelve ${horaLog(a.vuelve)} · ${duracion(a.fuera)} sin equipo</div>
+    <ul class="pin-detalle">${a.detalle.map(d => `<li>${esc(d)}</li>`).join('')}</ul>`
+}
+
+/** Apagados del equipo y reinicios de la app en el rango, con el porqué. */
+function Apagados({ apagados, elegir }) {
+  if (!apagados.length) return null
+  return (
+    <div className="card apagados">
+      <h3>Apagados y reinicios del equipo <span className="sutil">{apagados.length} en el rango</span></h3>
+      <table className="tabla-geo">
+        <thead><tr><th>Se apaga</th><th>Qué pasó</th><th>Apagado</th><th>Vuelve</th><th>Batería</th></tr></thead>
+        <tbody>
+          {apagados.map(a => (
+            <tr key={a.t} className={a.tipo === 'reinicio' ? '' : 'grave'} onClick={() => elegir(a)} title={a.detalle.join('\n')}>
+              <td>{horaLog(a.t)}</td>
+              <td className="nombre"><b className={a.tipo === 'reinicio' ? '' : 'mal'}>{a.titulo}</b><div className="sutil">{a.detalle[0]}</div></td>
+              <td>{duracion(a.fuera)}</td>
+              <td>{horaLog(a.vuelve)}</td>
+              <td>
+                {a.bateria != null ? `${a.bateria}%${a.cargaba === false ? ' sin cargar' : a.cargaba ? ' cargando' : ''}` : '—'}
+                {a.bateriaVuelve != null && <span className="sutil"> → {a.bateriaVuelve}%{a.cargaVuelve ? ' cargando' : ''}</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -215,7 +325,7 @@ function popupGeocerca(g, r) {
 }
 
 function capas(r, ir) {
-  const c = { ruta: L.layerGroup(), puntos: L.layerGroup(), paraderos: L.layerGroup(), geo: L.layerGroup(), casi: L.layerGroup(), paradas: L.layerGroup(), huecos: L.layerGroup(), ventas: L.layerGroup() }
+  const c = { ruta: L.layerGroup(), puntos: L.layerGroup(), paraderos: L.layerGroup(), geo: L.layerGroup(), casi: L.layerGroup(), paradas: L.layerGroup(), huecos: L.layerGroup(), ventas: L.layerGroup(), cortes: L.layerGroup() }
   const viajes = [...new Set(r.pos.map(p => p.trip))]
   viajes.forEach((trip, k) => {
     const color = COLOR_VIAJE[k % COLOR_VIAJE.length]
@@ -282,6 +392,31 @@ function capas(r, ir) {
     const p = v.p
     if (p) L.circleMarker([p.lat, p.lng], { radius: 3, color: v.impresa ? '#0d9488' : '#dc2626', fillOpacity: 1 }).bindPopup(`Venta ${v.impresa ? 'impresa' : 'NO impresa'} ${horaLog(v.t)}<br>${esc(v.nombre)} S/${v.tarifa}`).addTo(c.ventas)
   }
+  for (const a of r.apagados) {
+    if (!a.p) continue
+    const icono = L.divIcon({ className: `pin-apagado ${a.tipo}`, html: '<span>⏻</span>', iconSize: null, iconAnchor: [13, 13], popupAnchor: [0, -12] })
+    refs[`apagado${a.t}`] = L.marker([a.p.lat, a.p.lng], { icon: icono, zIndexOffset: 1100 })
+      .bindPopup(popupApagado(a), { maxWidth: 480, minWidth: 320 })
+      .bindTooltip(`${horaLog(a.t)} ${a.titulo}`, { direction: 'top', offset: [0, -12] })
+      .on('click', () => ir(a.t))
+      .addTo(c.cortes)
+  }
+  for (const x of r.cortes) {
+    const grave = graveCorte(x)
+    // Lo que recorrió el bus mientras estuvo sin socket.
+    if (x.fuera >= RAPIDA && x.tramo.length > 1)
+      L.polyline(x.tramo.map(p => [p.lat, p.lng]), { color: grave ? '#dc2626' : '#d97706', weight: 7, opacity: 0.75, dashArray: '2 9', lineCap: 'round' })
+        .bindTooltip(`sin conexión ${horaLog(x.t)} → ${x.vuelve != null ? horaLog(x.vuelve) : 'fin'} (${duracion(x.fuera)})`, { sticky: true })
+        .on('click', () => ir(x.t))
+        .addTo(c.cortes)
+    if (!x.p) continue
+    const icono = L.divIcon({ className: `pin-corte ${grave ? 'grave' : x.fuera >= RAPIDA ? '' : 'rapida'}`, html: '<span>⚡</span>', iconSize: null, iconAnchor: [11, 11], popupAnchor: [0, -10] })
+    refs[`corte${x.t}`] = L.marker([x.p.lat, x.p.lng], { icon: icono, zIndexOffset: grave ? 900 : 500 })
+      .bindPopup(popupCorte(x), { maxWidth: 560, minWidth: 360 })
+      .bindTooltip(`${horaLog(x.t)} se corta · ${duracion(x.fuera)} sin conexión`, { direction: 'top', offset: [0, -10] })
+      .on('click', () => ir(x.t))
+      .addTo(c.cortes)
+  }
   return { c, refs }
 }
 
@@ -296,7 +431,7 @@ function Mapa({ r, t, ir, foco, hallados, ancho, setAncho }) {
   const [seguir, setSeguir] = useState(false)
 
   const control = useRef(null)
-  const visibles = useRef(new Set(['Recorrido', 'Paraderos', 'Geocercas equipo vs central', 'Detenciones ≥ 1 min', 'Huecos GPS > 2 min']))
+  const visibles = useRef(new Set(['Recorrido', 'Paraderos', 'Geocercas equipo vs central', 'Detenciones ≥ 1 min', 'Huecos GPS > 2 min', 'Cortes y apagados']))
 
   useEffect(() => {
     const m = L.map(div.current)
@@ -331,7 +466,7 @@ function Mapa({ r, t, ir, foco, hallados, ancho, setAncho }) {
     marcadores.current = refs
     const nombres = {
       Recorrido: c.ruta, 'Posiciones (puntos)': c.puntos, Paraderos: c.paraderos, 'Geocercas equipo vs central': c.geo,
-      'CASI marca': c.casi, 'Detenciones ≥ 1 min': c.paradas, 'Huecos GPS > 2 min': c.huecos, Ventas: c.ventas,
+      'CASI marca': c.casi, 'Detenciones ≥ 1 min': c.paradas, 'Huecos GPS > 2 min': c.huecos, Ventas: c.ventas, 'Cortes y apagados': c.cortes,
     }
     for (const [nombre, capa] of Object.entries(nombres)) {
       control.current.addOverlay(capa, nombre)
@@ -369,7 +504,7 @@ function Mapa({ r, t, ir, foco, hallados, ancho, setAncho }) {
       mapa.current.flyTo(pin.getLatLng(), Math.max(mapa.current.getZoom(), 16), { duration: 0.6 }).once('moveend', () => pin.openPopup())
       return
     }
-    const g = marcadores.current[foco.t]
+    const g = marcadores.current[foco.corte ? `corte${foco.t}` : foco.apagado ? `apagado${foco.t}` : foco.t]
     const p = r.pos[posicionEn(r.pos, foco.t)]
     if (g) mapa.current.flyTo(g.getLatLng(), 17, { duration: 0.6 }).once('moveend', () => g.openPopup())
     else if (p) mapa.current.flyTo([p.lat, p.lng], 17, { duration: 0.6 })
@@ -395,6 +530,8 @@ function Mapa({ r, t, ir, foco, hallados, ancho, setAncho }) {
         <span><i style={{ background: COLOR.mal }} /> central con otra hora</span>
         <span><i style={{ background: COLOR.sin }} /> sin marca</span>
         <span><i style={{ background: '#facc15', border: '2px solid #0f172a' }} /> bus en la hora elegida</span>
+        {r.cortes.length > 0 && <span>⚡ se corta la conexión <span className="sutil">(punteado = tramo sin socket)</span></span>}
+        {r.apagados.length > 0 && <span>⏻ equipo apagado / reiniciado</span>}
         {hallados.length > 0 && <span><i style={{ background: '#7c3aed' }} /> búsqueda</span>}
       </div>
     </div>

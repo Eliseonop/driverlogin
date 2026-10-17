@@ -1,6 +1,8 @@
-import { memo, useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { duracion, fechaLog, horaLog, parseStamp } from './log/leer.js'
 import { buscar, estadoEn, ladoTxt, tramoEn } from './log/reconstruir.js'
+import ConsumoFrame, { useConsumo } from './ConsumoFrame.jsx'
+import Cuadre from './Cuadre.jsx'
 import Recorrido from './Recorrido.jsx'
 
 const colorLado = lado => (lado == null ? 'var(--none)' : lado ? 'var(--b)' : 'var(--a)')
@@ -12,9 +14,35 @@ const ZOOMS = [
   ['5 min', 5 * 60_000],
 ]
 const PESTANAS = [
-  ['sesion', 'Sesión'],
-  ['recorrido', 'Recorrido'],
+  ['sesion', 'Sesión', 'Login, cierre y conexión en el tiempo'],
+  ['cuadre', 'Cuadre', 'Liquidación de cada sesión contra los boletos enviados'],
+  ['ventas', 'Ventas e impresión', 'Toques, impresión, impresora y envío de boletos (app de consumo)'],
+  ['recorrido', 'Recorrido', 'Mapa: GPS, geocercas y paraderos'],
+  ['consumo', 'Consumo y red', 'Datos móviles, reinicios, versión y red (app de consumo)'],
 ]
+/** Pestañas que muestran paneles de la app de consumo, y cuál grupo. */
+const GRUPO_CONSUMO = { cuadre: 'sesiones', ventas: 'ventas', consumo: 'consumo' }
+const CON_TIEMPO = new Set(['sesion', 'recorrido'])
+
+/** Sesiones de la plataforma pegadas en Cuadre: se recuerdan por archivo de log en este navegador. */
+function usePlataforma(archivo) {
+  const clave = `driverlogin.plataforma.${archivo}`
+  const [texto, setTexto] = useState(() => {
+    try {
+      return localStorage.getItem(clave) ?? ''
+    } catch {
+      return ''
+    }
+  })
+  const guardar = t => {
+    setTexto(t)
+    try {
+      if (t) localStorage.setItem(clave, t)
+      else localStorage.removeItem(clave)
+    } catch {}
+  }
+  return [texto, guardar]
+}
 const ESTADO_VIAJE ={ R: 'en ruta', E: 'espera', X: 'fuera de ruta', T: 'terminado' }
 const TXT_CENTRAL = {
   confirmada: 'confirmada por la central',
@@ -28,7 +56,11 @@ export default function ReproduccionLog({ rep, onCerrar }) {
   const [mult, setMult] = useState(300)
   const [zoom, setZoom] = useState('2 h')
   const [vista, setVista] = useState('sesion')
+  const [sesionCuadre, setSesionCuadre] = useState(null)
   const [rango, setRango] = useState([rep.desde, rep.hasta])
+  const [plataforma, setPlataforma] = usePlataforma(rep.archivo)
+  const consumo = useConsumo(rep, plataforma)
+  const noCuadran = rep.cuadre.sesiones.filter(s => s.estado === 'no-cuadra').length
   const st = useMemo(() => estadoEn(rep, t), [rep, t])
   // Vista recortada: barra de tiempo, carriles, hitos, hallazgos, Play y recorrido solo miran [desde, hasta].
   const vr = useMemo(() => {
@@ -66,18 +98,43 @@ export default function ReproduccionLog({ rep, onCerrar }) {
     setJugando(false)
     setT(Math.max(vr.desde, Math.min(vr.hasta, x)))
   }
+  const verEnSesion = x => {
+    if (x < vr.desde || x > vr.hasta) setRango([rep.desde, rep.hasta])
+    setVista('sesion')
+    setJugando(false)
+    setT(x)
+  }
+  const abrirHallazgo = h => {
+    if (h.vista === 'cuadre') {
+      setSesionCuadre(h.sesion)
+      setVista('cuadre')
+    } else if (!CON_TIEMPO.has(vista)) setVista('sesion')
+    ir(h.t)
+  }
 
   return (
     <div className="app">
-      <PanelLog rep={vr} t={t} ir={ir} jugando={jugando} setJugando={setJugando} mult={mult} setMult={setMult} onCerrar={onCerrar} />
+      <PanelLog rep={vr} t={t} ir={ir} abrirHallazgo={abrirHallazgo} jugando={jugando} setJugando={setJugando} mult={mult} setMult={setMult} onCerrar={onCerrar} />
       <main className="main">
         <div className="barra-vista">
           <div className="pestanas">
-            {PESTANAS.map(([k, txt]) => <button key={k} className={vista === k ? 'on' : ''} onClick={() => setVista(k)}>{txt}</button>)}
+            {PESTANAS.map(([k, txt, ayuda]) => (
+              <button key={k} className={vista === k ? 'on' : ''} onClick={() => setVista(k)} title={ayuda}>
+                {txt}
+                {k === 'cuadre' && noCuadran > 0 && <span className="pest-alerta">{noCuadran}</span>}
+              </button>
+            ))}
           </div>
-          <Rango rep={rep} rango={rango} cambiar={cambiarRango} t={t} />
+          <div className="barra-acciones">
+            {CON_TIEMPO.has(vista) && <Rango rep={rep} rango={rango} cambiar={cambiarRango} t={t} />}
+            <div className="informe-botones">
+              <button onClick={() => consumo.informe(false)} title="Informe de boletos de la app de consumo (impresos, cobrados sin papel, fallas, envío a la central)">📄 Informe de boletos</button>
+              <button onClick={() => consumo.informe(true)} title="Imprimir o guardar el informe como PDF">🖨️</button>
+            </div>
+          </div>
         </div>
-        {vista === 'sesion' ? (
+        {CON_TIEMPO.has(vista) && <SliderRango rep={rep} rango={rango} cambiar={cambiarRango} t={t} />}
+        {vista === 'sesion' && (
           <>
             <EstadoLog rep={rep} st={st} />
             <CircuitoLog rep={rep} st={st} />
@@ -88,13 +145,15 @@ export default function ReproduccionLog({ rep, onCerrar }) {
               <LogReal rep={rep} linea={st.linea} ir={ir} seguir={jugando} />
             </div>
           </>
-        ) : (
+        )}
+        {vista === 'cuadre' && <Cuadre rep={rep} sel={sesionCuadre} setSel={setSesionCuadre} verEnSesion={verEnSesion} plataforma={plataforma} setPlataforma={setPlataforma} />}
+        {vista === 'recorrido' && (
           <>
             <BarraTiempo rep={vr} t={t} ir={ir} />
-            <Recorrido rep={rep} desde={vr.desde} hasta={vr.hasta} t={t} ir={ir} />
-            <LogReal rep={rep} linea={st.linea} ir={ir} seguir={jugando} />
+            <Recorrido rep={rep} desde={vr.desde} hasta={vr.hasta} t={t} ir={ir} log={<LogReal rep={rep} linea={st.linea} ir={ir} seguir={jugando} filtroInicial="todo" />} />
           </>
         )}
+        <ConsumoFrame c={consumo} grupo={GRUPO_CONSUMO[vista]} plataforma={plataforma} />
       </main>
     </div>
   )
@@ -147,9 +206,86 @@ function Rango({ rep, rango, cambiar, t }) {
   )
 }
 
+/**
+ * Todo el log en una barra con dos manijas: inicio y fin del rango (arrastrar la franja la mueve entera).
+ * Mientras se arrastra solo se previsualiza; el rango se aplica al soltar para no recalcular el mapa a cada píxel.
+ */
+function SliderRango({ rep, rango, cambiar, t }) {
+  const barra = useRef(null)
+  const arrastre = useRef(null)
+  const [previa, setPrevia] = useState(null)
+  const [d, h] = previa ?? rango
+  const span = rep.hasta - rep.desde
+  const pct = x => ((x - rep.desde) / span) * 100
+  const tDe = e => {
+    const r = barra.current.getBoundingClientRect()
+    return rep.desde + Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * span
+  }
+  const calcular = (a, x) => {
+    if (a.modo === 'd') return [Math.min(x, a.h - 60_000), a.h]
+    if (a.modo === 'h') return [a.d, Math.max(x, a.d + 60_000)]
+    const w = a.h - a.d
+    const nd = Math.max(rep.desde, Math.min(rep.hasta - w, a.d + x - a.x0))
+    return [nd, nd + w]
+  }
+  const empezar = (e, modo) => {
+    e.preventDefault()
+    e.stopPropagation()
+    try {
+      barra.current.setPointerCapture(e.pointerId)
+    } catch {}
+    const x = tDe(e)
+    const [rd, rh] = rango
+    // Clic en la barra fuera de las manijas: mueve la manija más cercana hasta ahí.
+    const m = modo ?? (Math.abs(x - rd) <= Math.abs(x - rh) ? 'd' : 'h')
+    arrastre.current = { modo: m, x0: x, d: rd, h: rh, previa: null }
+    if (!modo) mover(e)
+  }
+  const mover = e => {
+    const a = arrastre.current
+    if (!a) return
+    a.previa = calcular(a, tDe(e))
+    setPrevia(a.previa)
+  }
+  const soltar = () => {
+    const a = arrastre.current
+    if (!a) return
+    arrastre.current = null
+    if (a.previa) cambiar(a.previa[0], a.previa[1])
+    setPrevia(null)
+  }
+  const paso = pasoEje(span)
+  const ticks = []
+  for (let k = Math.ceil(rep.desde / paso) * paso; k <= rep.hasta; k += paso) ticks.push(k)
+  const huecos = rep.conexion.huecos
+  return (
+    <div className="slider-rango">
+      <span className="sr-tit">Rango<br /><span className="sutil">{duracion(h - d)}</span></span>
+      <div className="sr-barra" ref={barra} onPointerDown={e => empezar(e, null)} onPointerMove={mover} onPointerUp={soltar} onPointerCancel={soltar}>
+        <div className="sr-pista" />
+        {ticks.map(k => (
+          <span key={k} className="sr-tick" style={{ left: `${pct(k)}%` }}>{horaLog(k).slice(0, 5)}</span>
+        ))}
+        {huecos.map((x, k) => (
+          <span key={k} className="sr-hueco" style={{ left: `${pct(x.desde)}%`, width: `${Math.max(0.2, pct(x.hasta) - pct(x.desde))}%` }} title={`sin conexión ${horaLog(x.desde)}–${horaLog(x.hasta)} (${duracion(x.hasta - x.desde)})`} />
+        ))}
+        <div className="sr-sel" style={{ left: `${pct(d)}%`, width: `${pct(h) - pct(d)}%` }} onPointerDown={e => empezar(e, 'mover')} title="Arrastra para mover el rango entero" />
+        {t >= rep.desde && t <= rep.hasta && <span className="sr-t" style={{ left: `${pct(t)}%` }} />}
+        {/* La hora va hacia afuera de la franja, salvo pegada al borde: ahí va hacia adentro para no salirse. */}
+        <span className={`sr-manija ini ${pct(d) < 7 ? 'borde' : ''}`} style={{ left: `${pct(d)}%` }} onPointerDown={e => empezar(e, 'd')} title="Inicio del rango">
+          <b>{horaLog(d)}</b>
+        </span>
+        <span className={`sr-manija fin ${pct(h) > 93 ? 'borde' : ''}`} style={{ left: `${pct(h)}%` }} onPointerDown={e => empezar(e, 'h')} title="Fin del rango">
+          <b>{horaLog(h)}</b>
+        </span>
+      </div>
+    </div>
+  )
+}
+
 // ── panel ────────────────────────────────────────────────────────────────────
 
-function PanelLog({ rep, t, ir, jugando, setJugando, mult, setMult, onCerrar }) {
+function PanelLog({ rep, t, ir, abrirHallazgo, jugando, setJugando, mult, setMult, onCerrar }) {
   const { info } = rep
   const [abierto, setAbierto] = useState(0)
   const anterior = rep.hitos.filter(h => h.t < t - 500).at(-1)
@@ -190,9 +326,10 @@ function PanelLog({ rep, t, ir, jugando, setJugando, mult, setMult, onCerrar }) 
         <ol className="hallazgos">
           {rep.hallazgos.map((h, k) => (
             <li key={k} className={`hallazgo ${h.nivel} ${abierto === k ? 'abierto' : ''}`}>
-              <button onClick={() => { setAbierto(k); ir(h.t) }}>
+              <button onClick={() => { setAbierto(k); abrirHallazgo(h) }}>
                 <span className="h-hora">{horaLog(h.t)}</span>
                 <span className="h-titulo">{h.titulo}</span>
+                {h.vista === 'cuadre' && <span className="h-ir">Cuadre ▸</span>}
               </button>
               {abierto === k && h.detalle.length > 0 && <ul>{h.detalle.map(d => <li key={d}>{d}</li>)}</ul>}
             </li>
@@ -236,6 +373,8 @@ function EstadoLog({ rep, st }) {
     alertas.push(`El equipo usa la #${equipo.sesion} y la central ${central.estado === 'confirmada' ? 'tiene' : 'tendría'} la #${central.sesion}.`)
   if (st.gps?.estado === 'mudo')
     alertas.push(`GPS mudo desde las ${horaLog(st.gps.desde)} (${duracion(st.t - st.gps.desde)}): la app sigue usando esa posición para el lado y el paradero.`)
+  const apagado = rep.apagados.find(a => a.t <= st.t && st.t < a.vuelve)
+  if (apagado) alertas.push(`${apagado.titulo}. Apagado ${horaLog(apagado.t)} → vuelve ${horaLog(apagado.vuelve)} (${duracion(apagado.fuera)}).`)
   if (esp) alertas.push(`Esperando la respuesta de driver_logout #${esp.sesion} (${duracion(st.t - esp.t)})…${esp.sinRespuesta ? ' no va a llegar.' : ''}`)
 
   return (
@@ -798,6 +937,8 @@ const compacto = msg =>
 const recortar = m => (m.length > 400 ? `${m.slice(0, 400)}…` : m)
 
 function claseLinea(e) {
+  if (/Iniciando apagado|power event: F|type=SHUTDOWN|disparo: SHUTDOWN/.test(e.msg)) return 'apagado'
+  if (/MyApp\.onCreate|power event: O/.test(e.msg)) return 'arranque'
   if (/ERROR/.test(e.tag) || /❌|sin respuesta|conexión perdida|no enviado/.test(e.msg)) return 'error'
   if (/\[ENVIADO\]/.test(e.msg)) return 'enviado'
   if (/\[RECIBIDO\]/.test(e.msg)) return 'recibido'
@@ -806,36 +947,101 @@ function claseLinea(e) {
   return 'info'
 }
 
-const LogReal = memo(function LogReal({ rep, linea, ir, seguir }) {
-  const [solo, setSolo] = useState(true)
+const esDeSocket = e => /SocketService|SocketMessageDispatcher|ERROR/.test(e.tag) || /Watchdog|CONECTADO|Conectando|onFailure|onClosed|No hay conexión/.test(e.msg)
+/** Lo que explica qué le pasó al equipo: apagados, arranques, energía, cortes de red/socket, sesión y errores. */
+const IMPORTANTE =
+  /Iniciando apagado|Bateria critica|power event|type=SHUTDOWN|disparo: (SHUTDOWN|arranque|carga=)|MyApp\.onCreate|ENERGY|NIGHT|BUS ON|APAGANDO|Watchdog|onFailure|onClosed|TIMEOUT conexión|✅ CONECTADO|Red perdida|Red disponible|GPS mudo|GPS volvió|driver_login \[DATA\]|driver_logout|Sesión activada|Logout confirmado|Login rechazado|❌/
+const esImportante = e => /^ERROR/.test(e.tag) || IMPORTANTE.test(e.msg)
+const FILTROS = [
+  ['todo', 'todas las líneas', () => true],
+  ['importante', 'eventos importantes', esImportante],
+  ['sesion', 'sesión y conexión', esDeSesion],
+  ['socket', 'solo socket / red', esDeSocket],
+]
+const ALTO_LINEA = 19 // alto fijo de cada línea: permite listar el log entero (miles de líneas) dibujando solo las visibles
+
+export const LogReal = memo(function LogReal({ rep, linea, ir, seguir, filtroInicial = 'sesion' }) {
+  const [modo, setModo] = useState(filtroInicial)
+  const [texto, setTexto] = useState('')
+  const [sel, setSel] = useState(null)
+  const [scroll, setScroll] = useState({ top: 0, alto: 400 })
   const caja = useRef(null)
-  const lista = useMemo(() => (solo ? rep.entradas.filter(esDeSesion) : rep.entradas), [rep, solo])
-  const k = Math.max(0, buscar(lista, linea, 'i'))
-  const visibles = lista.slice(Math.max(0, k - 70), k + 50)
+  const propio = useRef(false)
+  const q = useDeferredValue(texto.trim().toLowerCase())
+  const lista = useMemo(() => {
+    const f = FILTROS.find(x => x[0] === modo)[2]
+    return rep.entradas.filter(e => f(e) && (q.length < 2 || `[${e.tag}] ${e.msg}`.toLowerCase().includes(q)))
+  }, [rep, modo, q])
+  const k = buscar(lista, linea, 'i')
   const tActual = rep.entradas[linea]?.t
+  const resumir = modo === 'sesion'
+
   useEffect(() => {
-    // Centra la línea actual moviendo solo la caja del log: scrollIntoView arrastraría también la página.
     const box = caja.current
-    const el = box?.querySelector('.l.actual')
-    if (!el) return
-    const top = el.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop
-    box.scrollTo({ top: top - (box.clientHeight - el.offsetHeight) / 2, behavior: seguir ? 'auto' : 'smooth' })
-  }, [linea, solo, seguir])
+    if (!box) return
+    const medir = () => setScroll({ top: box.scrollTop, alto: box.clientHeight })
+    medir()
+    const ro = new ResizeObserver(medir)
+    ro.observe(box)
+    return () => ro.disconnect()
+  }, [])
+  useEffect(() => {
+    // Un clic en el propio log no lo mueve; si la hora cambió desde afuera (mapa, carriles, Play) centra esa línea.
+    if (propio.current) {
+      propio.current = false
+      return
+    }
+    setSel(null)
+    const box = caja.current
+    if (!box || k < 0) return
+    box.scrollTo({ top: k * ALTO_LINEA - (box.clientHeight - ALTO_LINEA) / 2, behavior: seguir ? 'auto' : 'smooth' })
+  }, [linea, lista, seguir]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const desde = Math.max(0, Math.floor(scroll.top / ALTO_LINEA) - 15)
+  const hasta = Math.min(lista.length, Math.ceil((scroll.top + scroll.alto) / ALTO_LINEA) + 15)
+  const elegida = rep.entradas[sel ?? linea]
   return (
     <div className="log-caja">
       <div className="log-barra">
-        <span>Log real <span className="sutil">· línea {rep.entradas[linea]?.n} del archivo · clic en una línea para ir</span></span>
-        <label className="check"><input type="checkbox" checked={solo} onChange={e => setSolo(e.target.checked)} /> solo sesión y conexión</label>
+        <span>Log real <span className="sutil">· {lista.length.toLocaleString()} de {rep.entradas.length.toLocaleString()} líneas · línea {elegida?.n} del archivo</span></span>
+        <select value={modo} onChange={e => setModo(e.target.value)}>
+          {FILTROS.map(([k, txt]) => <option key={k} value={k}>{txt}</option>)}
+        </select>
       </div>
-      <div className="log" ref={caja}>
-        {visibles.map(e => (
-          <div key={e.i} className={`l ${claseLinea(e)} ${e.i === lista[k]?.i ? 'actual' : ''} ${e.t === tActual ? 'mismo' : ''} ${e.i > linea ? 'futuro' : ''}`} onClick={() => ir(e.t)}>
-            <span className="h">{horaLog(e.t)}</span>
-            <span className="tag">{e.tag}</span>
-            <span className="m">{recortar(solo ? compacto(e.msg) : e.msg)}</span>
+      <div className="log-filtro">
+        <input value={texto} placeholder="filtrar: Watchdog, onFailure, driver_login, SID:12…" onChange={e => setTexto(e.target.value)} />
+        {texto && <button onClick={() => setTexto('')} title="Limpiar">✕</button>}
+        <button onClick={() => caja.current?.scrollTo({ top: k * ALTO_LINEA - (caja.current.clientHeight - ALTO_LINEA) / 2 })} title="Volver a la línea de la hora elegida">◎ hora actual</button>
+      </div>
+      <div className="log" ref={caja} onScroll={e => setScroll({ top: e.currentTarget.scrollTop, alto: e.currentTarget.clientHeight })}>
+        {lista.length === 0 && <p className="nota">Ninguna línea coincide.</p>}
+        <div style={{ height: lista.length * ALTO_LINEA, position: 'relative' }}>
+          <div style={{ position: 'absolute', left: 0, right: 0, top: desde * ALTO_LINEA }}>
+            {lista.slice(desde, hasta).map(e => (
+              <div
+                key={e.i}
+                className={`l ${claseLinea(e)} ${e.i === lista[k]?.i ? 'actual' : ''} ${e.t === tActual ? 'mismo' : ''} ${e.i > linea ? 'futuro' : ''} ${e.i === sel ? 'sel' : ''}`}
+                title={e.msg.length > 160 ? 'clic para ver la línea completa abajo' : undefined}
+                onClick={() => {
+                  propio.current = true
+                  setSel(e.i)
+                  ir(e.t)
+                }}
+              >
+                <span className="h">{horaLog(e.t)}</span>
+                <span className="tag">{e.tag}</span>
+                <span className="m">{recortar(resumir ? compacto(e.msg) : e.msg)}</span>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
+      {elegida && (
+        <div className="log-detalle">
+          <div className="sutil">{fechaLog(elegida.t)} {horaLog(elegida.t)} · línea {elegida.n} · [{elegida.tag}]</div>
+          <pre>{elegida.msg}</pre>
+        </div>
+      )}
     </div>
   )
 })

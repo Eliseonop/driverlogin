@@ -99,6 +99,79 @@ function paraderos(eventos) {
   return [...out.values()]
 }
 
+/** Qué dice la causa de cierre del socket, en palabras. */
+export function porQueSeCorta(c) {
+  if (c.apagado && c.apagado.tipo !== 'reinicio') return c.apagado.titulo
+  if (c.apagado) return 'la app se reinició: el proceso se cerró (el equipo no se apagó)'
+  if (c.causa === 'watchdog') return `el watchdog lo cerró: ${c.silencio ? `${Math.round(c.silencio / 1000)} s` : 'demasiado tiempo'} sin mensajes del servidor`
+  if (c.causa === 'reinicio de la app') return 'la app se reinició (MyApp.onCreate / SocketService creado)'
+  if (c.causa === 'timeout') return 'timeout al conectar con el servidor'
+  if (c.causa === 'limpieza') return 'la app cerró el socket (limpiando recursos)'
+  if (/pong/.test(c.causa)) return `el servidor dejó de responder el ping: ${c.causa}`
+  if (/abort|reset|refused|resolve|unreachable|timed out|failed to connect/i.test(c.causa)) return `falla de red del equipo: ${c.causa}`
+  return c.causa
+}
+
+/** Lo que sugieren los intentos fallidos y la señal: qué le pasaba a la red del equipo. */
+function pistaCorte(motivos, senal) {
+  const txt = motivos.join(' ')
+  if (/portal\.|movistar|claro\.|entel|bitel/i.test(txt)) return 'la red móvil redirige al portal del operador: sin plan de datos / saldo'
+  if (/Unable to resolve host|No address associated/i.test(txt)) return 'sin DNS: el equipo no tenía internet'
+  if (/Network is unreachable|ENETUNREACH/i.test(txt)) return 'sin red: datos móviles caídos'
+  if (senal != null && senal <= -100) return `señal muy baja (${senal} dBm)`
+  return null
+}
+
+/**
+ * Cada vez que el socket se cae: dónde estaba el bus, por qué se cerró (causa + líneas del log), cuánto tardó en
+ * reconectar, los intentos fallidos en el medio y la señal/batería del último device_status.
+ */
+function cortesConexion(rep, pos) {
+  const { segmentos } = rep.conexion
+  const fallas = rep.eventos.filter(e => e.tipo === 'falla')
+  const estados = rep.eventos.filter(e => e.tipo === 'estado')
+  const out = []
+  for (const [k, s] of segmentos.entries()) {
+    if (!s.causa || s.causa === 'reemplazado') continue
+    const t = s.hasta
+    const sig = segmentos.slice(k + 1).find(x => x.desde >= t - 2000) ?? null
+    const vuelve = sig?.desde ?? null
+    const fin = vuelve ?? rep.hasta
+    const intentos = fallas.filter(f => f.t > t && f.t < fin)
+    const wd = rep.conexion.cortes.find(c => Math.abs(c.t - t) <= 2000)
+    const estado = estados.filter(e => e.t <= t && t - e.t <= 15 * 60_000).at(-1)?.data ?? null
+    const i = Number.isFinite(s.iFin) ? s.iFin : null
+    const motivos = [...new Set(intentos.map(f => f.motivo.split('\n')[0].replace(/ from \/[\d.]+ \(port \d+\)/, '').slice(0, 120)))].slice(0, 4)
+    // Las líneas que rodean el cierre: ahí está el porqué (watchdog, onFailure, onClosed, arranque…).
+    const lineas = i == null ? [] : rep.entradas.slice(Math.max(0, i - 6), i + 4).map(e => ({ t: e.t, tag: e.tag, msg: e.msg.split('\n')[0].slice(0, 220), propia: e.i === i }))
+    // Si el equipo se apagó (o la app se reinició) justo ahí, ese es el porqué real del corte.
+    const apagado = (rep.apagados ?? []).find(a => t >= a.t - 60_000 && t <= a.vuelve) ?? null
+    out.push({
+      apagado,
+      lineas,
+      t,
+      i,
+      sid: s.sid,
+      desdeSid: s.desde,
+      causa: s.causa,
+      silencio: wd?.silencio ?? null,
+      ultimoRx: s.ultimoRx ?? null,
+      vuelve,
+      sidNuevo: sig?.sid ?? null,
+      fuera: Math.max(0, fin - t),
+      intentos: intentos.length,
+      motivos,
+      pista: pistaCorte(motivos, estado?.cell_signal ?? null),
+      senal: estado?.cell_signal ?? null,
+      bateria: estado?.battery ?? null,
+      online: estado?.online ?? null,
+      p: pos[posicionEn(pos, t, 5 * 60_000)] ?? null,
+      tramo: pos.filter(p => p.t >= t && p.t <= fin),
+    })
+  }
+  return out
+}
+
 function veredicto(marcas, pos) {
   const conHora = marcas.filter(m => m.delta != null)
   const malas = conHora.filter(m => Math.abs(m.delta) > OK_MAX)
@@ -165,6 +238,8 @@ export function recorrido(rep) {
     sinMarca: entra.filter(g => !g.marca),
     paraderos: paraderos(eventos),
     ventas: vendidas,
+    cortes: cortesConexion(rep, pos),
+    apagados: (rep.apagados ?? []).map(a => ({ ...a, p: a.lat != null ? { lat: a.lat, lng: a.lng, t: a.t, vel: null } : pos[posicionEn(pos, a.ultima, 10 * 60_000)] ?? null })),
     ...detenciones(pos),
     veredicto: veredicto(marcas, pos),
   }
@@ -185,6 +260,8 @@ export function recortar(r, desde, hasta) {
     casi: r.casi.filter(dentro),
     sinMarca: r.sinMarca.filter(dentro),
     ventas: r.ventas.filter(dentro),
+    cortes: r.cortes.filter(dentro),
+    apagados: r.apagados.filter(a => a.vuelve >= desde && a.t <= hasta),
     paradas: r.paradas.filter(d => d.b.t >= desde && d.a.t <= hasta),
     huecos: r.huecos.filter(h => h.b.t >= desde && h.a.t <= hasta),
     veredicto: veredicto(marcas, pos),

@@ -92,7 +92,9 @@ export function clasificar({ tag, msg }) {
   if (tag === 'SocketService' || tag === 'ERROR-SocketService') return socket(msg)
   if (tag === 'LogManager' && msg.startsWith('Inicialización de LogManager')) return { tipo: 'arranque', fuente: 'LogManager' }
   if (tag === 'Arranque' && /MyApp\.onCreate/.test(msg)) return { tipo: 'arranque', fuente: 'MyApp' }
-  if (tag === 'DeviceStatus' && (m = /→ (\{.*\})$/s.exec(msg))) return { tipo: 'estado', data: parseKMap(m[1]) }
+  if (tag === 'DeviceStatus' && (m = /→ (\{.*\})$/s.exec(msg))) return { tipo: 'estado', disparo: /\[disparo: ([^\]]+)\]/.exec(msg)?.[1] ?? null, data: parseKMap(m[1]) }
+  // F = el sistema avisa que se apaga (ACTION_SHUTDOWN): apagado ordenado. O = encendido.
+  if (tag === 'DeviceStatus' && (m = /^⚡ power event: ([OF]):/.exec(msg))) return { tipo: 'power', encendido: m[1] === 'O' }
   if (tag === 'GeoMarkViewModel' && (m = /^✅ Marcando: (.*) a las (\d{2}:\d{2}:\d{2})/.exec(msg))) return { tipo: 'marca', nombre: m[1] }
   if (tag === 'GpsViewModel') {
     if (msg.startsWith('No hay conexión')) return { tipo: 'sinConexion' }
@@ -118,8 +120,16 @@ export function clasificar({ tag, msg }) {
     return null
   }
   if (tag === 'DriverSessionCoordinator') {
-    if ((m = /^logout solicitado: (\d+) allowAutoLogin=(true|false)(?: autoRetorno=(true|false))?/.exec(msg)))
-      return { tipo: 'logoutSolicitado', sesion: +m[1], autoRetorno: m[3] === 'true' }
+    if ((m = /^logout solicitado: (\d+)(?: cierre=(\w))? allowAutoLogin=(true|false)(?: autoRetorno=(true|false))?/.exec(msg)))
+      return { tipo: 'logoutSolicitado', sesion: +m[1], cierre: m[2] ?? null, autoRetorno: m[4] === 'true' }
+    // "(VUELTA) vuelta A 1 + B 2: encolada" · "(SESION) sesión 1 lado=A: encolada" · "(VUELTA) sesión 2 lado=B (sin A previa): sin_produccion"
+    if ((m = /^Liquidación automática \((\w+)\) (.*): (\w+)$/.exec(msg))) {
+      const v = /^vuelta A (\d+) \+ B (\d+)/.exec(m[2])
+      const sesiones = v ? [+v[1], +v[2]] : [+(/sesión (\d+)/.exec(m[2])?.[1] ?? NaN)]
+      return { tipo: 'liquidacionImpresa', modo: m[1], sesiones, texto: v ? 'vuelta A+B' : m[2], resultado: m[3] }
+    }
+    if ((m = /^Liquidación automática (\d+) lado=([AB]): (.*)$/.exec(msg))) return { tipo: 'liquidacionImpresa', sesiones: [+m[1]], texto: m[3], diferida: /al cerrar su/.test(m[3]), resultado: 'diferida' }
+    if ((m = /^Liquidación automática (\d+) (omitida: .*|error: .*)$/.exec(msg))) return { tipo: 'liquidacionImpresa', sesiones: [+m[1]], texto: m[2], resultado: m[2].startsWith('omitida') ? 'omitida' : 'error' }
     if ((m = /^Sesión activada: (\d+)(?: lado=([AB]))?/.exec(msg))) return { tipo: 'sesionActivada', sesion: +m[1], lado: m[2] ? m[2] === 'B' : null }
     if (msg.startsWith('onLoginSuccess: bloqueado')) return { tipo: 'loginBloqueado', sesion: +(/descartada sesión (\d+)/.exec(msg)?.[1] ?? NaN) }
     if ((m = /^Login rechazado: (.*)$/.exec(msg))) return { tipo: 'loginRechazado', texto: m[1] }
@@ -132,6 +142,7 @@ export function clasificar({ tag, msg }) {
       return s?.id != null ? { tipo: 'sesionMemoria', sesion: Number(s.id), lado: s.direction === true } : null
     }
     if ((m = /^Ejecutando logout automático para SessionDriver\(id=(\d+)/.exec(msg))) return { tipo: 'terminal', sesion: +m[1] }
+    if ((m = /^Terminal alcanzado lado=(?:true|false) \((.*)\) → cerrar sesión (\d+)/.exec(msg))) return { tipo: 'terminal', sesion: +m[2], paradero: m[1] }
     if ((m = /^VALIDATE AutoLogin: (true|false) - Paradero actual: (.*)$/s.exec(msg))) return { tipo: 'cercano', paradero: paraderoDesdeLog(parseKValue(m[2])) }
     if ((m = /^Autoretorno → abriendo lado ([AB]) \((\w+)\)/.exec(msg))) return { tipo: 'autoretorno', lado: m[1] === 'B', config: m[2] }
     if ((m = /^Ejecutando auto-login\.\.\.SessionDriverEntity\(id=(\d+)/.exec(msg))) return { tipo: 'autoretorno', desde: +m[1] }
@@ -147,6 +158,8 @@ export function clasificar({ tag, msg }) {
   }
   if (tag === 'ProtectorVM' || tag === 'ProtectorViewModel') {
     if ((m = /^(Bateria critica|ENERGY|NIGHT): cerrando sesión (\d+)/.exec(msg))) return { tipo: 'forzado', motivo: m[1], sesion: +m[2] }
+    if ((m = /^Bateria critica \((\d+)%\)\. Iniciando apagado/.exec(msg))) return { tipo: 'apagaBateria', bateria: +m[1] }
+    if (/^ENERGY: batería baja sin carga/.test(msg)) return { tipo: 'avisoEnergia', texto: msg }
     return null
   }
   return null

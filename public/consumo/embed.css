@@ -1,0 +1,20 @@
+/* Modo embebido en driverlogin: paleta clara de driverlogin y sin la cabecera ni la zona para soltar archivos. */
+html.embed {
+  --bg: #f3f4f6; --panel: #ffffff; --line: #e2e6ec; --line2: #eef1f5;
+  --text: #0f172a; --muted: #64748b; --accent: #2563eb; --accent2: #ea580c; --accent3: #16a34a;
+  color-scheme: light; scroll-behavior: auto;
+}
+html.embed body { background: transparent; padding: 0 0 6px; max-width: none; font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 13px; }
+html.embed header, html.embed #drop, html.embed #status, html.embed #toolbar, html.embed #cmp, html.embed #jump { display: none !important; }
+html.embed #report > [hidden] { display: none !important; }
+html.embed #report { columns: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); gap: 10px; align-items: start; grid-auto-flow: row dense; }
+html.embed #report > :not(.panel), html.embed .panel.wide { grid-column: 1 / -1; }
+html.embed .panel { margin: 0; }
+html.embed code { background: #f1f5f9; color: var(--text); }
+html.embed .tag.ok { background: #dcfce7; color: #166534; }
+html.embed .tag.err { background: #fee2e2; color: #b91c1c; }
+html.embed .tag.warn { background: #ffedd5; color: #9a3412; }
+html.embed .note { background: #f8fafc; }
+html.embed tr.hit td { background: #fef9c3; }
+html.embed .buscar input { color-scheme: light; }
+html.embed .modal { background: rgb(15 23 42 / 0.45); }

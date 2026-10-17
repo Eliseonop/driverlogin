@@ -67,8 +67,27 @@ No corre la lógica del simulador: reconstruye lo que pasó solo con las líneas
   boletos (en rojo los vendidos con una sesión que la central ya no tenía). Zoom todo / 2 h / 30 min / 5 min.
 - **Mensajes de sesión** como diagrama equipo ↔ central y el **log real** sincronizado con el cursor.
 
+### Pestañas del log
+
+| Pestaña | Qué responde |
+|---|---|
+| **Sesión** | Login, cierre, conexión y central en el tiempo (lo de arriba). |
+| **Cuadre** | ¿La liquidación de cada sesión cuadra con los boletos? Compara lo que el equipo liquidó al cerrar (`driver_logout`: total, correlativos `first`–`last`, rango de n° por tarifa) con los boletos que mandó con esa sesión (`tickets`), que es lo que suma la plataforma. Si no cuadra dice por qué: boletos vendidos después de armar la liquidación, correlativos liquidados que no se ven enviados, boletos del rango con otra sesión, precios, sin ACK. Muestra la regla de correlativos, el cuadre por tarifa, el **momento del cierre** en el orden de las líneas y la lista de boletos. **Liquidación impresa**: el papel de la liquidación automática (sesión o vuelta A+B) reconstruido con los boletos que el equipo tenía al imprimir, como lo arma `LiquidacionPrinter` (suma de nuevo desde Room; no es el `driver_logout`), si la cola lo dio por impreso, y columna Papel en la tabla. Las sesiones que no cuadran salen en Hallazgos y abren esta pestaña. Un boleto es **correlativo + hora**: si un reinicio borra filas de la base del equipo, el correlativo se reutiliza y la central guarda los dos; el cuadre lo detecta (el primer `[VENTA] IMPRESA` tras el arranque repite un correlativo ya impreso), lista los boletos borrados, cuáles llegaron a la central y qué números salieron dos veces, y muestra el **embudo** impreso → central → equipo al cerrar → liquidación. **Cerró** dice cómo: terminal (con su nombre), conductor, remoto (central/soporte), batería, noche o sesión de otro día; del `event` del `driver_logout` o deducido del log. **＋ Pegar sesiones de la plataforma**: el objeto JSON de la sesión (uno, un arreglo o varios seguidos) o filas de la tabla con inicio y fin; se empareja por id o por lado y horario, agrega la columna Plataforma y marca no cuadra si su producción difiere de la liquidación. Se recuerda por archivo en el navegador y alimenta también los paneles de consumo. Debajo, los paneles de sesión de la app de consumo. |
+| **Ventas e impresión** | Paneles de la app de consumo: boletos vendidos, impresión por toque, impresora, vendidos sin imprimir, envío a la central, duplicados, errores. |
+| **Recorrido** | Mapa: GPS, geocercas y paraderos. |
+| **Consumo y red** | Paneles de la app de consumo: datos por día, TrafficMonitor, payload del socket, reinicios, versión y red. |
+
+**📄 Informe de boletos** (arriba a la derecha) abre el informe de la app de consumo; 🖨️ lo imprime.
+
+La app de consumo (`C:\Users\Edu\WebstormProjects\consumo`) corre embebida en un iframe (`public/consumo/`, modo
+`?embed`): `embed.js` le pasa el texto del log, reparte sus paneles por pestaña según su título y le pone la paleta
+clara. Para traer cambios de esa app: `npm run consumo` (copia `app.js` y `styles.css`; `CONSUMO_DIR` cambia la carpeta
+de origen). Un panel nuevo cuyo título no reconozca `embed.js` cae en **Consumo y red** (avisa en la consola). Sin
+`?embed`, `/consumo/index.html` es la app de consumo normal.
+
 Código en `src/log/` (`leer.js` lee y clasifica líneas, `reconstruir.js` arma carriles, hallazgos y el estado en cada
-instante) y `src/ReproduccionLog.jsx`. Fixture anonimizado en `test/fixtures/` (padrón 132, 25-09, logout sin respuesta).
+instante, `cuadre.js` el cuadre por sesión), `src/ReproduccionLog.jsx`, `src/Cuadre.jsx` y `src/ConsumoFrame.jsx`.
+Fixtures anonimizados en `test/fixtures/` (132: logout sin respuesta; 135: boletos vendidos tras la liquidación).
 
 ## Archivos
 
@@ -77,8 +96,11 @@ src/logica.js      port 1:1 de DriverSessionPolicy.kt + LogoutIntents
 src/simulador.js   ruta, bus, reloj, equipo (Repository / Coordinator / ParaderoManager / Protector / Dispatcher), central
 src/App.jsx        panel, estado, circuito, línea de tiempo y log; arrastrar un log abre la reproducción
 src/log/           lectura y reconstrucción de logs reales
-src/ReproduccionLog.jsx  pantalla de reproducción de un log real
-test/              simulador (22 casos) y logs reales (14)
+src/ReproduccionLog.jsx  pantalla de reproducción de un log real (pestañas)
+src/Cuadre.jsx     pestaña Cuadre
+src/ConsumoFrame.jsx     iframe de la app de consumo + informe de boletos
+public/consumo/    copia de la app de consumo (npm run consumo) + embed.js / embed.css
+test/              simulador, logs reales y cuadre
 ```
 
 Si cambia la lógica en Android, se cambia `src/logica.js` (o el paso correspondiente en `src/simulador.js`) y se corre

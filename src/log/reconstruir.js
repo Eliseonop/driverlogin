@@ -1,6 +1,8 @@
 // Reconstruye lo que pasó en un log real: carriles en el tiempo (viaje, conexión, sesión del equipo, sesión de la
 // central), mensajes de sesión emparejados con su respuesta, boletos, posición del bus sobre la ruta y hallazgos.
 // Solo usa lo que dice el log: lo deducido se marca como tal (estado 'incierta' / 'inferida').
+import { cuadrar, hallazgosCuadre } from './cuadre.js'
+import { apagadosDe } from './energia.js'
 import { duracion, horaLog, leerLog, parseStamp } from './leer.js'
 
 const SESION = new Set(['driver_login', 'driver_logout', 'operation', 'android_command', 'uid_driver'])
@@ -132,7 +134,7 @@ function carrilViaje(eventos, hasta) {
   return tramos(cambios, hasta)
 }
 
-function carrilConexion(eventos, desde, hasta) {
+function carrilConexion(eventos, entradas, desde, hasta) {
   const segmentos = []
   const cortes = []
   const intentos = []
@@ -172,7 +174,8 @@ function carrilConexion(eventos, desde, hasta) {
         } else if (!abierto && e.tipo === 'falla') intentos.push({ t: e.t, motivo: e.motivo })
         break
       case 'arranque':
-        if (abierto) cerrar(e.t, 'reinicio de la app', e)
+        // El socket murió con el equipo/la app, no al volver a arrancar: se corta en la última línea anterior.
+        if (abierto) cerrar(Math.max(abierto.desde, entradas[e.i - 1]?.t ?? e.t), 'reinicio de la app', e)
         break
     }
   }
@@ -440,7 +443,7 @@ function loginsRancios(eventos, msgs, gps) {
 
 // ── hitos y hallazgos ─────────────────────────────────────────────────────────
 
-function hitosDe(msgs, conexion, viaje, eventos, gps) {
+function hitosDe(msgs, conexion, viaje, eventos, gps, apagados) {
   const h = []
   for (const m of msgs) {
     if (m.header === 'driver_login' && m.dir === 'rx') {
@@ -462,8 +465,9 @@ function hitosDe(msgs, conexion, viaje, eventos, gps) {
   for (const e of eventos)
     if (e.tipo === 'arranque' && e.t - ultArranque > 60_000) {
       ultArranque = e.t
-      h.push({ t: e.t, i: e.i, tipo: 'arranque', texto: 'la app arranca' })
+      h.push({ t: e.t, i: e.i, tipo: 'encendido', texto: 'la app arranca' })
     }
+  for (const a of apagados) if (a.tipo !== 'reinicio') h.push({ t: a.t, i: a.i, tipo: 'apagado', texto: a.titulo })
   for (const e of eventos) if (e.tipo === 'terminal') h.push({ t: e.t, i: e.i, tipo: 'terminal', texto: `terminal → cerrar #${e.sesion}` })
   for (const s of gps.tramos.filter(x => x.estado === 'mudo' && x.hasta - x.desde >= GPS_HALLAZGO)) {
     h.push({ t: s.desde, tipo: 'gps', texto: 'GPS deja de dar posiciones' })
@@ -590,6 +594,8 @@ function hallazgosDe(rep) {
   }
 
   for (const e of eventos.filter(x => x.tipo === 'loginBloqueado')) out.push({ nivel: 'aviso', t: e.t, i: e.i, titulo: `driver_login descartado (${horaLog(e.t)})`, detalle: ['Tras un logout forzado la app descarta el siguiente driver_login.'] })
+  for (const a of rep.apagados)
+    out.push({ nivel: a.tipo === 'reinicio' || a.tipo === 'ordenado' ? 'aviso' : 'error', t: a.t, i: a.i, titulo: `${a.titulo} · ${duracion(a.fuera)} sin equipo`, detalle: a.detalle })
   for (const e of eventos.filter(x => x.tipo === 'forzado')) out.push({ nivel: 'aviso', t: e.t, i: e.i, titulo: `Logout forzado ${e.motivo} (#${e.sesion})`, detalle: [] })
 
   if (!eventos.some(e => e.tipo === 'sesionActivada' || e.tipo === 'logoutConfirmado') && info.versiones.length)
@@ -599,6 +605,7 @@ function hallazgosDe(rep) {
       titulo: `Log de ${info.versiones.join(', ')}: sin logs de sesión nuevos`,
       detalle: ['La sesión del equipo se deduce de driver_login, "Primera sesión obtenida" y los boletos; la de la central, de sus respuestas y órdenes.'],
     })
+  out.push(...hallazgosCuadre(rep.cuadre))
   return out.sort((a, b) => ({ error: 0, aviso: 1, info: 2 })[a.nivel] - { error: 0, aviso: 1, info: 2 }[b.nivel] || a.t - b.t)
 }
 
@@ -612,7 +619,7 @@ export function reconstruir(texto, archivo = 'log') {
   const info = infoEquipo(eventos)
   const cat = catalogo(eventos, info.ruta)
   const viaje = carrilViaje(eventos, hasta)
-  const conexion = carrilConexion(eventos, desde, hasta)
+  const conexion = carrilConexion(eventos, entradas, desde, hasta)
   const mensajes = mensajesSesion(eventos, conexion)
   emparejar(mensajes, eventos, conexion)
   const boletos = leerBoletos(eventos)
@@ -622,11 +629,13 @@ export function reconstruir(texto, archivo = 'log') {
   const posiciones = posicionesBus(eventos, cat, viaje)
   const gps = carrilGps(eventos, entradas, desde, hasta)
   gps.rancios = loginsRancios(eventos, mensajes, gps)
-  const rep = { archivo, desde, hasta, entradas, eventos, info, cat, viaje, conexion, mensajes, boletos, equipo, central, posiciones, gps }
+  const rep = { archivo, texto, desde, hasta, entradas, eventos, info, cat, viaje, conexion, mensajes, boletos, equipo, central, posiciones, gps }
   rep.marcas = eventos.filter(e => e.tipo === 'marca')
   rep.estados = eventos.filter(e => e.tipo === 'estado')
   rep.paraderosActuales = eventos.filter(e => e.tipo === 'paraderoActual')
-  rep.hitos = hitosDe(mensajes, conexion, viaje, eventos, gps)
+  rep.apagados = apagadosDe(entradas, eventos)
+  rep.hitos = hitosDe(mensajes, conexion, viaje, eventos, gps, rep.apagados)
+  rep.cuadre = cuadrar(rep)
   rep.hallazgos = hallazgosDe(rep)
   return rep
 }

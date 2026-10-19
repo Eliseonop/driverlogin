@@ -1,8 +1,9 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { duracion, horaLog } from './log/leer.js'
-import { aCsv, buscarEnLog, desfase, estadoMarca, porQueSeCorta, posicionEn, recortar, recorrido } from './log/recorrido.js'
+import { duracion, fechaLog, horaLog } from './log/leer.js'
+import { libroXlsx, XLSX_MIME } from './log/excel.js'
+import { aCsv, buscarEnLog, desfase, estadoMarca, excelViaje, porQueSeCorta, posicionEn, recortar, recorrido } from './log/recorrido.js'
 
 const COLOR = { ok: '#16a34a', mal: '#dc2626', sin: '#94a3b8' }
 const COLOR_VIAJE = ['#2563eb', '#0d9488', '#ca8a04', '#0891b2', '#475569'] // sin morado: es el color de la búsqueda
@@ -60,6 +61,7 @@ export default function Recorrido({ rep, desde, hasta, t, ir, log }) {
         <Cortes cortes={r.cortes} t={t} elegir={elegirCorte} />
         <Buscador consulta={consulta} setConsulta={setConsulta} busqueda={busqueda} elegir={elegirPin} encuadrar={() => setFoco({ todos: Date.now() })} />
         <Cobertura r={r} rep={rep} desde={desde} hasta={hasta} />
+        <ExportarViaje r={completo} rep={rep} t={t} />
         <Veredicto v={r.veredicto} />
         {r.viajes.map(v => <TablaViaje key={v.trip} v={v} t={t} ir={elegir} />)}
         {r.sinMarca.length > 0 && (
@@ -238,18 +240,21 @@ function pinesBusqueda(hallados, ir) {
   return { capa, refs }
 }
 
+function descargar(datos, tipo, nombre) {
+  const url = URL.createObjectURL(new Blob([datos], { type: tipo }))
+  const a = document.createElement('a')
+  a.href = url
+  a.download = nombre
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
 /** ¿Hay recorrido en el rango? Cuántas posiciones, desde/hasta cuándo, huecos, y bajarlo en CSV. */
 function Cobertura({ r, rep, desde, hasta }) {
   const { pos, huecos } = r
   const sinGps = huecos.reduce((a, h) => a + Math.min(h.b.t, hasta) - Math.max(h.a.t, desde), 0)
-  const bajar = () => {
-    const url = URL.createObjectURL(new Blob([aCsv(pos)], { type: 'text/csv' }))
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `recorrido_${rep.info.padron ?? 'equipo'}_${new Date(desde).toISOString().slice(0, 16).replace(/[-:]/g, '').replace('T', '_')}-${horaLog(hasta).replace(/:/g, '').slice(0, 4)}.csv`
-    a.click()
-    URL.revokeObjectURL(url)
-  }
+  const bajar = () =>
+    descargar(aCsv(pos), 'text/csv', `recorrido_${rep.info.padron ?? 'equipo'}_${new Date(desde).toISOString().slice(0, 16).replace(/[-:]/g, '').replace('T', '_')}-${horaLog(hasta).replace(/:/g, '').slice(0, 4)}.csv`)
   return (
     <div className="card">
       <h3>Cobertura del rango <button onClick={bajar}>⬇ CSV ({pos.length})</button></h3>
@@ -257,6 +262,42 @@ function Cobertura({ r, rep, desde, hasta }) {
       <div className="dato">
         {huecos.length ? <>Huecos &gt; 2 min: <b className="mal">{huecos.length}</b> ({duracion(sinGps)} sin posiciones)</> : <b className="ok">Sin huecos de más de 2 min</b>}
         {pos[0].t - desde > 120_000 && <span className="sutil"> · empieza {duracion(pos[0].t - desde)} después del inicio del rango</span>}
+      </div>
+    </div>
+  )
+}
+
+const diaHora = t => `${fechaLog(t).slice(0, 5)} ${hm(t)}`
+const etiquetaViaje = v =>
+  [
+    `Viaje ${v.trip}`,
+    v.salida && `lado ${v.salida.lado ? 'B' : 'A'}${v.salida.inicio != null ? ` · salida ${diaHora(v.salida.inicio)}` : ''}`,
+    `${v.n} posiciones`,
+    v.desde != null && (fechaLog(v.desde) === fechaLog(v.hasta) ? `${diaHora(v.desde)}–${hm(v.hasta)}` : `${diaHora(v.desde)} – ${diaHora(v.hasta)}`),
+  ]
+    .filter(Boolean)
+    .join(' · ')
+
+/** Elegir un viaje (de todo el log, no solo del rango) y bajar sus posiciones en Excel. */
+function ExportarViaje({ r, rep, t }) {
+  const [elegido, setElegido] = useState(null)
+  if (!r.trips.length) return null
+  const enCursor = String(r.pos[posicionEn(r.pos, t, Infinity)]?.trip)
+  const v = r.trips.find(x => x.trip === (elegido ?? enCursor)) ?? r.trips[0]
+  const bajar = () => descargar(libroXlsx(excelViaje(r, v.trip)), XLSX_MIME, `viaje_${v.trip}_padron_${rep.info.padron ?? 'equipo'}.xlsx`)
+  return (
+    <div className="card exportar-viaje">
+      <h3>Exportar viaje a Excel <span className="sutil">{r.trips.length} viajes con posiciones en el log</span></h3>
+      <div className="fila">
+        <select value={v.trip} onChange={e => setElegido(e.target.value)}>
+          {r.trips.map(x => <option key={x.trip} value={x.trip}>{etiquetaViaje(x)}</option>)}
+        </select>
+        <button onClick={bajar}>⬇ Excel</button>
+      </div>
+      <div className="dato">
+        Una fila por posición enviada, con la geocerca que vio el equipo y la hora que estampó la central
+        {r.viajes.some(x => x.trip === v.trip) ? '; segunda hoja con el viaje geocerca por geocerca.' : '.'}
+        {v.adelantadas > 0 && <> <b className="mal">{v.adelantadas} con hora adelantada</b> (en rojo).</>}
       </div>
     </div>
   )

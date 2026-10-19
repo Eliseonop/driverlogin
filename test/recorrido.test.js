@@ -2,7 +2,8 @@ import fs from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { horaLog, parseStamp } from '../src/log/leer.js'
 import { reconstruir } from '../src/log/reconstruir.js'
-import { aCsv, buscarEnLog, desfase, porQueSeCorta, recortar, recorrido } from '../src/log/recorrido.js'
+import { libroXlsx } from '../src/log/excel.js'
+import { aCsv, buscarEnLog, desfase, excelViaje, porQueSeCorta, recortar, recorrido } from '../src/log/recorrido.js'
 
 const rep = reconstruir(fs.readFileSync(new URL('./fixtures/420_2026-10-07_marcas-central-desfasadas.log', import.meta.url), 'utf8'), '420.log')
 const r = recorrido(rep)
@@ -62,6 +63,54 @@ describe('rango y CSV', () => {
     expect(lineas[0]).toBe('fecha_hora,lat,lng,velocidad_kmh,precision_m,angulo,trip,estado,enviada')
     expect(lineas.length).toBe(c.pos.length + 1)
     expect(lineas[1]).toMatch(/^2026-10-07 11:00:\d\d,-12\.\d+,-77\.\d+,/)
+  })
+})
+
+describe('exportar un viaje a Excel', () => {
+  const [pos, geo] = excelViaje(r, '44454')
+
+  it('lista los viajes con posiciones y su salida', () => {
+    const v = r.trips.find(x => x.trip === '44454')
+    expect(v.n).toBe(r.pos.filter(p => String(p.trip) === '44454').length)
+    expect(v.salida.trip).toBe('44454')
+    expect(v.adelantadas).toBe(0)
+  })
+
+  it('una fila por posición del viaje con la geocerca del equipo y la marca de la central', () => {
+    expect(pos.filas.length).toBe(r.trips.find(x => x.trip === '44454').n)
+    const basadre = pos.filas.find(f => f[9] === 'BASADRE A')
+    expect(horaLog(basadre[10])).toBe('14:18:12')
+    expect(pos.filas.filter(f => f[9]).length).toBe(23)
+  })
+
+  it('segunda hoja con las geocercas del viaje', () => {
+    expect(geo.filas.length).toBe(43)
+    const b = geo.filas.find(f => f[1] === 'BASADRE A')
+    expect(horaLog(b[3])).toBe('09:57:41')
+    expect(b[5]).toEqual({ v: '+4:20:31', rojo: true })
+  })
+
+  it('arma un .xlsx con las dos hojas', () => {
+    const bytes = libroXlsx([pos, geo])
+    const txt = new TextDecoder('latin1').decode(bytes)
+    expect(txt.slice(0, 2)).toBe('PK')
+    expect(txt).toContain('xl/worksheets/sheet2.xml')
+    expect(txt).toContain('<sheet name="Posiciones 44454"')
+    expect(txt).toContain('BASADRE A')
+  })
+
+  it('marca las posiciones que salieron con hora adelantada (+13 h por zona horaria)', () => {
+    const report = (linea, ...horas) =>
+      `2026-10-19 ${linea} [SocketService] [ENVIADO] | [NUEVO] (54B) [KEY]: report [DATA]: {trip=355161, route=1, positions=[${horas.map(h => `{lng=-76.95, busstop=0, angle=0, time=2026-10-19T${h}.807796, lat=-11.91, speed=0, mark=0}`).join(', ')}], state=T, boletos=[], events=[], direction=false}`
+    const log = [report('04:03:47', '17:01:03', '17:01:36'), report('04:03:52', '17:02:12', '04:03:47'), report('04:05:02', '04:04:52')].join('\n')
+    const rr = recorrido(reconstruir(log, 'adelantada.log'))
+    const [v] = rr.trips
+    expect(v).toMatchObject({ trip: '355161', n: 5, adelantadas: 3 })
+    expect([horaLog(v.desde), horaLog(v.hasta)]).toEqual(['04:03:47', '04:04:52'])
+    const [h] = excelViaje(rr, '355161')
+    expect(horaLog(h.filas.at(-1)[0])).toBe('17:02:12')
+    expect(h.filas.at(-1)[11]).toEqual({ v: 'hora adelantada: +12:58:21 después de su envío', rojo: true })
+    expect(h.filas[0][11]).toBe('')
   })
 })
 

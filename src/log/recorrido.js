@@ -5,6 +5,10 @@ import { parseStamp } from './leer.js'
 const OK_MAX = 60_000 // diferencia tolerada entre la entrada del equipo y la hora de la central
 const HUECO = 120_000 // sin posiciones por más de esto = hueco GPS
 const DETENIDO = 60_000 // velocidad ≤ 2 km/h por más de esto = detención
+const ADELANTO = 5_000 // hora de la posición posterior a su envío por más de esto = salió con hora adelantada
+
+const adelanto = p => p.t - p.enviada
+export const adelantada = p => adelanto(p) > ADELANTO
 
 /** Índice de la posición más cercana a t (dentro de max ms) o -1. */
 export function posicionEn(pos, t, max = HUECO) {
@@ -218,7 +222,8 @@ export function recorrido(rep) {
   for (const x of casi) x.p = en(x.t)
   const vendidas = ventas(entradas)
   for (const v of vendidas) v.p = en(v.t)
-  const viajes = [...salidas(eventos).values()]
+  const sal = salidas(eventos)
+  const viajes = [...sal.values()]
     .filter(s => marcas.some(m => m.trip === s.trip))
     .map(s => {
       let prog = s.inicio
@@ -235,6 +240,7 @@ export function recorrido(rep) {
     casi,
     marcas,
     viajes,
+    trips: conPosiciones(pos, sal),
     sinMarca: entra.filter(g => !g.marca),
     paraderos: paraderos(eventos),
     ventas: vendidas,
@@ -243,6 +249,82 @@ export function recorrido(rep) {
     ...detenciones(pos),
     veredicto: veredicto(marcas, pos),
   }
+}
+
+/** Cada viaje (trip de las posiciones) con cuántas posiciones tiene, su horario y su salida si llegó. */
+function conPosiciones(pos, sal) {
+  const out = new Map()
+  for (const p of pos) {
+    const trip = String(p.trip)
+    const v = out.get(trip) ?? { trip, n: 0, desde: null, hasta: null, adelantadas: 0, salida: sal.get(trip) ?? null }
+    v.n++
+    if (adelantada(p)) v.adelantadas++
+    else {
+      v.desde ??= p.t
+      v.hasta = p.t
+    }
+    out.set(trip, v)
+  }
+  return [...out.values()].sort((a, b) => (a.desde ?? Infinity) - (b.desde ?? Infinity))
+}
+
+/**
+ * Hojas del Excel de un viaje: una fila por posición enviada (con la geocerca que vio el equipo ahí y la hora que
+ * estampó la central) y, si la central marcó, el viaje geocerca por geocerca.
+ */
+export function excelViaje(r, trip) {
+  const geo = new Map()
+  for (const g of r.entra) if (g.p) geo.set(g.p, [...(geo.get(g.p) ?? []), g])
+  const posiciones = {
+    nombre: `Posiciones ${trip}`,
+    columnas: [
+      { titulo: 'Hora GPS', ancho: 20, fecha: true },
+      { titulo: 'Enviada', ancho: 20, fecha: true },
+      { titulo: 'Envío − hora (s)', ancho: 15 },
+      { titulo: 'Latitud', ancho: 12 },
+      { titulo: 'Longitud', ancho: 12 },
+      { titulo: 'Velocidad km/h', ancho: 14 },
+      { titulo: 'Precisión m', ancho: 12 },
+      { titulo: 'Ángulo', ancho: 8 },
+      { titulo: 'Estado', ancho: 8 },
+      { titulo: 'Geocerca (entra el equipo)', ancho: 28 },
+      { titulo: 'Marca de la central', ancho: 20, fecha: true },
+      { titulo: 'Observación', ancho: 30 },
+    ],
+    filas: r.pos
+      .filter(p => String(p.trip) === trip)
+      .map(p => {
+        const gs = geo.get(p) ?? []
+        const obs = adelantada(p) ? { v: `hora adelantada: ${desfase(adelanto(p))} después de su envío`, rojo: true } : ''
+        return [p.t, p.enviada, Math.round(-adelanto(p) / 1000), p.lat, p.lng, p.vel, p.acc, p.ang, p.estado, gs.map(g => g.nombre).join(' · '), gs.find(g => g.marca)?.marca.hora, obs]
+      }),
+  }
+  const v = r.viajes.find(x => x.trip === trip)
+  if (!v) return [posiciones]
+  const geocercas = {
+    nombre: `Geocercas ${trip}`,
+    columnas: [
+      { titulo: '#', ancho: 5 },
+      { titulo: 'Geocerca', ancho: 28 },
+      { titulo: 'Programada', ancho: 20, fecha: true },
+      { titulo: 'Equipo entra', ancho: 20, fecha: true },
+      { titulo: 'Central marca', ancho: 20, fecha: true },
+      { titulo: 'Diferencia', ancho: 12 },
+      { titulo: 'Volada', ancho: 8 },
+      { titulo: 'Dateros', ancho: 8 },
+    ],
+    filas: v.filas.map(({ orden, nombre, geocerca, prog, marca: m }) => [
+      orden,
+      nombre ?? `#${geocerca}`,
+      prog,
+      m?.entrada?.t,
+      m?.hora,
+      m?.delta != null ? { v: desfase(m.delta), rojo: estadoMarca(m) === 'mal' } : '',
+      m?.volada,
+      m?.dateros?.length,
+    ]),
+  }
+  return [posiciones, geocercas]
 }
 
 /** El mismo recorrido limitado a [desde, hasta]: el veredicto se recalcula solo con lo que cae dentro. */

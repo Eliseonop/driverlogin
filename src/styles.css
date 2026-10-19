@@ -427,6 +427,8 @@ svg.mapa text { font-family: inherit; }
 
 /* ── buscador del recorrido ── */
 .buscador .fila input { flex: 1; }
+.exportar-viaje .fila { margin: 6px 0; }
+.exportar-viaje button { flex: none; white-space: nowrap; }
 .atajos { display: flex; flex-wrap: wrap; gap: 4px; }
 .atajos button { padding: 3px 8px; font-size: 11.5px; border-radius: 999px; }
 .atajos button.on { background: #7c3aed; border-color: #7c3aed; color: #fff; }

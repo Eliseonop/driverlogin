@@ -2,6 +2,7 @@
 // central), mensajes de sesión emparejados con su respuesta, boletos, posición del bus sobre la ruta y hallazgos.
 // Solo usa lo que dice el log: lo deducido se marca como tal (estado 'incierta' / 'inferida').
 import { cuadrar, hallazgosCuadre } from './cuadre.js'
+import { hallazgosInspector, informeInspector } from './inspector.js'
 import { apagadosDe } from './energia.js'
 import { duracion, horaLog, leerLog, parseStamp } from './leer.js'
 
@@ -606,6 +607,7 @@ function hallazgosDe(rep) {
       detalle: ['La sesión del equipo se deduce de driver_login, "Primera sesión obtenida" y los boletos; la de la central, de sus respuestas y órdenes.'],
     })
   out.push(...hallazgosCuadre(rep.cuadre))
+  out.push(...hallazgosInspector(rep.inspector))
   return out.sort((a, b) => ({ error: 0, aviso: 1, info: 2 })[a.nivel] - { error: 0, aviso: 1, info: 2 }[b.nivel] || a.t - b.t)
 }
 
@@ -636,6 +638,7 @@ export function reconstruir(texto, archivo = 'log') {
   rep.apagados = apagadosDe(entradas, eventos)
   rep.hitos = hitosDe(mensajes, conexion, viaje, eventos, gps, rep.apagados)
   rep.cuadre = cuadrar(rep)
+  rep.inspector = informeInspector(rep)
   rep.hallazgos = hallazgosDe(rep)
   return rep
 }

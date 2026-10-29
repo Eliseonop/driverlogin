@@ -3,6 +3,7 @@ import { duracion, fechaLog, horaLog, parseStamp } from './log/leer.js'
 import { buscar, estadoEn, ladoTxt, tramoEn } from './log/reconstruir.js'
 import ConsumoFrame, { useConsumo } from './ConsumoFrame.jsx'
 import Cuadre from './Cuadre.jsx'
+import Inspector from './Inspector.jsx'
 import Recorrido from './Recorrido.jsx'
 
 const colorLado = lado => (lado == null ? 'var(--none)' : lado ? 'var(--b)' : 'var(--a)')
@@ -17,6 +18,7 @@ const PESTANAS = [
   ['sesion', 'Sesión', 'Login, cierre y conexión en el tiempo'],
   ['cuadre', 'Cuadre', 'Liquidación de cada sesión contra los boletos enviados'],
   ['ventas', 'Ventas e impresión', 'Toques, impresión, impresora y envío de boletos (app de consumo)'],
+  ['inspector', 'Inspector', 'QR, boletos que pidió el inspector y boletos impresos sin toque del chofer'],
   ['recorrido', 'Recorrido', 'Mapa: GPS, geocercas y paraderos'],
   ['consumo', 'Consumo y red', 'Datos móviles, reinicios, versión y red (app de consumo)'],
 ]
@@ -108,7 +110,8 @@ export default function ReproduccionLog({ rep, onCerrar }) {
     if (h.vista === 'cuadre') {
       setSesionCuadre(h.sesion)
       setVista('cuadre')
-    } else if (!CON_TIEMPO.has(vista)) setVista('sesion')
+    } else if (h.vista === 'inspector') setVista('inspector')
+    else if (!CON_TIEMPO.has(vista)) setVista('sesion')
     ir(h.t)
   }
 
@@ -122,6 +125,7 @@ export default function ReproduccionLog({ rep, onCerrar }) {
               <button key={k} className={vista === k ? 'on' : ''} onClick={() => setVista(k)} title={ayuda}>
                 {txt}
                 {k === 'cuadre' && noCuadran > 0 && <span className="pest-alerta">{noCuadran}</span>}
+                {k === 'inspector' && rep.inspector.filas.length > 0 && <span className="pest-alerta info">{rep.inspector.filas.length}</span>}
               </button>
             ))}
           </div>
@@ -147,6 +151,7 @@ export default function ReproduccionLog({ rep, onCerrar }) {
           </>
         )}
         {vista === 'cuadre' && <Cuadre rep={rep} sel={sesionCuadre} setSel={setSesionCuadre} verEnSesion={verEnSesion} plataforma={plataforma} setPlataforma={setPlataforma} />}
+        {vista === 'inspector' && <Inspector rep={rep} verEnSesion={verEnSesion} />}
         {vista === 'recorrido' && (
           <>
             <BarraTiempo rep={vr} t={t} ir={ir} />
@@ -330,6 +335,7 @@ function PanelLog({ rep, t, ir, abrirHallazgo, jugando, setJugando, mult, setMul
                 <span className="h-hora">{horaLog(h.t)}</span>
                 <span className="h-titulo">{h.titulo}</span>
                 {h.vista === 'cuadre' && <span className="h-ir">Cuadre ▸</span>}
+                {h.vista === 'inspector' && <span className="h-ir">Inspector ▸</span>}
               </button>
               {abierto === k && h.detalle.length > 0 && <ul>{h.detalle.map(d => <li key={d}>{d}</li>)}</ul>}
             </li>

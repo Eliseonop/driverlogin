@@ -450,6 +450,7 @@ svg.mapa text { font-family: inherit; }
 .informe-botones { display: flex; gap: 4px; }
 .informe-botones button { padding: 4px 10px; font-size: 12px; }
 .pest-alerta { display: inline-block; margin-left: 6px; min-width: 18px; padding: 0 5px; border-radius: 999px; background: var(--err); color: #fff; font-size: 11px; line-height: 18px; text-align: center; }
+.pest-alerta.info { background: var(--muted); }
 .h-ir { margin-left: auto; flex: none; font-size: 11px; font-weight: 700; color: var(--a); }
 button.chico { padding: 2px 8px; font-size: 11.5px; border-radius: 999px; }
 .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }

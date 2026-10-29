@@ -26,7 +26,7 @@ function moda(xs) {
 
 const RE_KV = /(\w+)=(?:"([^"]*)"|(\S+))/g
 /** "[VENTA] IMPRESA job=… boleto=7 nombre="…" tarifa=1.0 num=1951 correlativo=5580 …" → { ev, boleto, nombre, … } */
-function venta(msg) {
+export function venta(msg) {
   const m = /^(\w+)\s*(.*)$/s.exec(msg)
   if (!m) return null
   const kv = { ev: m[1] }

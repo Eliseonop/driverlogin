@@ -1,0 +1,1269 @@
+2026-10-31 17:44:55 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 17:44:55 [SocketService] [RECIBIDO]| #2 | SID:2 | 3B | report [DATA]: {positions=1}
+2026-10-31 17:44:54 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.9919833, busstop=0, angle=92, accuracy=3, time=2026-10-31T17:44:54.845, lat=-11.981365, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 17:44:54 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 17:44:54 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 17:44:51 [HORA] Cambió el reloj del equipo · equipo=2026-10-31 17:44:51.173 zona_equipo=America/Lima hora_auto=no zona_auto=no · la app sigue con 2026-10-31 17:44:51.189 (equipo)
+2026-10-31 14:52:30 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:30 [LogManager] Enviando chunk 1 (1267 logs, ~132KB)
+2026-10-31 14:52:30 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:29 [LogManager] ✅ subida confirmada [1/-1]: log(1258)
+2026-10-31 14:52:29 [LogManager] Enviando chunk 1 (1263 logs, ~131KB)
+2026-10-31 14:52:29 [LogManager] ✅ subida confirmada [1/-1]: log(1256)
+2026-10-31 14:52:29 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:29 [LogManager] Enviando chunk 1 (1261 logs, ~131KB)
+2026-10-31 14:52:29 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:29 [LogManager] ✅ subida confirmada [1/-1]: log(1253)
+2026-10-31 14:52:29 [LogManager] Enviando chunk 1 (1258 logs, ~131KB)
+2026-10-31 14:52:28 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:28 [LogManager] Enviando chunk 1 (1256 logs, ~131KB)
+2026-10-31 14:52:28 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:28 [LogManager] ✅ subida confirmada [1/-1]: log(1250)
+2026-10-31 14:52:28 [LogManager] Enviando chunk 1 (1253 logs, ~131KB)
+2026-10-31 14:52:28 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:27 [LogManager] ✅ subida confirmada [1/-1]: log(1247)
+2026-10-31 14:52:27 [LogManager] Enviando chunk 1 (1250 logs, ~130KB)
+2026-10-31 14:52:27 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:27 [LogManager] ✅ subida confirmada [1/-1]: log(1245)
+2026-10-31 14:52:26 [LogManager] Enviando chunk 1 (1247 logs, ~130KB)
+2026-10-31 14:52:26 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:26 [LogManager] Enviando chunk 1 (1245 logs, ~130KB)
+2026-10-31 14:52:26 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:17 [LogManager] ✅ subida confirmada [1/-1]: log(1241)
+2026-10-31 14:52:16 [LogManager] ✅ subida confirmada [1/-1]: log(1238)
+2026-10-31 14:52:16 [LogManager] Enviando chunk 1 (1241 logs, ~130KB)
+2026-10-31 14:52:16 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:16 [LogManager] ✅ subida confirmada [1/-1]: log(1235)
+2026-10-31 14:52:15 [LogManager] Enviando chunk 1 (1238 logs, ~130KB)
+2026-10-31 14:52:15 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:15 [LogManager] ✅ subida confirmada [1/-1]: log(1232)
+2026-10-31 14:52:15 [LogManager] Enviando chunk 1 (1235 logs, ~129KB)
+2026-10-31 14:52:15 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:14 [LogManager] ✅ subida confirmada [1/-1]: log(1230)
+2026-10-31 14:52:14 [LogManager] Enviando chunk 1 (1232 logs, ~129KB)
+2026-10-31 14:52:14 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:14 [LogManager] Enviando chunk 1 (1230 logs, ~129KB)
+2026-10-31 14:52:13 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:12 [LogManager] ✅ subida confirmada [1/-1]: log(1226)
+2026-10-31 14:52:12 [LogManager] ✅ subida confirmada [1/-1]: log(1223)
+2026-10-31 14:52:11 [LogManager] Enviando chunk 1 (1226 logs, ~129KB)
+2026-10-31 14:52:11 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:11 [LogManager] ✅ subida confirmada [1/-1]: log(1220)
+2026-10-31 14:52:11 [LogManager] Enviando chunk 1 (1223 logs, ~129KB)
+2026-10-31 14:52:11 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:10 [LogManager] ✅ subida confirmada [1/-1]: log(1218)
+2026-10-31 14:52:10 [LogManager] Enviando chunk 1 (1220 logs, ~128KB)
+2026-10-31 14:52:10 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:09 [LogManager] Enviando chunk 1 (1218 logs, ~128KB)
+2026-10-31 14:52:09 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:09 [LogManager] ✅ subida confirmada [1/-1]: log(1214)
+2026-10-31 14:52:08 [LogManager] ✅ subida confirmada [1/-1]: log(1212)
+2026-10-31 14:52:08 [LogManager] Enviando chunk 1 (1214 logs, ~128KB)
+2026-10-31 14:52:08 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:07 [LogManager] Enviando chunk 1 (1212 logs, ~128KB)
+2026-10-31 14:52:07 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:07 [LogManager] ✅ subida confirmada [1/-1]: log(1208)
+2026-10-31 14:52:06 [LogManager] ✅ subida confirmada [1/-1]: log(1205)
+2026-10-31 14:52:06 [LogManager] Enviando chunk 1 (1208 logs, ~127KB)
+2026-10-31 14:52:06 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:05 [LogManager] ✅ subida confirmada [1/-1]: log(1199)
+2026-10-31 14:52:05 [LogManager] Enviando chunk 1 (1205 logs, ~127KB)
+2026-10-31 14:52:05 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:05 [ProtectorVM] >>> TICKETERA → protector con hora, sin apagado de pantalla
+2026-10-31 14:52:05 [ProtectorVM] powerOn omitido: kiosko inactivo
+2026-10-31 14:52:05 [ProtectorVM] >>> TIMER COMPLETADO -> mostrando protector + brillo 30
+2026-10-31 14:52:05 [LogManager] ✅ subida confirmada [1/-1]: log(1196)
+2026-10-31 14:52:04 [LogManager] Enviando chunk 1 (1199 logs, ~127KB)
+2026-10-31 14:52:04 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:04 [LogManager] ✅ subida confirmada [1/-1]: log(1194)
+2026-10-31 14:52:04 [LogManager] Enviando chunk 1 (1196 logs, ~127KB)
+2026-10-31 14:52:03 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:52:03 [LogManager] Enviando chunk 1 (1194 logs, ~126KB)
+2026-10-31 14:52:03 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:51:46 [LogManager] ✅ subida confirmada [1/-1]: log(1191)
+2026-10-31 14:51:45 [LogManager] Enviando chunk 1 (1191 logs, ~126KB)
+2026-10-31 14:51:45 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:51:39 [ProtectorVM] TEMP: 38.7C -> cap térmico 100%
+2026-10-31 14:51:39 [ProtectorVM] temp: 38.7C
+2026-10-31 14:51:37 [LogManager] ✅ subida confirmada [1/-1]: log(1185)
+2026-10-31 14:51:36 [LogManager] ✅ subida confirmada [1/-1]: log(1183)
+2026-10-31 14:51:36 [LogManager] Enviando chunk 1 (1185 logs, ~126KB)
+2026-10-31 14:51:36 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:51:35 [LogManager] Enviando chunk 1 (1183 logs, ~126KB)
+2026-10-31 14:51:35 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:51:30 [LogManager] ✅ subida confirmada [1/-1]: log(1180)
+2026-10-31 14:51:28 [LogManager] Enviando chunk 1 (1180 logs, ~125KB)
+2026-10-31 14:51:28 [LogsViewModel] Generando archivo de logs para el dispositivo 000000000000000
+2026-10-31 14:51:07 [WebRTCCallVM] Limpieza completada
+2026-10-31 14:51:07 [WebRTCCallVM] Error observando sesión WebRTC: Job was cancelled
+2026-10-31 14:51:07 [CallViewModel] 🔄 State change: IDLE -> IDLE
+2026-10-31 14:51:07 [CallViewModel] Previous: IDLE -> New: IDLE
+2026-10-31 14:51:07 [CallViewModel] 💤 Call state IDLE - no action needed
+2026-10-31 14:51:05 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:51:05 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:51:04 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:51:04 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:51:03 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:51:03 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:51:02 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:51:02 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:51:02 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:51:02 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:51:00 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:51:00 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:51:00 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:51:00 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:59 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:59 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:59 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:59 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:59 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:59 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:59 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:59 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:57 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:57 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:57 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:57 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:55 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:55 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:55 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:55 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:54 [OSMMap] ⚠️ MAPA EN BLANCO → Mapa lima no disponible
+2026-10-31 14:50:54 [CallViewModel] 💤 Call state IDLE - no action needed
+2026-10-31 14:50:54 [CallViewModel] Previous: IDLE -> New: IDLE
+2026-10-31 14:50:54 [CallViewModel] 🔄 State change: IDLE -> IDLE
+2026-10-31 14:50:54 [FeitianManager] KIOSK-DIAG (candado oculto (Unavailable)) available=false appMgr=false serviceMgr=true
+2026-10-31 14:50:54 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:54 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:54 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:54 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:52 [DriverLoginRepository] Lado login=A por P INICIAL A (id=46) gps=-11.981365,-76.9919833 acc=7m fix=true
+2026-10-31 14:50:52 [DriverLoginRepository] Lado login=A por P INICIAL A (id=46) gps=-11.981365,-76.9919833 acc=7m fix=true
+2026-10-31 14:50:52 [NavTicketViewModel] Retorno auto: false ruta login=2 config=ConfigRuta(id=148, orden=57, ruta=2, grupo=GPS, nombre=retorno_auto_b, descripcion=Retorno Automático en B, data=false, tipo=bool, timestamp=2026-08-18 15:33:42, json=false)
+2026-10-31 14:50:50 [ADS] [POLICY] sessionActive=false inRoute=true
+2026-10-31 14:50:50 [ParaderoManager] Paradero más cercano orden 1: Paradero(id=46, lado=false, ruta=Ruta(id=2, codigo=1097, inicio=null, activo=false), activo=true, nombre=P INICIAL A, orden=1, latitud=-11.979179, liquidar=false, longitud=-76.991963, radio=50.0, velocidad=70.0, terminal=false, audio=PARADERO INICIAL)
+2026-10-31 14:50:50 [GpsLoadingViewModel] ✅ Todas las tareas completadas
+2026-10-31 14:50:50 [ParaderoManager] tiempo_mensaje ruta login=2 → 16 config=ConfigRuta(id=187, orden=93, ruta=2, grupo=GPS, nombre=tiempo_mensaje, descripcion=Tiempo en segundos que los mensajes permanecen visibles en pantalla, data=16.0, tipo=int, timestamp=2026-09-09 02:03:34, json=16.0)
+2026-10-31 14:50:50 [GpsLoadingViewModel] ⚡ Datos en cache, sincronizando en segundo plano
+2026-10-31 14:50:48 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 14:50:48 [SocketService] [RECIBIDO]| #3 | SID:2 | 7B | device_status [DATA]: {id=80}
+2026-10-31 14:50:48 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-94, screen=O:1650064806, battery=99, data_mb=3, view=home, sim=false, temperature=38.7, model=, id=80, state=T, power=O:1650062502, map=, signal=0, lat=-11.981365, wifi_ssid=, sim_operator=, lng=-76.9919833, net_type=4, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/2/0, version=1.1.5, gps_acc=5, bluetooth=true, serial=, online=true, time=2026-10-31T14:50:48.231, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 14:50:48 [DeviceStatus] 📡 device_status [disparo: online=true] → {id=80, time=2026-10-31T14:50:48.231, version=1.1.5, state=T, view=home, power=O:1650062502, screen=O:1650064806, battery=99, temperature=38.7, charging=false, online=true, printer=NONE, aux=, map=, lat=-11.981365, lng=-76.9919833, gps_acc=5, net_type=4, data_mb=3, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-94, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/2/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 14:50:48 [GpsLoadingViewModel] ✅ Internet detectado (CELLULAR), iniciando carga
+2026-10-31 14:50:46 [HORA] SINCRONIZADA (red recuperada) · internet=2026-10-31 14:50:46.086 · usada_antes=2026-10-31 14:50:42.987 (equipo) · corrección=+3,0 s · equipo=2026-10-31 14:50:42.993 zona_equipo=America/Lima hora_auto=no zona_auto=no · desfase_equipo=-3,0 s · fuentes: sntp time.google.com rtt 92 ms + https rtt 745 ms coinciden (dif -796 ms)
+2026-10-31 14:50:42 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:42 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:42 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:42 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:42 [NetworkConnectivityRepository] ✅ Red disponible
+2026-10-31 14:50:41 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:41 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:41 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:41 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:40 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:40 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:39 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:39 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:38 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:38 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:33 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:33 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:32 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:32 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:32 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:32 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:32 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:32 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:30 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:30 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:29 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:29 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:25 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:25 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:17 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:17 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:50:10 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:50:05 [LocationTrackingService] onStartCommand
+2026-10-31 14:50:01 [ProtectorVM] >>> TICKETERA → protector con hora, sin apagado de pantalla
+2026-10-31 14:50:01 [ProtectorVM] powerOn omitido: kiosko inactivo
+2026-10-31 14:50:01 [ProtectorVM] >>> TIMER COMPLETADO -> mostrando protector + brillo 30
+2026-10-31 14:50:00 [HORA] Cambió el reloj del equipo · equipo=2026-10-31 14:50:00.020 zona_equipo=America/Lima hora_auto=no zona_auto=no · la app sigue con 2026-10-31 14:50:00.022 (equipo)
+2026-10-31 14:44:21 [SocketService] [ENVIADO] | [NUEVO] (88B) [KEY]: android_command [DATA]: {value=verificar:OK:FIJADA central 31/10 14.44.21 · internet +4,9 s · equipo -47,9 s, key=hora}
+2026-10-31 14:44:21 [SocketMessageDispatcher] ↩️ ACK verificar:OK:FIJADA central 31/10 14.44.21 · internet +4,9 s · equipo -47,9 s
+2026-10-31 14:44:21 [SocketMessageDispatcher] 🕒 Operation hora=verificar → FIJADA central 31/10 14.44.21 · internet +4,9 s · equipo -47,9 s
+2026-10-31 14:44:21 [HORA] FIJADA (pedido de la central) · se mantiene la de la central=2026-10-31 14:44:21.657 · internet=2026-10-31 14:44:26.626 difiere +4,9 s · equipo=2026-10-31 14:43:38.643 zona_equipo=America/Lima hora_auto=no zona_auto=no · fuentes: sntp time.google.com rtt 170 ms + https rtt 112 ms coinciden (dif +62 ms)
+2026-10-31 14:44:21 [SocketService] [ENVIADO] | [NUEVO] (23B) [KEY]: android_command [DATA]: {value=verificar:RECV, key=hora}
+2026-10-31 14:44:21 [SocketMessageDispatcher] ↩️ ACK verificar:RECV
+2026-10-31 14:44:21 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=hora, value=verificar)
+2026-10-31 14:44:21 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=verificar, key=hora}
+2026-10-31 14:44:21 [SocketService] [RECIBIDO]| #4 | SID:1 | 18B | android_command [DATA]: {value=verificar, key=hora}
+2026-10-31 14:44:02 [TrackerPatch] ✅ Tracker 5624: version=1.1.5
+2026-10-31 14:43:59 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:43:59 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:43:59 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:43:59 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:43:53 [OSMMap] ⚠️ MAPA EN BLANCO → Mapa lima no disponible
+2026-10-31 14:43:53 [CallViewModel] 💤 Call state IDLE - no action needed
+2026-10-31 14:43:53 [CallViewModel] Previous: IDLE -> New: IDLE
+2026-10-31 14:43:53 [CallViewModel] 🔄 State change: IDLE -> IDLE
+2026-10-31 14:43:53 [FeitianManager] KIOSK-DIAG (candado oculto (Unavailable)) available=false appMgr=false serviceMgr=true
+2026-10-31 14:43:51 [DriverLoginRepository] Lado login=A por P INICIAL A (id=46) gps=-11.9813559,-76.9919406 acc=3m fix=true
+2026-10-31 14:43:51 [DriverLoginRepository] Lado login=A por P INICIAL A (id=46) gps=-11.9813559,-76.9919406 acc=3m fix=true
+2026-10-31 14:43:51 [NavTicketViewModel] Retorno auto: false ruta login=2 config=ConfigRuta(id=148, orden=57, ruta=2, grupo=GPS, nombre=retorno_auto_b, descripcion=Retorno Automático en B, data=false, tipo=bool, timestamp=2026-08-18 15:33:42, json=false)
+2026-10-31 14:43:50 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 14:43:50 [SocketService] [RECIBIDO]| #3 | SID:1 | 3B | report [DATA]: {positions=1}
+2026-10-31 14:43:50 [ParaderoManager] tiempo_mensaje ruta login=2 → 16 config=ConfigRuta(id=187, orden=93, ruta=2, grupo=GPS, nombre=tiempo_mensaje, descripcion=Tiempo en segundos que los mensajes permanecen visibles en pantalla, data=16.0, tipo=int, timestamp=2026-09-09 02:03:34, json=16.0)
+2026-10-31 14:43:50 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 14:43:50 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 14:43:50 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 14:43:50 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 14:43:50 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 14:43:50 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 14:43:50 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 14:43:50 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 14:43:49 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 14:43:49 [SocketService] [RECIBIDO]| #2 | SID:1 | 7B | device_status [DATA]: {id=80}
+2026-10-31 14:43:49 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.9919406, busstop=0, angle=88, accuracy=3, time=2026-10-31T14:43:49.763, lat=-11.9813559, speed=1, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 14:43:49 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 14:43:49 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-102, screen=O:1650064806, battery=99, data_mb=3, view=home, sim=false, temperature=38.1, model=, id=80, state=T, power=O:1793475823, map=, signal=0, lat=-11.9813568, wifi_ssid=, sim_operator=, lng=-76.9919534, net_type=4, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/2/0, version=1.1.5, gps_acc=4, bluetooth=true, serial=, online=true, time=2026-10-31T14:43:49.676, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 14:43:49 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.2m
+2026-10-31 14:43:49 [DeviceStatus] 📡 device_status [disparo: carga=false] → {id=80, time=2026-10-31T14:43:49.676, version=1.1.5, state=T, view=home, power=O:1793475823, screen=O:1650064806, battery=99, temperature=38.1, charging=false, online=true, printer=NONE, aux=, map=, lat=-11.9813568, lng=-76.9919534, gps_acc=4, net_type=4, data_mb=3, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-102, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/2/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 14:43:49 [DeviceEventRepository⚠️] Inserted event: DeviceEventEntity(id=134, type=null, timestamp=2026-10-31T14:43:49.411, sent=false, battery=99, charging=false, lat=-11.9813568, lng=-76.9919534, wifi=false, map=null, printer=NONE, aux=null, version=1.1.5, data=2026-10-31T14:43:48.123, status={"id":"80","time":"2026-10-31T14:43:49.411","version":"1.1.5","state":"T","view":"home","power":"O:1793475823","screen":"O:1650064806","battery":99,"temperature":38.1,"charging":false,"online":true,"printer":"NONE","aux":"","map":"","lat":-11.9813568,"lng":-76.9919534,"gps_acc":4,"net_type":"4","data_mb":3,"nodo":"56\/34.71.11.201","printer_dev":"-\/T00","model":"","serial":"","battery_voltage":0,"ram_free":0,"ram_total":0,"storage_free":0,"storage_total":0,"sim":false,"sim_operator":"","wifi_ssid":"","signal":0,"cell_signal":-102,"ip":"","bluetooth":true,"no_battery":false,"cpu":"##\/","perm":"111111111101111111","gps":"1111\/2\/0","kiosk":"00-00","yape":"1110\/-1"})
+2026-10-31 14:43:49 [INSPECTOR_BLE] Presencia: PRESENCIA: OK
+2026-10-31 14:43:49 [ADS] [POLICY] sessionActive=false inRoute=true
+2026-10-31 14:43:49 [ProtectorVM] SCREEN [id=83568941]: state=T sesion=false → iniciando ciclo protector
+2026-10-31 14:43:49 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:43:49 [ADS] Cola detenida
+2026-10-31 14:43:49 [SoundRepository] BT detenido
+2026-10-31 14:43:49 [GpsLoadingViewModel] ✅ Todas las tareas completadas
+2026-10-31 14:43:49 [INSPECTOR_BLE] Presencia: servidor: OK
+2026-10-31 14:43:49 [GATT_INSPECTOR] OK
+2026-10-31 14:43:49 [ParaderoManager] Paradero más cercano orden 1: Paradero(id=46, lado=false, ruta=Ruta(id=2, codigo=1097, inicio=null, activo=false), activo=true, nombre=P INICIAL A, orden=1, latitud=-11.979179, liquidar=false, longitud=-76.991963, radio=50.0, velocidad=70.0, terminal=false, audio=PARADERO INICIAL)
+2026-10-31 14:43:49 [INSPECTOR_BLE] Presencia: activo unidad=80
+2026-10-31 14:43:49 [EmpresaResolver] 🏢 ✓ 'etrascpsa' (id=56) vive en 34.71.11.201
+2026-10-31 14:43:49 [INSPECTOR_BLE] Presencia: preparando unidad=80 rol=vende
+2026-10-31 14:43:49 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 14:43:49 [ParaderoManager] tiempo_mensaje ruta login=2 → 16 config=ConfigRuta(id=187, orden=93, ruta=2, grupo=GPS, nombre=tiempo_mensaje, descripcion=Tiempo en segundos que los mensajes permanecen visibles en pantalla, data=16.0, tipo=int, timestamp=2026-09-09 02:03:34, json=16.0)
+2026-10-31 14:43:48 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T14:43:53, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 14:43:48 [SocketService] [RECIBIDO]| #1 | SID:1 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T14:43:53, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 14:43:48 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 14:43:48 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 14:43:48 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 14:43:48 [SocketService] ✅ CONECTADO [ID: 1] en 422ms - Code: 101
+2026-10-31 14:43:48 [SocketService] 🔄 Conectando [ID: 1] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 14:43:48 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 14:43:48 [SocketService] 🔄 Nuevo Socket ID: 1
+2026-10-31 14:43:48 [SocketService] 🧹 Limpiando recursos [ID: 0]
+2026-10-31 14:43:48 [SocketService] 🚀 SocketService creado
+2026-10-31 14:43:48 [GpsLoadingViewModel] ⚡ Datos en cache, sincronizando en segundo plano
+2026-10-31 14:43:46 [LocationTrackingService] onStartCommand
+2026-10-31 14:43:46 [BluetoothAcceso] ✅ Permisos y Bluetooth activos · feitian=NO ble=SI encendido=SI anunciar=SI multi=SI extendido=SI escanear=SI android=31
+2026-10-31 14:43:46 [LocationTrackingService] Location updates activos
+2026-10-31 14:43:46 [LocationTrackingService] Location updates activos
+2026-10-31 14:43:46 [LocationTrackingService] onStartCommand
+2026-10-31 14:43:46 [LocationTrackingService] Iniciando tracking - Modo: FUERA DE RUTA, Intervalo: 5000ms
+2026-10-31 14:43:46 [LocationTrackingService] Permisos concedidos - Reiniciando tracking
+2026-10-31 14:43:46 [LocationTrackingService] Iniciando tracking - Modo: FUERA DE RUTA, Intervalo: 5000ms
+2026-10-31 14:43:46 [GpsLoadingViewModel] ✅ Internet disponible
+2026-10-31 14:43:46 [Arranque] 8) initLoad ejecutando — evaluando red/socket
+2026-10-31 14:43:46 [Arranque] ✅ Arranque verificado — watchdog cancelado
+2026-10-31 14:43:46 [Arranque] 7) GpsLoading — llamando initLoad
+2026-10-31 14:43:46 [LocationTrackingService] onStartCommand
+2026-10-31 14:43:46 [INSPECTOR_BLE] Presencia: apagado (sin login)
+2026-10-31 14:43:46 [FeitianManager] PAGOS-AWAKE omitido: equipo sin SDK Feitian
+2026-10-31 14:43:46 [ExtTicket] ▶️ receptor com_ext_ticket activo
+2026-10-31 14:43:46 [YapeSales] ▶️ escucha de notificaciones Yape activada
+2026-10-31 14:43:46 [LocationTrackingService] Service onCreate
+2026-10-31 14:43:46 [Arranque] 🔵 Bluetooth al iniciar → se pide · feitian=NO ble=SI encendido=SI anunciar=SI multi=SI extendido=SI escanear=SI android=31 sin_permiso=BLUETOOTH_ADVERTISE
+2026-10-31 14:43:46 [Arranque] 5) AppInitializer completado
+2026-10-31 14:43:46 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 14:43:46 [Arranque] 6) NavScreenChofer — pantalla principal compuesta
+2026-10-31 14:43:46 [Arranque] 4) NavigationWrapper — destino=com.tcontur.login_tcontur.core.navigation.AppRoute$ChoferRoute@796e211 imei=OK
+2026-10-31 14:43:45 [CashlessNotifs] 🔗 listener conectado
+2026-10-31 14:43:45 [Arranque] Arranque sin completar → despertando pantalla (intento 1)
+2026-10-31 14:43:45 [DualAudio] TTS listo. Dispositivos: moto g22(1), moto g22(2), moto g22(18)
+2026-10-31 14:43:45 [SoundRepository] ExoPlayer SPEAKER inicializado
+2026-10-31 14:43:45 [SoundRepository] ExoPlayer AUX inicializado
+2026-10-31 14:43:45 [SoundRepository] LoudnessEnhancer AUX +800mB (session=129)
+2026-10-31 14:43:45 [SoundRepository] ExoPlayer BT inicializado
+2026-10-31 14:43:44 [SoundRepository] [BT] Perfil A2DP listo — iniciando auto-conexión
+2026-10-31 14:43:44 [ProtectorVM] ENERGY: condición inactiva
+2026-10-31 14:43:44 [ProtectorVM] TEMP: 38.1C -> cap térmico 100%
+2026-10-31 14:43:44 [ProtectorVM] temp: 38.1C
+2026-10-31 14:43:44 [ProtectorVM] monitorCallState: llamada finalizada → state=null, delegando a monitorScreenState
+2026-10-31 14:43:44 [ProtectorVM] monitorCallState: hasActiveCall=false
+2026-10-31 14:43:44 [ProtectorVM] monitorScreenState: iniciando observacion
+2026-10-31 14:43:44 [ProtectorVM] === INIT ProtectorViewModel [id=83568941] ===
+2026-10-31 14:43:44 [ProtectorVM] NIGHT: hora_corte_noche=180 (03:00)
+2026-10-31 14:43:43 [ADS] [POLICY] sessionActive=false inRoute=false
+2026-10-31 14:43:43 [SoundRepository] BT detenido
+2026-10-31 14:43:43 [ADS] Cola detenida
+2026-10-31 14:43:43 [NetworkConnectivityRepository] ✅ Red disponible
+2026-10-31 14:43:43 [NetworkConnectivityRepository] ✅ Monitoreo de red iniciado
+2026-10-31 14:43:43 [ADS] [CONFIG] sin anuncios — nada que reproducir
+2026-10-31 14:43:43 [ADS] [CONFIG] 0 campañas, 0 planes, 0 anuncios
+2026-10-31 14:43:43 [DeviceStatus] ⚡ power event: O:2026-10-31 14:43:43
+2026-10-31 14:43:42 [TCONTUR_UPDATE] 🔁 app actualizada y reabierta: ahora v1.1.5 (161)
+2026-10-31 14:43:42 [Arranque] 3) MainActivity — setContent (entregando a Compose)
+2026-10-31 14:43:42 [FeitianManager] Sin SDK Feitian (motorola moto g22): funciones del equipo omitidas
+2026-10-31 14:43:39 [Arranque] 2) MainActivity.onCreate — inicio
+2026-10-31 14:43:39 [Arranque] Watchdog armado (60s)
+2026-10-31 14:43:39 [HORA] FIJADA (arranque) · se mantiene la de la central=2026-10-31 14:43:39.413 · internet=2026-10-31 14:43:44.374 difiere +4,9 s · equipo=2026-10-31 14:42:56.399 zona_equipo=America/Lima hora_auto=no zona_auto=no · fuentes: sntp time.google.com rtt 160 ms + https rtt 521 ms coinciden (dif -396 ms)
+2026-10-31 14:43:39 [PrinterService] 🖨️ SDK de impresión: SDK Tcontur · venta directa (sin estado)
+2026-10-31 14:43:39 [TCONTUR_UPDATE] ✅ abierta ya actualizada (v1.1.5): se quita el bloqueo
+2026-10-31 14:43:39 [SoundRepository] Ads cargados: 5 (externos: 0, assets: 5)
+2026-10-31 14:43:39 [ERROR-SoundRepository] No se encontraron archivos en STORM_Files/TCONTUR/Ads
+2026-10-31 14:43:39 [SoundRepository] [BT] ADS off (login) — auto-reconexión A2DP desactivada
+2026-10-31 14:43:39 [SoundRepository] Sonidos cargados: 8 (Assets: true)
+2026-10-31 14:43:39 [SoundRepository] [INIT] BT_ON=true BT_CONNECTED=false AUX=false
+2026-10-31 14:43:39 [ShutterEmergencyHandler] Init — shutterAvailable=false
+2026-10-31 14:43:38 [SmsRepository] Nuevo mensaje recibido: null
+2026-10-31 14:43:38 [DiarioVentas] Arranque · core_db2 journal=wal synchronous=FULL · diario 0 líneas · recuperados 0 · próximo correlativo > 6239
+2026-10-31 14:43:38 [HORA] INICIO · restaurada la hora FIJADA por la central de este arranque · usada=2026-10-31 14:43:38.697 (central, hace 5 min) · equipo=2026-10-31 14:42:55.684 zona_equipo=America/Lima hora_auto=no zona_auto=no
+2026-10-31 14:43:35 [FeitianManager] installApkNative: sesión 1605905380 commit (PackageInstaller) path=/data/user/0/com.tcontur.login_tcontur/files/updates/tcontur_1.1.5.apk
+2026-10-31 14:43:35 [TCONTUR_UPDATE] ② nativo: sesión PackageInstaller pidiendo SIN confirmación (Android 12+)
+2026-10-31 14:43:35 [TCONTUR_UPDATE] ① SDK FALLÓ: code=-1 (INSTALL_FAILED_ALREADY_EXISTS) msg=SDK no disponible → ② FALLBACK nativo
+2026-10-31 14:43:35 [ERROR-FeitianManager] installApk: ApplicationManager no disponible
+2026-10-31 14:43:35 [TCONTUR_UPDATE] ① instalando con SDK Feitian (silencioso): /data/user/0/com.tcontur.login_tcontur/files/updates/tcontur_1.1.5.apk
+2026-10-31 14:43:35 [TCONTUR_UPDATE] ⬇ descarga OK: 29.5 MB en 43 s
+2026-10-31 14:43:24 [TCONTUR_UPDATE]    descargando 75%
+2026-10-31 14:43:13 [TCONTUR_UPDATE]    descargando 50%
+2026-10-31 14:43:11 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 14:43:11 [SocketService] [RECIBIDO]| #9 | SID:3 | 7B | device_status [DATA]: {id=80}
+2026-10-31 14:43:10 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-100, screen=O:1650064806, battery=99, data_mb=3, view=home, sim=false, temperature=36.1, model=, id=80, state=T, power=O:1650062500, map=, signal=0, lat=-11.98136, wifi_ssid=, sim_operator=, lng=-76.9919567, net_type=4, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/3/0, version=1.1.2, gps_acc=11, bluetooth=true, serial=, online=true, time=2026-10-31T14:43:10.478, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 14:43:10 [DeviceStatus] 📡 device_status [disparo: online=true] → {id=80, time=2026-10-31T14:43:10.478, version=1.1.2, state=T, view=home, power=O:1650062500, screen=O:1650064806, battery=99, temperature=36.1, charging=false, online=true, printer=NONE, aux=, map=, lat=-11.98136, lng=-76.9919567, gps_acc=11, net_type=4, data_mb=3, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-100, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/3/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 14:43:08 [HORA] FIJADA (red recuperada) · se mantiene la de la central=2026-10-31 14:43:08.302 · internet=2026-10-31 14:43:13.323 difiere +5,0 s · equipo=2026-10-31 14:42:25.288 zona_equipo=America/Lima hora_auto=no zona_auto=no · fuentes: sntp time.google.com rtt 313 ms + https rtt 499 ms coinciden (dif -438 ms)
+2026-10-31 14:43:07 [NetworkConnectivityRepository] ✅ Red disponible
+2026-10-31 14:43:03 [TCONTUR_UPDATE]    descargando 25%
+2026-10-31 14:42:56 [ProtectorVM] TEMP: 36.1C -> cap térmico 100%
+2026-10-31 14:42:56 [ProtectorVM] temp: 36.1C
+2026-10-31 14:42:55 [LogManager] Inicialización de LogManager completa
+2026-10-31 14:42:55 [Arranque] 1) MyApp.onCreate — proceso iniciado v1.1.5
+2026-10-31 14:42:51 [TCONTUR_UPDATE] ⬇ descargando https://storage.googleapis.com/multiempresa-tcontur3/android/busApp/busApp_1.1.5.apk
+2026-10-31 14:42:51 [TCONTUR_UPDATE]    manifest: v1.1.5 (161) url=https://storage.googleapis.com/multiempresa-tcontur3/android/busApp/busApp_1.1.5.apk 
+2026-10-31 14:42:51 [ProtectorVM] UPDATE: pantalla bloqueada → timers del protector pausados
+2026-10-31 14:42:51 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:51 [TCONTUR_UPDATE]    modo manifest: https://multiempresa-23lnu3rcea-uc.a.run.app/api/apps/1/latest (última versión, firma=auto)
+2026-10-31 14:42:51 [TCONTUR_UPDATE] ▶ update manual (configuración) · instalada v1.1.2 (158) · Android 31 · SDK Feitian NO disponible
+2026-10-31 14:42:38 [CallViewModel] Previous: IDLE -> New: IDLE
+2026-10-31 14:42:38 [CallViewModel] 💤 Call state IDLE - no action needed
+2026-10-31 14:42:38 [CallViewModel] 🔄 State change: IDLE -> IDLE
+2026-10-31 14:42:37 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:37 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:36 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:36 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:36 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:36 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:35 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:35 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:34 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:34 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:33 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:33 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:19 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:19 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:19 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:19 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:11 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:11 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:11 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:11 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:10 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:10 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:09 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:09 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:09 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:09 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:08 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:08 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:06 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:06 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:05 [LocationTrackingService] onStartCommand
+2026-10-31 14:42:03 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:42:03 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:00 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:42:00 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:41:57 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:41:57 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:41:56 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:41:56 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:41:53 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:41:51 [LocationTrackingService] onStartCommand
+2026-10-31 14:41:43 [HORA] Cambió el reloj del equipo · equipo=2026-10-31 14:41:00.020 zona_equipo=America/Lima hora_auto=no zona_auto=no · la app sigue con 2026-10-31 14:41:43.038 (central, hace 3 min)
+2026-10-31 14:41:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 14:41:27 [SocketService] [RECIBIDO]| #8 | SID:3 | 3B | report [DATA]: {positions=1}
+2026-10-31 14:41:27 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.9919567, busstop=0, angle=180, accuracy=3, time=2026-10-31T14:41:27.172, lat=-11.98136, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 14:41:27 [PositionRepository] 📤 Enviando 1 (batch=5, pendientes=1)
+2026-10-31 14:41:27 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 14:41:27 [ProtectorVM] >>> TICKETERA → protector con hora, sin apagado de pantalla
+2026-10-31 14:41:27 [ProtectorVM] powerOn omitido: kiosko inactivo
+2026-10-31 14:41:27 [ProtectorVM] >>> TIMER COMPLETADO -> mostrando protector + brillo 30
+2026-10-31 14:41:22 [HORA] Cambió el reloj del equipo · equipo=2026-10-31 17:56:54.292 zona_equipo=America/Lima hora_auto=no zona_auto=no · la app sigue con 2026-10-31 14:41:22.975 (central, hace 2 min)
+2026-10-31 14:41:09 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 14:41:09 [SocketService] [RECIBIDO]| #7 | SID:3 | 7B | device_status [DATA]: {id=80}
+2026-10-31 14:41:09 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-94, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=36.1, model=, id=80, state=T, power=O:1650062500, map=, signal=0, lat=-11.98136, wifi_ssid=, sim_operator=, lng=-76.9919567, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/1/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T14:41:09.083, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 14:41:09 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T14:41:09.083, version=1.1.2, state=T, view=home, power=O:1650062500, screen=O:1650064806, battery=99, temperature=36.1, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.98136, lng=-76.9919567, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-94, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/1/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 14:40:28 [SocketService] [ENVIADO] | [NUEVO] (95B) [KEY]: android_command [DATA]: {value=verificar:WARN:NO_SINCRONIZADA sin internet · usa 31/10 14.40.28 (central hace 1 min), key=hora}
+2026-10-31 14:40:28 [SocketMessageDispatcher] ↩️ ACK verificar:WARN:NO_SINCRONIZADA sin internet · usa 31/10 14.40.28 (central hace 1 min)
+2026-10-31 14:40:28 [SocketMessageDispatcher] 🕒 Operation hora=verificar → NO_SINCRONIZADA sin internet · usa 31/10 14.40.28 (central hace 1 min)
+2026-10-31 14:40:28 [SocketService] [ENVIADO] | [NUEVO] (23B) [KEY]: android_command [DATA]: {value=verificar:RECV, key=hora}
+2026-10-31 14:40:28 [SocketMessageDispatcher] ↩️ ACK verificar:RECV
+2026-10-31 14:40:28 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=hora, value=verificar)
+2026-10-31 14:40:28 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=verificar, key=hora}
+2026-10-31 14:40:28 [SocketService] [RECIBIDO]| #6 | SID:3 | 18B | android_command [DATA]: {value=verificar, key=hora}
+2026-10-31 14:40:27 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:27 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:26 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:26 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:25 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:25 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:24 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:24 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:24 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:24 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:24 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:23 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:23 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:21 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:21 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:20 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:20 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:20 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:19 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:19 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:19 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:19 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:16 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:16 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:13 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:13 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:07 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:06 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:05 [LocationTrackingService] onStartCommand
+2026-10-31 14:40:04 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:04 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:01 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:40:01 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:00 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:40:00 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:58 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:58 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:58 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:58 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:57 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:57 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:54 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:54 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:53 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:53 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:53 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:53 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:52 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:52 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:52 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:52 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:52 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:51 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:51 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:50 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:50 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:49 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:49 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:47 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:47 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:47 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 14:39:47 [SocketService] [RECIBIDO]| #5 | SID:3 | 3B | report [DATA]: {positions=1}
+2026-10-31 14:39:47 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.9919567, busstop=0, angle=180, accuracy=3, time=2026-10-31T14:39:47.170, lat=-11.98136, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 14:39:47 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 14:39:47 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 14:39:47 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:47 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:45 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:45 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:45 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:45 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:44 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:44 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:44 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:44 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:44 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:43 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:43 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:42 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:42 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:42 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:42 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:41 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:41 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:41 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:41 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:40 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:40 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:40 [TrafficMonitor] 📊 hoy | movil ↑0.0KB ↓0.0KB | wifi ↑0.0KB ↓0.0KB | total 0.0KB (Δ10min 0.0KB)
+2026-10-31 14:39:39 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:39 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:39 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:38 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:38 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:37 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:37 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:36 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:36 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:34 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:34 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:33 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:33 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:32 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:32 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:32 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:32 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:31 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:31 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:29 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:29 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:28 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:28 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:28 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:27 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:26 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:26 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:23 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:23 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:22 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:22 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:21 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:20 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:20 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:19 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:19 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:19 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:19 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:18 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:18 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:17 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:16 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:16 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:14 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:14 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:14 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:14 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:13 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:13 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:12 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:12 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:11 [LocationTrackingService] onStartCommand
+2026-10-31 14:39:11 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:11 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:10 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:10 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:08 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:08 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:06 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:06 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:06 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:06 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:02 [SocketService] [ENVIADO] | [NUEVO] (46B) [KEY]: android_command [DATA]: {value=update:ERROR:manifest no disponible, key=update}
+2026-10-31 14:39:02 [SocketMessageDispatcher] ↩️ ACK update:ERROR:manifest no disponible
+2026-10-31 14:39:02 [ProtectorVM] UPDATE: pantalla liberada state=T sesion=false → se reinicia el ciclo del protector
+2026-10-31 14:39:02 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:39:02 [TCONTUR_UPDATE] ❌ manifest ilegible: Cadena no confiable por ningún TrustManager
+2026-10-31 14:39:02 [TCONTUR_UPDATE] ❌ resultado: ERROR manifest no disponible
+2026-10-31 14:39:01 [ProtectorVM] UPDATE: pantalla bloqueada → timers del protector pausados
+2026-10-31 14:39:01 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:39:01 [SocketService] [ENVIADO] | [NUEVO] (22B) [KEY]: android_command [DATA]: {value=update:RECV, key=update}
+2026-10-31 14:39:01 [TCONTUR_UPDATE] ▶ update pedido · instalada v1.1.2 (158) · Android 31 · SDK Feitian NO disponible
+2026-10-31 14:39:01 [TCONTUR_UPDATE]    modo manifest: https://multiempresa-23lnu3rcea-uc.a.run.app/api/apps/1/latest (última versión, firma=auto)
+2026-10-31 14:39:01 [SocketMessageDispatcher] ↩️ ACK update:RECV
+2026-10-31 14:39:01 [SocketMessageDispatcher] ⬇️ Operation update value='' → actualización remota
+2026-10-31 14:39:01 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=update, value=)
+2026-10-31 14:39:01 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=, key=update}
+2026-10-31 14:39:01 [SocketService] [RECIBIDO]| #4 | SID:3 | 11B | android_command [DATA]: {value=, key=update}
+2026-10-31 14:38:48 [SocketService] [ENVIADO] | [NUEVO] (46B) [KEY]: android_command [DATA]: {value=update:ERROR:manifest no disponible, key=update}
+2026-10-31 14:38:48 [SocketMessageDispatcher] ↩️ ACK update:ERROR:manifest no disponible
+2026-10-31 14:38:48 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:38:48 [ProtectorVM] UPDATE: pantalla liberada state=T sesion=false → se reinicia el ciclo del protector
+2026-10-31 14:38:48 [TCONTUR_UPDATE] ❌ resultado: ERROR manifest no disponible
+2026-10-31 14:38:48 [TCONTUR_UPDATE] ❌ manifest ilegible: Cadena no confiable por ningún TrustManager
+2026-10-31 14:38:47 [ProtectorVM] UPDATE: pantalla bloqueada → timers del protector pausados
+2026-10-31 14:38:47 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:38:47 [TCONTUR_UPDATE]    modo manifest: https://multiempresa-23lnu3rcea-uc.a.run.app/api/apps/1/latest (última versión, firma=auto)
+2026-10-31 14:38:47 [TCONTUR_UPDATE] ▶ update pedido · instalada v1.1.2 (158) · Android 31 · SDK Feitian NO disponible
+2026-10-31 14:38:47 [SocketService] [ENVIADO] | [NUEVO] (22B) [KEY]: android_command [DATA]: {value=update:RECV, key=update}
+2026-10-31 14:38:47 [SocketMessageDispatcher] ⬇️ Operation update value='' → actualización remota
+2026-10-31 14:38:47 [SocketMessageDispatcher] ↩️ ACK update:RECV
+2026-10-31 14:38:47 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=update, value=)
+2026-10-31 14:38:47 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=, key=update}
+2026-10-31 14:38:47 [SocketService] [RECIBIDO]| #3 | SID:3 | 11B | android_command [DATA]: {value=, key=update}
+2026-10-31 14:38:31 [SocketService] [ENVIADO] | [NUEVO] (113B) [KEY]: android_command [DATA]: {value=1793475511630:OK:…1/10 14.38.31 · corrección +304 ms · antes (central hace 6 min) · equipo sin SDK, key=hora}
+2026-10-31 14:38:31 [SocketMessageDispatcher] ↩️ ACK 1793475511630:OK:…1/10 14.38.31 · corrección +304 ms · antes (central hace 6 min) · equipo sin SDK
+2026-10-31 14:38:31 [SocketMessageDispatcher] 🕒 Operation hora=1793475511630 → FIJADA 31/10 14.38.31 · corrección +304 ms · antes (central hace 6 min) · equipo sin SDK
+2026-10-31 14:38:31 [ERROR-FeitianManager] Error setSystemTime(1793475511630): sin SDK Feitian
+2026-10-31 14:38:31 [FeitianManager] setSystemTime(1793475511630, America/Lima): false
+2026-10-31 14:38:31 [WARN-HORA] FIJADA por la central · nueva=2026-10-31 14:38:31.630 · usada_antes=2026-10-31 14:38:31.326 (central, hace 6 min) · corrección=+304 ms · equipo=2022-04-15 17:54:02.957 zona_equipo=America/Lima hora_auto=no zona_auto=no · internet ya no la corrige hasta hora=auto o reiniciar el equipo
+2026-10-31 14:38:31 [SocketService] [ENVIADO] | [NUEVO] (27B) [KEY]: android_command [DATA]: {value=1793475511630:RECV, key=hora}
+2026-10-31 14:38:31 [SocketMessageDispatcher] ↩️ ACK 1793475511630:RECV
+2026-10-31 14:38:31 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=hora, value=1793475511630)
+2026-10-31 14:38:31 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=1793475511630, key=hora}
+2026-10-31 14:38:31 [SocketService] [RECIBIDO]| #2 | SID:3 | 22B | android_command [DATA]: {value=1793475511630, key=hora}
+2026-10-31 14:38:14 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 14:38:14 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 14:38:14 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 14:38:14 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 14:38:14 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 14:38:14 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 14:38:14 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 14:38:14 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 14:38:14 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 14:38:13 [SoundRepository] BT detenido
+2026-10-31 14:38:13 [ADS] Cola detenida
+2026-10-31 14:38:13 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 14:38:13 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T14:38:18, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 14:38:13 [SocketService] [RECIBIDO]| #1 | SID:3 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T14:38:18, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 14:38:13 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 14:38:13 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 14:38:13 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 14:38:13 [SocketService] ✅ CONECTADO [ID: 3] en 691499ms - Code: 101
+2026-10-31 14:38:12 [SocketService] 🔄 Conectando [ID: 3] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 14:38:12 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 14:38:12 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 14:38:12 [SocketService] 🔄 Nuevo Socket ID: 3
+2026-10-31 14:38:12 [SocketService] 🧹 Limpiando recursos [ID: 2]
+2026-10-31 14:38:12 [SocketService] ⏰ Watchdog: 123725ms sin mensajes, forzando reconexión
+2026-10-31 14:38:01 [DeviceStatus] ⏭️ device_status [disparo: carga=false] omitido: mismo estado ya enviado
+2026-10-31 14:38:01 [DeviceEventRepository⚠️] Inserted event: DeviceEventEntity(id=133, type=null, timestamp=2026-10-31T14:38:01.526, sent=false, battery=99, charging=false, lat=-11.98136, lng=-76.9919567, wifi=null, map=null, printer=NONE, aux=null, version=1.1.2, data=2022-04-15T17:45:12.262, status={"id":"80","time":"2026-10-31T14:38:01.526","version":"1.1.2","state":"T","view":"home","power":"O:1650062500","screen":"O:1650064806","battery":99,"temperature":36.1,"charging":false,"online":false,"printer":"NONE","aux":"","map":"","lat":-11.98136,"lng":-76.9919567,"gps_acc":4,"net_type":"n","data_mb":0,"nodo":"56\/34.71.11.201","printer_dev":"-\/T00","model":"","serial":"","battery_voltage":0,"ram_free":0,"ram_total":0,"storage_free":0,"storage_total":0,"sim":false,"sim_operator":"","wifi_ssid":"","signal":0,"cell_signal":-100,"ip":"","bluetooth":true,"no_battery":false,"cpu":"##\/","perm":"111111111101111111","gps":"1111\/4\/0","kiosk":"00-00","yape":"1110\/-1"})
+2026-10-31 14:37:57 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:37:57 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:37:56 [GpsLoadingViewModel] ❌ Conexión perdida
+2026-10-31 14:37:56 [GpsLoadingViewModel] ⚠️ Sin internet, esperando conexión...
+2026-10-31 14:37:56 [Arranque] 8) initLoad ejecutando — evaluando red/socket
+2026-10-31 14:37:56 [Arranque] 7) GpsLoading — llamando initLoad
+2026-10-31 14:37:56 [LocationTrackingService] onStartCommand
+2026-10-31 14:37:56 [Arranque] 5) AppInitializer completado
+2026-10-31 14:37:56 [Arranque] 6) NavScreenChofer — pantalla principal compuesta
+2026-10-31 14:37:56 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:37:56 [Arranque] 4) NavigationWrapper — destino=com.tcontur.login_tcontur.core.navigation.AppRoute$ChoferRoute@a4be53e imei=OK
+2026-10-31 14:37:56 [ProtectorVM] ENERGY: condición inactiva
+2026-10-31 14:37:56 [ProtectorVM] TEMP: 36.1C -> cap térmico 100%
+2026-10-31 14:37:56 [ProtectorVM] temp: 36.1C
+2026-10-31 14:37:56 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:37:56 [ProtectorVM] monitorCallState: hasActiveCall=false
+2026-10-31 14:37:56 [ProtectorVM] monitorCallState: llamada finalizada → state=T, delegando a monitorScreenState
+2026-10-31 14:37:56 [ProtectorVM] SCREEN [id=183798171]: state=T sesion=false → iniciando ciclo protector
+2026-10-31 14:37:56 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:37:56 [ProtectorVM] monitorScreenState: iniciando observacion
+2026-10-31 14:37:56 [ProtectorVM] === INIT ProtectorViewModel [id=183798171] ===
+2026-10-31 14:37:56 [ProtectorVM] NIGHT: hora_corte_noche=180 (03:00)
+2026-10-31 14:37:56 [ADS] [POLICY] sessionActive=false inRoute=true
+2026-10-31 14:37:56 [SoundRepository] BT detenido
+2026-10-31 14:37:56 [ADS] Cola detenida
+2026-10-31 14:37:56 [NetworkConnectivityRepository] El monitoreo ya está activo
+2026-10-31 14:37:56 [LocationTrackingService] onStartCommand
+2026-10-31 14:37:56 [ProtectorVM] === CLEARED ProtectorViewModel [id=155941152] ===
+2026-10-31 14:37:56 [Arranque] 3) MainActivity — setContent (entregando a Compose)
+2026-10-31 14:37:56 [Arranque] 2) MainActivity.onCreate — inicio
+2026-10-31 14:37:56 [Arranque] 5) AppInitializer completado
+2026-10-31 14:37:56 [Arranque] 4) NavigationWrapper — destino=com.tcontur.login_tcontur.core.navigation.AppRoute$ChoferRoute@a4be53e imei=OK
+2026-10-31 14:37:55 [Arranque] 3) MainActivity — setContent (entregando a Compose)
+2026-10-31 14:37:55 [Arranque] 2) MainActivity.onCreate — inicio
+2026-10-31 14:37:55 [Arranque] MainActivity duplicada (task 8988 → 8988): se cierra la anterior
+2026-10-31 14:37:36 [HORA] Cambió el reloj del equipo · equipo=2022-04-15 17:53:07.776 zona_equipo=America/Lima hora_auto=no zona_auto=no · la app sigue con 2026-10-31 14:37:36.163 (central, hace 5 min)
+2026-10-31 14:36:14 [LocationTrackingService] onStartCommand
+2026-10-31 14:36:11 [LocationTrackingService] onStartCommand
+2026-10-31 14:36:09 [ProtectorVM] TEMP: 36.1C -> cap térmico 100%
+2026-10-31 14:36:09 [ProtectorVM] temp: 36.1C
+2026-10-31 14:36:09 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 14:36:09 [SocketService] [RECIBIDO]| #12 | SID:2 | 7B | device_status [DATA]: {id=80}
+2026-10-31 14:36:08 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-107, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=36.1, model=, id=80, state=T, power=O:1650062500, map=, signal=0, lat=-11.98136, wifi_ssid=, sim_operator=, lng=-76.9919567, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/1/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T14:36:08.679, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 14:36:08 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T14:36:08.679, version=1.1.2, state=T, view=home, power=O:1650062500, screen=O:1650064806, battery=99, temperature=36.1, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.98136, lng=-76.9919567, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-107, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/1/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 14:35:55 [LocationTrackingService] onStartCommand
+2026-10-31 14:35:48 [LocationTrackingService] onStartCommand
+2026-10-31 14:35:43 [LocationTrackingService] onStartCommand
+2026-10-31 14:35:29 [LocationTrackingService] onStartCommand
+2026-10-31 14:35:23 [SocketService] [ENVIADO] | [NUEVO] (26B) [KEY]: android_command [DATA]: {value=close-app:OK, key=close-app}
+2026-10-31 14:35:23 [SocketMessageDispatcher] ↩️ ACK close-app:OK
+2026-10-31 14:35:23 [FeitianManager] forceStopPackage(com.tcontur.login_tcontur) → cerrando en 1500ms
+2026-10-31 14:35:23 [SocketService] [ENVIADO] | [NUEVO] (28B) [KEY]: android_command [DATA]: {value=close-app:RECV, key=close-app}
+2026-10-31 14:35:23 [SocketMessageDispatcher] 🛑 Operation close-app → cerrando aplicación
+2026-10-31 14:35:23 [SocketMessageDispatcher] ↩️ ACK close-app:RECV
+2026-10-31 14:35:23 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=close-app, value=)
+2026-10-31 14:35:23 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=, key=close-app}
+2026-10-31 14:35:23 [SocketService] [RECIBIDO]| #11 | SID:2 | 14B | android_command [DATA]: {value=, key=close-app}
+2026-10-31 14:35:11 [LocationTrackingService] onStartCommand
+2026-10-31 14:35:11 [LocationTrackingService] onStartCommand
+2026-10-31 14:35:09 [LocationTrackingService] onStartCommand
+2026-10-31 14:35:02 [LocationTrackingService] onStartCommand
+2026-10-31 14:34:54 [LocationTrackingService] onStartCommand
+2026-10-31 14:34:45 [LocationTrackingService] onStartCommand
+2026-10-31 14:34:42 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 14:34:42 [SocketService] [RECIBIDO]| #10 | SID:2 | 3B | report [DATA]: {positions=1}
+2026-10-31 14:34:41 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.9919567, busstop=0, angle=180, accuracy=3, time=2026-10-31T14:34:41.867, lat=-11.98136, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 14:34:41 [PositionRepository] 📤 Enviando 1 (batch=5, pendientes=1)
+2026-10-31 14:34:41 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 14:34:34 [LocationTrackingService] onStartCommand
+2026-10-31 14:33:44 [TCONTUR_UPDATE] ❌ manifest ilegible: Cadena no confiable por ningún TrustManager
+2026-10-31 14:33:25 [TCONTUR_UPDATE] ❌ manifest ilegible: Cadena no confiable por ningún TrustManager
+2026-10-31 14:33:09 [ProtectorVM] >>> TICKETERA → protector con hora, sin apagado de pantalla
+2026-10-31 14:33:09 [ProtectorVM] powerOn omitido: kiosko inactivo
+2026-10-31 14:33:09 [ProtectorVM] >>> TIMER COMPLETADO -> mostrando protector + brillo 30
+2026-10-31 14:32:43 [LogManager] ❌ subida NO confirmada [1/1]: captura — Fallo conexión: Cadena no confiable por ningún TrustManager
+2026-10-31 14:32:41 [SmsRepository] Enviando SOLO captura de pantalla para el dispositivo 000000000000000
+2026-10-31 14:32:41 [SocketService] [ENVIADO] | [NUEVO] (22B) [KEY]: android_command [DATA]: {value=captura:OK, key=captura}
+2026-10-31 14:32:41 [SocketMessageDispatcher] ↩️ ACK captura:OK
+2026-10-31 14:32:41 [SocketService] [ENVIADO] | [NUEVO] (24B) [KEY]: android_command [DATA]: {value=captura:RECV, key=captura}
+2026-10-31 14:32:41 [SocketMessageDispatcher] 📸 Operation captura → captura de pantalla
+2026-10-31 14:32:41 [SocketMessageDispatcher] ↩️ ACK captura:RECV
+2026-10-31 14:32:41 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=captura, value=)
+2026-10-31 14:32:41 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=, key=captura}
+2026-10-31 14:32:41 [SocketService] [RECIBIDO]| #9 | SID:2 | 12B | android_command [DATA]: {value=, key=captura}
+2026-10-31 14:32:11 [WebRTCCallVM] Limpieza completada
+2026-10-31 14:32:11 [WebRTCCallVM] Error observando sesión WebRTC: Job was cancelled
+2026-10-31 14:32:10 [CallViewModel] 💤 Call state IDLE - no action needed
+2026-10-31 14:32:10 [CallViewModel] Previous: IDLE -> New: IDLE
+2026-10-31 14:32:10 [CallViewModel] 🔄 State change: IDLE -> IDLE
+2026-10-31 14:32:09 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 14:32:09 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2026-10-31 14:32:06 [SocketService] [ENVIADO] | [NUEVO] (113B) [KEY]: android_command [DATA]: {value=1793475126245:OK:…DA 31/10 14.32.06 · corrección +39836h 44m 28s · antes (equipo) · equipo sin SDK, key=hora}
+2026-10-31 14:32:06 [SocketMessageDispatcher] ↩️ ACK 1793475126245:OK:…DA 31/10 14.32.06 · corrección +39836h 44m 28s · antes (equipo) · equipo sin SDK
+2026-10-31 14:32:06 [SocketMessageDispatcher] 🕒 Operation hora=1793475126245 → FIJADA 31/10 14.32.06 · corrección +39836h 44m 28s · antes (equipo) · equipo sin SDK
+2026-10-31 14:32:06 [ERROR-FeitianManager] Error setSystemTime(1793475126245): sin SDK Feitian
+2026-10-31 14:32:06 [FeitianManager] setSystemTime(1793475126245, America/Lima): false
+2026-10-31 14:32:06 [WARN-HORA] FIJADA por la central · nueva=2026-10-31 14:32:06.245 · usada_antes=2022-04-15 17:47:37.867 (equipo) · corrección=+39836h 44m 28s · equipo=2022-04-15 17:47:37.875 zona_equipo=America/Lima hora_auto=no zona_auto=sí · internet ya no la corrige hasta hora=auto o reiniciar el equipo
+2026-10-31 11:07:53 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-91, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=35.8, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/1/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T11:07:52.978, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 11:07:53 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T11:07:52.978, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=35.8, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-91, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/1/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 11:06:52 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 11:06:52 [SocketService] [RECIBIDO]| #2 | SID:14 | 3B | report [DATA]: {positions=1}
+2026-10-31 11:06:51 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.99195, busstop=0, angle=90, accuracy=3, time=2026-10-31T11:06:51.767, lat=-11.9813333, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 11:06:51 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 11:06:51 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 11:05:35 [ProtectorVM] TEMP: 35.8C -> cap térmico 100%
+2026-10-31 11:05:35 [ProtectorVM] temp: 35.8C
+2026-10-31 11:05:16 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 11:05:15 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 11:05:15 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 11:05:15 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 11:05:15 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 11:05:15 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 11:05:15 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 11:05:15 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 11:05:15 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 11:05:14 [SoundRepository] BT detenido
+2026-10-31 11:05:14 [ADS] Cola detenida
+2026-10-31 11:05:14 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 11:05:14 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T11:05:19, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 11:05:14 [SocketService] [RECIBIDO]| #1 | SID:14 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T11:05:19, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 11:05:14 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 11:05:14 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 11:05:14 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 11:05:14 [SocketService] ✅ CONECTADO [ID: 14] en 3846401ms - Code: 101
+2026-10-31 11:05:14 [SocketService] 🔄 Conectando [ID: 14] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 11:05:14 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 11:05:14 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 11:05:14 [SocketService] 🔄 Nuevo Socket ID: 14
+2026-10-31 11:05:14 [SocketService] 🧹 Limpiando recursos [ID: 13]
+2026-10-31 11:05:14 [SocketService] ⏰ Watchdog: 140827ms sin mensajes, forzando reconexión
+2026-10-31 11:02:53 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 11:02:53 [SocketService] [RECIBIDO]| #3 | SID:13 | 7B | device_status [DATA]: {id=80}
+2026-10-31 11:02:53 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-91, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=35.8, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/1/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T11:02:52.860, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 11:02:52 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T11:02:52.860, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=35.8, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-91, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/1/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 11:01:47 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 11:01:47 [SocketService] [RECIBIDO]| #2 | SID:13 | 3B | report [DATA]: {positions=1}
+2026-10-31 11:01:46 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.99195, busstop=0, angle=90, accuracy=3, time=2026-10-31T11:01:46.763, lat=-11.9813333, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 11:01:46 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 11:01:46 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 11:00:38 [TrafficMonitor] 📊 hoy | movil ↑0.0KB ↓0.0KB | wifi ↑0.0KB ↓0.0KB | total 0.0KB (Δ10min 0.0KB)
+2026-10-31 11:00:35 [ProtectorVM] TEMP: 35.8C -> cap térmico 100%
+2026-10-31 11:00:35 [ProtectorVM] temp: 35.8C
+2026-10-31 11:00:15 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 11:00:15 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 11:00:15 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 11:00:15 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 11:00:15 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 11:00:15 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 11:00:15 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 11:00:15 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 11:00:15 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 11:00:14 [SoundRepository] BT detenido
+2026-10-31 11:00:14 [ADS] Cola detenida
+2026-10-31 11:00:14 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 11:00:14 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T11:00:18, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 11:00:14 [SocketService] [RECIBIDO]| #1 | SID:13 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T11:00:18, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 11:00:14 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 11:00:14 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 11:00:14 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 11:00:14 [SocketService] ✅ CONECTADO [ID: 13] en 3545977ms - Code: 101
+2026-10-31 11:00:13 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 11:00:13 [SocketService] 🔄 Conectando [ID: 13] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 11:00:13 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 11:00:13 [SocketService] 🔄 Nuevo Socket ID: 13
+2026-10-31 11:00:13 [SocketService] 🧹 Limpiando recursos [ID: 12]
+2026-10-31 11:00:13 [SocketService] ⏰ Watchdog: 140505ms sin mensajes, forzando reconexión
+2026-10-31 10:57:53 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 10:57:53 [SocketService] [RECIBIDO]| #3 | SID:12 | 7B | device_status [DATA]: {id=80}
+2026-10-31 10:57:52 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-91, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=35.4, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/1/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T10:57:52.758, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 10:57:52 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T10:57:52.758, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=35.4, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-91, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/1/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 10:56:42 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 10:56:42 [SocketService] [RECIBIDO]| #2 | SID:12 | 3B | report [DATA]: {positions=1}
+2026-10-31 10:56:41 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.99195, busstop=0, angle=90, accuracy=3, time=2026-10-31T10:56:41.780, lat=-11.9813333, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 10:56:41 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 10:56:41 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 10:55:35 [ProtectorVM] TEMP: 35.4C -> cap térmico 100%
+2026-10-31 10:55:35 [ProtectorVM] temp: 35.4C
+2026-10-31 10:55:15 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 10:55:14 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 10:55:14 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 10:55:14 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 10:55:14 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 10:55:14 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 10:55:14 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 10:55:14 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 10:55:14 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 10:55:13 [ADS] Cola detenida
+2026-10-31 10:55:13 [SoundRepository] BT detenido
+2026-10-31 10:55:13 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 10:55:13 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:55:18, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:55:13 [SocketService] [RECIBIDO]| #1 | SID:12 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:55:18, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:55:13 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 10:55:13 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 10:55:13 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 10:55:13 [SocketService] ✅ CONECTADO [ID: 12] en 3245495ms - Code: 101
+2026-10-31 10:55:13 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 10:55:13 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 10:55:13 [SocketService] 🔄 Conectando [ID: 12] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 10:55:13 [SocketService] 🔄 Nuevo Socket ID: 12
+2026-10-31 10:55:13 [SocketService] 🧹 Limpiando recursos [ID: 11]
+2026-10-31 10:55:13 [SocketService] ⏰ Watchdog: 140150ms sin mensajes, forzando reconexión
+2026-10-31 10:52:53 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 10:52:53 [SocketService] [RECIBIDO]| #3 | SID:11 | 7B | device_status [DATA]: {id=80}
+2026-10-31 10:52:52 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-91, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=35.4, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/0/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T10:52:52.685, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 10:52:52 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T10:52:52.685, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=35.4, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-91, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/0/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 10:51:37 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 10:51:37 [SocketService] [RECIBIDO]| #2 | SID:11 | 3B | report [DATA]: {positions=1}
+2026-10-31 10:51:36 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.99195, busstop=0, angle=90, accuracy=3, time=2026-10-31T10:51:36.783, lat=-11.9813333, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 10:51:36 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 10:51:36 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 10:50:38 [TrafficMonitor] 📊 hoy | movil ↑0.0KB ↓0.0KB | wifi ↑0.0KB ↓0.0KB | total 0.0KB (Δ10min 0.0KB)
+2026-10-31 10:50:35 [ProtectorVM] TEMP: 35.4C -> cap térmico 100%
+2026-10-31 10:50:35 [ProtectorVM] temp: 35.4C
+2026-10-31 10:50:14 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 10:50:14 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 10:50:14 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 10:50:14 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 10:50:14 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 10:50:14 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 10:50:14 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 10:50:14 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 10:50:14 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 10:50:13 [ADS] Cola detenida
+2026-10-31 10:50:13 [SoundRepository] BT detenido
+2026-10-31 10:50:13 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 10:50:13 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:50:17, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:50:13 [SocketService] [RECIBIDO]| #1 | SID:11 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:50:17, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:50:13 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 10:50:13 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 10:50:13 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 10:50:13 [SocketService] ✅ CONECTADO [ID: 11] en 2945059ms - Code: 101
+2026-10-31 10:50:12 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 10:50:12 [SocketService] 🔄 Conectando [ID: 11] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 10:50:12 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 10:50:12 [SocketService] 🔄 Nuevo Socket ID: 11
+2026-10-31 10:50:12 [SocketService] 🧹 Limpiando recursos [ID: 10]
+2026-10-31 10:50:12 [SocketService] ⏰ Watchdog: 139787ms sin mensajes, forzando reconexión
+2026-10-31 10:47:52 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 10:47:52 [SocketService] [RECIBIDO]| #3 | SID:10 | 7B | device_status [DATA]: {id=80}
+2026-10-31 10:47:52 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-92, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=35.3, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/0/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T10:47:52.549, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 10:47:52 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T10:47:52.549, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=35.3, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-92, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/0/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 10:46:37 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 10:46:37 [SocketService] [RECIBIDO]| #2 | SID:10 | 3B | report [DATA]: {positions=1}
+2026-10-31 10:46:36 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.99195, busstop=0, angle=90, accuracy=3, time=2026-10-31T10:46:36.782, lat=-11.9813333, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 10:46:36 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 10:46:36 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 10:45:35 [ProtectorVM] TEMP: 35.3C -> cap térmico 100%
+2026-10-31 10:45:35 [ProtectorVM] temp: 35.3C
+2026-10-31 10:45:14 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 10:45:14 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 10:45:14 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 10:45:14 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 10:45:14 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 10:45:14 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 10:45:14 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 10:45:14 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 10:45:14 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 10:45:13 [ADS] Cola detenida
+2026-10-31 10:45:13 [SoundRepository] BT detenido
+2026-10-31 10:45:13 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 10:45:13 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:45:17, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:45:13 [SocketService] [RECIBIDO]| #1 | SID:10 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:45:17, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:45:12 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 10:45:12 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 10:45:12 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 10:45:12 [SocketService] ✅ CONECTADO [ID: 10] en 2644618ms - Code: 101
+2026-10-31 10:45:12 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 10:45:12 [SocketService] 🔄 Conectando [ID: 10] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 10:45:12 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 10:45:12 [SocketService] 🔄 Nuevo Socket ID: 10
+2026-10-31 10:45:12 [SocketService] 🧹 Limpiando recursos [ID: 9]
+2026-10-31 10:45:12 [SocketService] ⏰ Watchdog: 139501ms sin mensajes, forzando reconexión
+2026-10-31 10:42:52 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 10:42:52 [SocketService] [RECIBIDO]| #3 | SID:9 | 7B | device_status [DATA]: {id=80}
+2026-10-31 10:42:52 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-92, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=35.3, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/0/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T10:42:52.473, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 10:42:52 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T10:42:52.473, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=35.3, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-92, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/0/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 10:41:32 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 10:41:32 [SocketService] [RECIBIDO]| #2 | SID:9 | 3B | report [DATA]: {positions=1}
+2026-10-31 10:41:31 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.99195, busstop=0, angle=90, accuracy=3, time=2026-10-31T10:41:31.784, lat=-11.9813333, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 10:41:31 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 10:41:31 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 10:40:38 [TrafficMonitor] 📊 hoy | movil ↑0.0KB ↓0.0KB | wifi ↑0.0KB ↓0.0KB | total 0.0KB (Δ10min 0.0KB)
+2026-10-31 10:40:35 [ProtectorVM] TEMP: 35.3C -> cap térmico 100%
+2026-10-31 10:40:35 [ProtectorVM] temp: 35.3C
+2026-10-31 10:40:13 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 10:40:13 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 10:40:13 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 10:40:13 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 10:40:13 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 10:40:13 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 10:40:13 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 10:40:13 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 10:40:13 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 10:40:12 [SoundRepository] BT detenido
+2026-10-31 10:40:12 [ADS] Cola detenida
+2026-10-31 10:40:12 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 10:40:12 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:40:16, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:40:12 [SocketService] [RECIBIDO]| #1 | SID:9 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:40:16, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:40:12 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 10:40:12 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 10:40:12 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 10:40:12 [SocketService] ✅ CONECTADO [ID: 9] en 2344170ms - Code: 101
+2026-10-31 10:40:11 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 10:40:11 [SocketService] 🔄 Conectando [ID: 9] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 10:40:11 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 10:40:11 [SocketService] 🔄 Nuevo Socket ID: 9
+2026-10-31 10:40:11 [SocketService] 🧹 Limpiando recursos [ID: 8]
+2026-10-31 10:40:11 [SocketService] ⏰ Watchdog: 139078ms sin mensajes, forzando reconexión
+2026-10-31 10:37:52 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 10:37:52 [SocketService] [RECIBIDO]| #3 | SID:8 | 7B | device_status [DATA]: {id=80}
+2026-10-31 10:37:52 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-84, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=34.8, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/0/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T10:37:52.366, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 10:37:52 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T10:37:52.366, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=34.8, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-84, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/0/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 10:36:32 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 10:36:32 [SocketService] [RECIBIDO]| #2 | SID:8 | 3B | report [DATA]: {positions=1}
+2026-10-31 10:36:31 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.99195, busstop=0, angle=90, accuracy=3, time=2026-10-31T10:36:31.769, lat=-11.9813333, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 10:36:31 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 10:36:31 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 10:35:35 [ProtectorVM] temp: 34.8C
+2026-10-31 10:35:35 [ProtectorVM] TEMP: 34.8C -> cap térmico 100%
+2026-10-31 10:35:14 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 10:35:14 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 10:35:14 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 10:35:14 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 10:35:14 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 10:35:14 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 10:35:14 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 10:35:14 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 10:35:14 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 10:35:13 [ADS] Cola detenida
+2026-10-31 10:35:13 [SoundRepository] BT detenido
+2026-10-31 10:35:13 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 10:35:13 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:35:17, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:35:13 [SocketService] [RECIBIDO]| #1 | SID:8 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:35:17, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:35:11 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 10:35:11 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 10:35:11 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 10:35:11 [SocketService] ✅ CONECTADO [ID: 8] en 2043739ms - Code: 101
+2026-10-31 10:35:11 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 10:35:11 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 10:35:11 [SocketService] 🔄 Conectando [ID: 8] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 10:35:11 [SocketService] 🔄 Nuevo Socket ID: 8
+2026-10-31 10:35:11 [SocketService] 🧹 Limpiando recursos [ID: 7]
+2026-10-31 10:35:11 [SocketService] ⏰ Watchdog: 138739ms sin mensajes, forzando reconexión
+2026-10-31 10:32:52 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 10:32:52 [SocketService] [RECIBIDO]| #3 | SID:7 | 7B | device_status [DATA]: {id=80}
+2026-10-31 10:32:52 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-91, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=34.8, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/0/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T10:32:52.258, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 10:32:52 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=80, time=2026-10-31T10:32:52.258, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=34.8, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-91, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/0/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 10:31:32 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-10-31 10:31:32 [SocketService] [RECIBIDO]| #2 | SID:7 | 3B | report [DATA]: {positions=1}
+2026-10-31 10:31:31 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.99195, busstop=0, angle=90, accuracy=3, time=2026-10-31T10:31:31.769, lat=-11.9813333, speed=0, mark=0}], state=T, sales=0, events=[], direction=false}
+2026-10-31 10:31:31 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2026-10-31 10:31:31 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2026-10-31 10:31:13 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2026-10-31 10:31:12 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2026-10-31 10:31:12 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2026-10-31 10:31:12 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2026-10-31 10:31:12 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2026-10-31 10:31:12 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2026-10-31 10:31:12 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-10-31 10:31:12 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-10-31 10:31:12 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-10-31 10:31:11 [ADS] Cola detenida
+2026-10-31 10:31:11 [SoundRepository] BT detenido
+2026-10-31 10:31:11 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2026-10-31 10:31:11 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:31:15, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:31:11 [SocketService] [RECIBIDO]| #1 | SID:7 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T10:31:15, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2026-10-31 10:31:11 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2026-10-31 10:31:11 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2026-10-31 10:31:11 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2026-10-31 10:31:11 [SocketService] ✅ CONECTADO [ID: 7] en 1803253ms - Code: 101
+2026-10-31 10:31:10 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2026-10-31 10:31:10 [SocketService] 🔄 Conectando [ID: 7] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2026-10-31 10:31:10 [SocketService] ✅ Recursos completamente limpiados
+2026-10-31 10:31:10 [SocketService] 🔄 Nuevo Socket ID: 7
+2026-10-31 10:31:10 [SocketService] 🧹 Limpiando recursos [ID: 6]
+2026-10-31 10:31:10 [SocketService] ⏰ Watchdog: 123020ms sin mensajes, forzando reconexión
+2026-10-31 10:30:38 [TrafficMonitor] 📊 hoy | movil ↑0.0KB ↓0.0KB | wifi ↑0.0KB ↓0.0KB | total 0.0KB (Δ10min 0.0KB)
+2026-10-31 10:30:35 [ProtectorVM] temp: 34.8C
+2026-10-31 10:30:35 [ProtectorVM] TEMP: 34.8C -> cap térmico 100%
+2026-10-31 10:29:14 [ProtectorVM] >>> TICKETERA → protector con hora, sin apagado de pantalla
+2026-10-31 10:29:14 [ProtectorVM] powerOn omitido: kiosko inactivo
+2026-10-31 10:29:14 [ProtectorVM] >>> TIMER COMPLETADO -> mostrando protector + brillo 30
+2026-10-31 10:29:09 [LogManager] ❌ subida NO confirmada [1/1]: captura — Fallo conexión: Cadena no confiable por ningún TrustManager
+2026-10-31 10:29:08 [SmsRepository] Enviando SOLO captura de pantalla para el dispositivo 000000000000000
+2026-10-31 10:29:07 [SocketService] [ENVIADO] | [NUEVO] (22B) [KEY]: android_command [DATA]: {value=captura:OK, key=captura}
+2026-10-31 10:29:07 [SocketService] [ENVIADO] | [NUEVO] (24B) [KEY]: android_command [DATA]: {value=captura:RECV, key=captura}
+2026-10-31 10:29:07 [SocketMessageDispatcher] ↩️ ACK captura:OK
+2026-10-31 10:29:07 [SocketMessageDispatcher] 📸 Operation captura → captura de pantalla
+2026-10-31 10:29:07 [SocketMessageDispatcher] ↩️ ACK captura:RECV
+2026-10-31 10:29:07 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=captura, value=)
+2026-10-31 10:29:07 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=, key=captura}
+2026-10-31 10:29:07 [SocketService] [RECIBIDO]| #11 | SID:6 | 12B | android_command [DATA]: {value=, key=captura}
+2026-10-31 10:28:14 [SocketService] [ENVIADO] | [NUEVO] (46B) [KEY]: android_command [DATA]: {value=update:ERROR:manifest no disponible, key=update}
+2026-10-31 10:28:14 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2026-10-31 10:28:14 [ProtectorVM] UPDATE: pantalla liberada state=T sesion=false → se reinicia el ciclo del protector
+2026-10-31 10:28:14 [SocketMessageDispatcher] ↩️ ACK update:ERROR:manifest no disponible
+2026-10-31 10:28:14 [TCONTUR_UPDATE] ❌ resultado: ERROR manifest no disponible
+2026-10-31 10:28:14 [TCONTUR_UPDATE] ❌ manifest ilegible: Cadena no confiable por ningún TrustManager
+2026-10-31 10:28:12 [ProtectorVM] UPDATE: pantalla bloqueada → timers del protector pausados
+2026-10-31 10:28:12 [SocketService] [ENVIADO] | [NUEVO] (22B) [KEY]: android_command [DATA]: {value=update:RECV, key=update}
+2026-10-31 10:28:12 [TCONTUR_UPDATE]    modo manifest: https://multiempresa-23lnu3rcea-uc.a.run.app/api/apps/1/latest (última versión, firma=auto)
+2026-10-31 10:28:12 [TCONTUR_UPDATE] ▶ update pedido · instalada v1.1.2 (158) · Android 31 · SDK Feitian NO disponible
+2026-10-31 10:28:12 [SocketMessageDispatcher] ⬇️ Operation update value='' → actualización remota
+2026-10-31 10:28:12 [SocketMessageDispatcher] ↩️ ACK update:RECV
+2026-10-31 10:28:12 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=update, value=)
+2026-10-31 10:28:12 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=, key=update}
+2026-10-31 10:28:12 [SocketService] [RECIBIDO]| #10 | SID:6 | 11B | android_command [DATA]: {value=, key=update}
+2026-10-31 10:27:52 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=80}
+2026-10-31 10:27:52 [SocketService] [RECIBIDO]| #9 | SID:6 | 7B | device_status [DATA]: {id=80}
+2026-10-31 10:27:52 [SocketService] [ENVIADO] | [NUEVO] (20B) [KEY]: android_command [DATA]: {value=status:OK, key=status}
+2026-10-31 10:27:52 [SocketService] [ENVIADO] | [NUEVO] (168B) [KEY]: device_status [DATA]: {ram_free=0, battery_voltage=0, no_battery=false, printer_dev=-/T00, perm=111111111101111111, aux=, yape=1110/-1, storage_free=0, storage_total=0, cell_signal=-91, screen=O:1650064806, battery=99, data_mb=0, view=home, sim=false, temperature=35.2, model=, id=80, state=T, power=O:1650064863, map=, signal=0, lat=-11.9813333, wifi_ssid=, sim_operator=, lng=-76.99195, net_type=n, ram_total=0, printer=NONE, ip=, charging=false, cpu=##/, gps=1111/0/0, version=1.1.2, gps_acc=4, bluetooth=true, serial=, online=false, time=2026-10-31T10:27:52.201, kiosk=00-00, nodo=56/34.71.11.201}
+2026-10-31 10:27:52 [SocketMessageDispatcher] ↩️ ACK status:OK
+2026-10-31 10:27:52 [DeviceStatus] 📡 device_status [disparo: cmd-status] → {id=80, time=2026-10-31T10:27:52.201, version=1.1.2, state=T, view=home, power=O:1650064863, screen=O:1650064806, battery=99, temperature=35.2, charging=false, online=false, printer=NONE, aux=, map=, lat=-11.9813333, lng=-76.99195, gps_acc=4, net_type=n, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=, serial=, battery_voltage=0, ram_free=0, ram_total=0, storage_free=0, storage_total=0, sim=false, sim_operator=, wifi_ssid=, signal=0, cell_signal=-91, ip=, bluetooth=true, no_battery=false, cpu=##/, perm=111111111101111111, gps=1111/0/0, kiosk=00-00, yape=1110/-1}
+2026-10-31 10:27:52 [DeviceEventRepository⚠️] Inserted event: DeviceEventEntity(id=132, type=null, timestamp=2026-10-31T10:27:52.075, sent=false, battery=99, charging=false, lat=-11.9813333, lng=-76.99195, wifi=null, map=null, printer=NONE, aux=null, version=1.1.2, data=null, status={"id":"80","time":"2026-10-31T10:27:52.076","version":"1.1.2","state":"T","view":"home","power":"O:1650064863","screen":"O:1650064806","battery":99,"temperature":35.2,"charging":false,"online":false,"printer":"NONE","aux":"","map":"","lat":-11.9813333,"lng":-76.99195,"gps_acc":4,"net_type":"n","data_mb":0,"nodo":"56\/34.71.11.201","printer_dev":"-\/T00","model":"","serial":"","battery_voltage":0,"ram_free":0,"ram_total":0,"storage_free":0,"storage_total":0,"sim":false,"sim_operator":"","wifi_ssid":"","signal":0,"cell_signal":-91,"ip":"","bluetooth":true,"no_battery":false,"cpu":"##\/","perm":"111111111101111111","gps":"1111\/0\/0","kiosk":"00-00","yape":"1110\/-1"})
+2026-10-31 10:27:52 [SocketService] [ENVIADO] | [NUEVO] (22B) [KEY]: android_command [DATA]: {value=status:RECV, key=status}
+2026-10-31 10:27:52 [SocketMessageDispatcher] ↩️ ACK status:RECV
+2026-10-31 10:27:52 [SocketMessageDispatcher] Processing operation: ProtoOperation(id=null, section=null, key=status, value=)
+2026-10-31 10:27:52 [SocketMessageDispatcher] Mensaje: Header: android_command, Data: {value=, key=status}
+2026-10-31 10:27:52 [SocketService] [RECIBIDO]| #8 | SID:6 | 11B | android_command [DATA]: {value=, key=status}
+2026-10-31 10:27:39 [SocketService] [ENVIADO] | [NUEVO] (113B) [KEY]: android_command [DATA]: {value=1793460458961:OK:…DA 31/10 10.27.38 · corrección +39831h 39m 31s · antes (equipo) · equipo sin SDK, key=hora}
+2026-10-31 10:27:38 [SocketMessageDispatcher] ↩️ ACK 1793460458961:OK:…DA 31/10 10.27.38 · corrección +39831h 39m 31s · antes (equipo) · equipo sin SDK
+2026-10-31 10:27:38 [FeitianManager] setSystemTime(1793460458961, America/Lima): false
+2026-10-31 10:27:38 [SocketMessageDispatcher] 🕒 Operation hora=1793460458961 → FIJADA 31/10 10.27.38 · corrección +39831h 39m 31s · antes (equipo) · equipo sin SDK
+2026-10-31 10:27:38 [ERROR-FeitianManager] Error setSystemTime(1793460458961): sin SDK Feitian
+2026-10-31 10:27:38 [WARN-HORA] FIJADA por la central · nueva=2026-10-31 10:27:38.961 · usada_antes=2022-04-15 18:48:07.779 (equipo) · corrección=+39831h 39m 31s · equipo=2022-04-15 18:48:07.786 zona_equipo=America/Lima hora_auto=no zona_auto=sí · internet ya no la corrige hasta hora=auto o reiniciar el equipo
+2022-04-15 17:44:49 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2022-04-15 17:44:48 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2022-04-15 17:44:48 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2022-04-15 17:44:48 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2022-04-15 17:44:48 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2022-04-15 17:44:48 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2022-04-15 17:44:48 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2022-04-15 17:44:48 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2022-04-15 17:44:48 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2022-04-15 17:44:47 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2022-04-15 17:44:47 [ADS] Cola detenida
+2022-04-15 17:44:47 [SoundRepository] BT detenido
+2022-04-15 17:44:47 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T14:49:44, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2022-04-15 17:44:47 [SocketService] [RECIBIDO]| #1 | SID:2 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T14:49:44, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2022-04-15 17:44:47 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2022-04-15 17:44:47 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2022-04-15 17:44:47 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2022-04-15 17:44:47 [SocketService] ✅ CONECTADO [ID: 2] en 151097ms - Code: 101
+2022-04-15 17:44:47 [SocketService] 🔄 Conectando [ID: 2] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2022-04-15 17:44:47 [SocketService] ✅ Recursos completamente limpiados
+2022-04-15 17:44:47 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2022-04-15 17:44:47 [SocketService] 🔄 Nuevo Socket ID: 2
+2022-04-15 17:44:47 [SocketService] 🧹 Limpiando recursos [ID: 1]
+2022-04-15 17:44:47 [SocketService] ⏰ Watchdog: 147031ms sin mensajes, forzando reconexión
+2022-04-15 17:44:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:44:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:44:07 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:44:07 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:44:06 [LocationTrackingService] onStartCommand
+2022-04-15 17:44:04 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:44:04 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:44:03 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:44:03 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:44:02 [LocationTrackingService] Fix impreciso descartado acc:103.715m (total: 5)
+2022-04-15 17:43:37 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:43:37 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:43:36 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:43:36 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:43:36 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:43:36 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:43:36 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:43:36 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:43:35 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:43:35 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:43:35 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:43:35 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:43:35 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:43:35 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:43:18 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:43:18 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:43:14 [LocationTrackingService] Fix impreciso descartado acc:186.454m (total: 4)
+2022-04-15 17:42:45 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:45 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:42:44 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:44 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:42:43 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:32 [LocationTrackingService] Fix impreciso descartado acc:111.09m (total: 2)
+2022-04-15 17:42:28 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:28 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:42:27 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:27 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:42:27 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:27 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:42:26 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:26 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:42:26 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:26 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:42:20 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2022-04-15 17:42:20 [SocketService] [RECIBIDO]| #2 | SID:1 | 3B | report [DATA]: {positions=1}
+2022-04-15 17:42:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=0, route=2, positions=[{lng=-76.9919433, busstop=0, angle=60, accuracy=3, time=2022-04-15T17:42:19.928, lat=-11.98133, speed=1, mark=0}], state=T, sales=0, events=[], direction=false}
+2022-04-15 17:42:19 [PositionRepository] 📤 Enviando 1 (batch=2, pendientes=1)
+2022-04-15 17:42:19 [LocationTrackingService] GPS desactivado - Pulso cada 5 min acc:3.9m
+2022-04-15 17:42:19 [EmpresaResolver] 🏢 No se pudo verificar el nodo de 'etrascpsa' (id=56)
+2022-04-15 17:42:18 [SocketMessageDispatcher] 🎟️ Ticket #6237 - ID: 2026-10-11T15:06:59.052 - Uploaded: true - Data: 6237 numero: 1936
+2022-04-15 17:42:18 [SocketMessageDispatcher] 🎟️ Ticket #6236 - ID: 2026-10-11T15:06:58.252 - Uploaded: true - Data: 6236 numero: 1935
+2022-04-15 17:42:18 [SocketMessageDispatcher] 🎟️ Ticket #6235 - ID: 2026-10-11T15:04:52.159 - Uploaded: true - Data: 6235 numero: 1934
+2022-04-15 17:42:18 [SocketMessageDispatcher] 🎟️ Ticket #6238 - ID: 2026-10-11T15:07:36.675 - Uploaded: true - Data: 6238 numero: 1937
+2022-04-15 17:42:18 [SocketMessageDispatcher] 🎟️ Ticket #6239 - ID: 2026-10-11T15:15:45.058 - Uploaded: true - Data: 6239 numero: 1647
+2022-04-15 17:42:18 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2022-04-15 17:42:18 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2022-04-15 17:42:18 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2022-04-15 17:42:17 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:17 [ProtectorVM] cancelTimers: saver=true off=false queue=false busOn=false
+2022-04-15 17:42:17 [INSPECTOR_BLE] Presencia: PRESENCIA: OK
+2022-04-15 17:42:17 [INSPECTOR_BLE] Presencia: servidor: OK
+2022-04-15 17:42:17 [GATT_INSPECTOR] OK
+2022-04-15 17:42:17 [ProtectorVM] >>> TIMER PROTECTOR INICIADO: 60000ms
+2022-04-15 17:42:17 [ProtectorVM] SCREEN [id=167603205]: state=T sesion=false → iniciando ciclo protector
+2022-04-15 17:42:17 [SoundRepository] BT detenido
+2022-04-15 17:42:17 [ADS] Cola detenida
+2022-04-15 17:42:17 [INSPECTOR_BLE] Presencia: activo unidad=80
+2022-04-15 17:42:17 [SocketMessageDispatcher] ✅ Login confirmado por servidor (sesión OK)
+2022-04-15 17:42:17 [INSPECTOR_BLE] Presencia: preparando unidad=80 rol=vende
+2022-04-15 17:42:17 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=false, orientation=true, contactless=false, data=2026-10-31T14:47:13, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2022-04-15 17:42:17 [SocketService] [RECIBIDO]| #1 | SID:1 | 35B | login [DATA]: {voice=false, orientation=true, contactless=false, data=2026-10-31T14:47:13, ticket=true, geofence=null, gps=false, schedule=null, ads=false, route=2, trip=null, driver=null, calls=false, padron=332, id=80, state=T, map=false, placa=AYX833, direction=false, order=0}
+2022-04-15 17:42:17 [SocketService] 🔒 WakeLock + WifiLock adquiridos
+2022-04-15 17:42:17 [SocketService] [ENVIADO] | [NUEVO] (18B) [KEY]: login [DATA]: {serial=000000000000000}
+2022-04-15 17:42:17 [SocketService] 🔑 Enviando login handshake (000000000000000)
+2022-04-15 17:42:17 [SocketService] ✅ CONECTADO [ID: 1] en 659ms - Code: 101
+2022-04-15 17:42:16 [SocketService] 🔄 Conectando [ID: 1] a ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2022-04-15 17:42:16 [SocketService] ✅ Recursos completamente limpiados
+2022-04-15 17:42:16 [SocketService] 🔄 Nuevo Socket ID: 1
+2022-04-15 17:42:16 [SocketService] 🧹 Limpiando recursos [ID: 0]
+2022-04-15 17:42:16 [SocketService] 🔁 Conexión sin pantalla (gps sin pantalla) → ws://34.71.11.201:22222?schema=android&gps=true&console=true&version=3
+2022-04-15 17:42:16 [SocketService] 🚀 SocketService creado
+2022-04-15 17:42:12 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:12 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:12 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:11 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:11 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:09 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:09 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:09 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:09 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:04 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:04 [LocationTrackingService] onStartCommand
+2022-04-15 17:42:00 [LocationTrackingService] Fix impreciso descartado acc:52.4m (total: 1)
+2022-04-15 17:41:46 [LocationTrackingService] Location updates activos
+2022-04-15 17:41:46 [LocationTrackingService] Location updates activos
+2022-04-15 17:41:46 [LocationTrackingService] Iniciando tracking - Modo: FUERA DE RUTA, Intervalo: 5000ms
+2022-04-15 17:41:46 [LocationTrackingService] Iniciando tracking - Modo: FUERA DE RUTA, Intervalo: 5000ms
+2022-04-15 17:41:46 [LocationTrackingService] Permisos concedidos - Reiniciando tracking
+2022-04-15 17:41:46 [LocationTrackingService] onStartCommand
+2022-04-15 17:41:46 [GpsLoadingViewModel] ❌ Conexión perdida
+2022-04-15 17:41:46 [GpsLoadingViewModel] ⚠️ Sin internet, esperando conexión...
+2022-04-15 17:41:46 [ExtTicket] ▶️ receptor com_ext_ticket activo
+2022-04-15 17:41:46 [Arranque] ✅ Arranque verificado — watchdog cancelado
+2022-04-15 17:41:46 [FeitianManager] PAGOS-AWAKE omitido: equipo sin SDK Feitian
+2022-04-15 17:41:46 [Arranque] 8) initLoad ejecutando — evaluando red/socket
+2022-04-15 17:41:46 [Arranque] 7) GpsLoading — llamando initLoad
+2022-04-15 17:41:46 [YapeSales] ▶️ escucha de notificaciones Yape activada
+2022-04-15 17:41:46 [LocationTrackingService] onStartCommand
+2022-04-15 17:41:46 [INSPECTOR_BLE] Presencia: apagado (sin login)
+2022-04-15 17:41:46 [LocationTrackingService] Service onCreate
+2022-04-15 17:41:46 [Arranque] 5) AppInitializer completado
+2022-04-15 17:41:46 [GpsViewModel] No hay conexión. Se omite procesamiento.
+2022-04-15 17:41:46 [Arranque] 6) NavScreenChofer — pantalla principal compuesta
+2022-04-15 17:41:46 [Arranque] 4) NavigationWrapper — destino=com.tcontur.login_tcontur.core.navigation.AppRoute$ChoferRoute@79bb4ab imei=OK
+2022-04-15 17:41:46 [CashlessNotifs] 🔗 listener conectado
+2022-04-15 17:41:46 [Arranque] Arranque sin completar → despertando pantalla (intento 1)
+2022-04-15 17:41:46 [DualAudio] TTS listo. Dispositivos: moto g22(1), moto g22(2), moto g22(18)
+2022-04-15 17:41:45 [SoundRepository] ExoPlayer SPEAKER inicializado
+2022-04-15 17:41:45 [SoundRepository] ExoPlayer AUX inicializado
+2022-04-15 17:41:45 [SoundRepository] LoudnessEnhancer AUX +800mB (session=97)
+2022-04-15 17:41:45 [SoundRepository] ExoPlayer BT inicializado
+2022-04-15 17:41:44 [SoundRepository] [BT] Perfil A2DP listo — iniciando auto-conexión
+2022-04-15 17:41:43 [ProtectorVM] ENERGY: condición inactiva
+2022-04-15 17:41:43 [ProtectorVM] TEMP: 37.8C -> cap térmico 100%
+2022-04-15 17:41:43 [ProtectorVM] temp: 37.8C
+2022-04-15 17:41:43 [ProtectorVM] monitorCallState: llamada finalizada → state=null, delegando a monitorScreenState
+2022-04-15 17:41:43 [ProtectorVM] monitorCallState: hasActiveCall=false
+2022-04-15 17:41:43 [ProtectorVM] monitorScreenState: iniciando observacion
+2022-04-15 17:41:43 [ProtectorVM] === INIT ProtectorViewModel [id=167603205] ===
+2022-04-15 17:41:43 [ProtectorVM] NIGHT: hora_corte_noche=180 (03:00)
+2022-04-15 17:41:43 [ADS] [POLICY] sessionActive=false inRoute=false
+2022-04-15 17:41:43 [ADS] Cola detenida
+2022-04-15 17:41:43 [SoundRepository] BT detenido
+2022-04-15 17:41:43 [NetworkConnectivityRepository] ✅ Monitoreo de red iniciado
+2022-04-15 17:41:43 [ADS] [CONFIG] sin anuncios — nada que reproducir
+2022-04-15 17:41:43 [ADS] [CONFIG] 0 campañas, 0 planes, 0 anuncios
+2022-04-15 17:41:42 [DeviceStatus] ⚡ power event: O:2022-04-15 17:41:42
+2022-04-15 17:41:41 [Arranque] 3) MainActivity — setContent (entregando a Compose)
+2022-04-15 17:41:41 [FeitianManager] Sin SDK Feitian (motorola moto g22): funciones del equipo omitidas
+2022-04-15 17:41:38 [Arranque] Watchdog armado (60s)
+2022-04-15 17:41:38 [Arranque] 2) MainActivity.onCreate — inicio
+2022-04-15 17:41:37 [PrinterService] 🖨️ SDK de impresión: SDK Tcontur · venta directa (sin estado)
+2022-04-15 17:41:37 [SoundRepository] Ads cargados: 5 (externos: 0, assets: 5)
+2022-04-15 17:41:37 [ERROR-SoundRepository] No se encontraron archivos en STORM_Files/TCONTUR/Ads
+2022-04-15 17:41:37 [SoundRepository] Sonidos cargados: 8 (Assets: true)
+2022-04-15 17:41:37 [SoundRepository] [BT] ADS off (login) — auto-reconexión A2DP desactivada
+2022-04-15 17:41:37 [SoundRepository] [INIT] BT_ON=true BT_CONNECTED=false AUX=false
+2022-04-15 17:41:37 [ShutterEmergencyHandler] Init — shutterAvailable=false
+2022-04-15 17:41:37 [SmsRepository] Nuevo mensaje recibido: null
+2022-04-15 17:41:37 [DiarioVentas] Arranque · core_db2 journal=wal synchronous=FULL · diario 0 líneas · recuperados 0 · próximo correlativo > 6239
+2022-04-15 17:41:37 [WARN-HORA] NO_SINCRONIZADA (arranque, sin internet) · usada=2022-04-15 17:41:37.141 (equipo) · equipo=2022-04-15 17:41:37.142 zona_equipo=America/Lima hora_auto=no zona_auto=no
+2022-04-15 17:41:37 [HORA] INICIO · usada=2022-04-15 17:41:37.062 (equipo) hasta verificar con internet · equipo=2022-04-15 17:41:37.065 zona_equipo=America/Lima hora_auto=no zona_auto=no
+2022-04-15 17:41:36 [LogManager] Inicialización de LogManager completa
+2022-04-15 17:41:36 [Arranque] 1) MyApp.onCreate — proceso iniciado v1.1.5

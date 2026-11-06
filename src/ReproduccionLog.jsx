@@ -5,6 +5,8 @@ import ConsumoFrame, { useConsumo } from './ConsumoFrame.jsx'
 import Cuadre from './Cuadre.jsx'
 import Inspector from './Inspector.jsx'
 import Recorrido from './Recorrido.jsx'
+import Venta from './Venta.jsx'
+import { modoEn, textoModo } from './log/venta.js'
 
 const colorLado = lado => (lado == null ? 'var(--none)' : lado ? 'var(--b)' : 'var(--a)')
 const VELOCIDADES = [60, 300, 1200, 3600]
@@ -17,7 +19,7 @@ const ZOOMS = [
 const PESTANAS = [
   ['sesion', 'Sesión', 'Login, cierre y conexión en el tiempo'],
   ['cuadre', 'Cuadre', 'Liquidación de cada sesión contra los boletos enviados'],
-  ['ventas', 'Ventas e impresión', 'Toques, impresión, impresora y envío de boletos (app de consumo)'],
+  ['ventas', 'Ventas e impresión', 'Modo de venta y cola; toques, impresión, impresora y envío de boletos (app de consumo)'],
   ['inspector', 'Inspector', 'QR, boletos que pidió el inspector y boletos impresos sin toque del chofer'],
   ['recorrido', 'Recorrido', 'Mapa: GPS, geocercas y paraderos'],
   ['consumo', 'Consumo y red', 'Datos móviles, reinicios, versión y red (app de consumo)'],
@@ -152,6 +154,7 @@ export default function ReproduccionLog({ rep, onCerrar }) {
         )}
         {vista === 'cuadre' && <Cuadre rep={rep} sel={sesionCuadre} setSel={setSesionCuadre} verEnSesion={verEnSesion} plataforma={plataforma} setPlataforma={setPlataforma} />}
         {vista === 'inspector' && <Inspector rep={rep} verEnSesion={verEnSesion} />}
+        {vista === 'ventas' && <Venta rep={rep} verEnSesion={verEnSesion} />}
         {vista === 'recorrido' && (
           <>
             <BarraTiempo rep={vr} t={t} ir={ir} />
@@ -371,6 +374,7 @@ function Pill({ s, vacio }) {
 function EstadoLog({ rep, st }) {
   const { equipo, central, conexion, viaje, esperandoLogout: esp } = st
   const conSesion = equipo ? st.boletos.filter(b => b.sesion === equipo.sesion) : []
+  const modo = modoEn(rep.venta, st.t)
   const ignoradas = rep.mensajes.filter(m => m.dir === 'rx' && m.procesada === false && m.t <= st.t)
   const alertas = []
   if (equipo && viaje && equipo.lado != null && equipo.lado !== viaje.lado && viaje.estado === 'R')
@@ -393,6 +397,7 @@ function EstadoLog({ rep, st }) {
             {equipo ? <>Desde {horaLog(equipo.desde)} · {FUENTE[equipo.fuente] ?? equipo.fuente}</> : 'Sin sesión en memoria'}
           </div>
           <div className="dato">Boletos con esta sesión: <b>{conSesion.length}</b>{conSesion.length > 0 && <> · S/ {(conSesion.reduce((a, b) => a + b.precio, 0) / 100).toFixed(2)}</>}</div>
+          {modo && <div className="dato">Venta: <b>{textoModo(modo)}</b></div>}
           <div className="dato">
             Socket: {conexion ? <b className="ok">SID {conexion.sid}</b> : <b className="mal">sin conexión</b>}
             {conexion && <span className="sutil"> desde {horaLog(conexion.desde)}{conexion.causa && ` · se cierra ${horaLog(conexion.hasta)} (${conexion.causa})`}</span>}

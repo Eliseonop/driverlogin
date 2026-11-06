@@ -42,10 +42,30 @@ export function leerEntradas(texto) {
     if (m) out.push({ t: parseStamp(m[1]), tag: m[2], msg: m[3], n: k + 1 })
     else if (out.length && lineas[k].trim()) out[out.length - 1].msg += `\n${lineas[k]}`
   }
-  const desc = out.length > 1 && out[0].t > out[out.length - 1].t
-  if (desc) out.reverse()
+  let baja = 0
+  for (let k = 1; k < out.length; k++) baja += Math.sign(out[k - 1].t - out[k].t)
+  if (baja > 0) out.reverse()
+  corregirHora(out)
   out.forEach((e, i) => (e.i = i))
   return out
+}
+
+const DIA = 86_400_000
+const SALTO_HORA = /(?:nueva|internet|servidor)=(\d{4}-\d{2}-\d{2} [\d:.]+)(?: rtt \d+ ms)? · usada_antes=(\d{4}-\d{2}-\d{2} [\d:.]+)/
+
+// Equipo con la fecha atrasada (2022 tras quedarse sin batería): las líneas de antes de que la app corrigiera su hora
+// se corren lo que dice esa corrección ("nueva=… · usada_antes=…") para que no estiren la línea de tiempo años.
+function corregirHora(out) {
+  for (let k = 0; k < out.length; k++) {
+    const m = /HORA$/.test(out[k].tag) && SALTO_HORA.exec(out[k].msg)
+    if (!m) continue
+    const salto = parseStamp(m[1]) - parseStamp(m[2])
+    if (!(salto > DIA)) continue
+    for (let j = k - 1; j >= 0 && out[j].t < out[k].t - DIA; j--) {
+      out[j].t += salto
+      out[j].horaCorregida = salto
+    }
+  }
 }
 
 const RX = /^\[RECIBIDO\]\| #\d+ \| SID:(\d+) \| \d+B \| (\w+) \[DATA\]: (.*)$/s
@@ -176,7 +196,13 @@ export function leerLog(texto) {
     } catch {
       ev = null
     }
-    if (ev) eventos.push({ ...ev, t: e.t, i: e.i })
+    if (ev) eventos.push({ ...ev, t: e.t, i: e.i, ...(e.horaCorregida && { corr: e.horaCorregida }) })
   }
   return { entradas, eventos }
+}
+
+/** Hora que la app puso dentro de lo que envió (positions, tickets): con la fecha atrasada se corre como su línea. */
+export function horaDato(s, e) {
+  const t = parseStamp(String(s ?? ''))
+  return t == null ? null : t + (e.corr ?? 0)
 }

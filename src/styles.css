@@ -354,6 +354,22 @@ svg.mapa text { font-family: inherit; }
 .pin-apagado { background: transparent; border: 0; }
 .pin-apagado span { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 6px; background: #7f1d1d; color: #fff; font-size: 15px; font-weight: 700; border: 2px solid #fff; box-shadow: 0 1px 5px rgb(0 0 0 / 0.45); }
 .pin-apagado.reinicio span { background: #d97706; width: 20px; height: 20px; font-size: 12px; }
+.recorrido-abajo .emergencias { grid-column: 1 / -1; border-color: #fecaca; }
+.emergencias .tabla-geo td.nombre { min-width: 200px; }
+.emergencias .tabla-geo tr { cursor: pointer; }
+.emergencias .tabla-geo tr.activa td:first-child { box-shadow: inset 3px 0 0 #dc2626; }
+.emergencias .tabla-geo tr.activa td.nombre > b { color: #dc2626; }
+.emergencias .tabla-geo tr.apagada td:first-child { box-shadow: inset 3px 0 0 #16a34a; }
+.emergencias .tabla-geo tr.llamada td:first-child { box-shadow: inset 3px 0 0 #2563eb; }
+.emergencias .tabla-geo tr.atascado td:first-child { box-shadow: inset 3px 0 0 #d97706; }
+.emergencias .tabla-geo tr.ignorado td { color: var(--muted); }
+.tramo-emergencia { cursor: pointer; }
+.pin-emergencia { background: transparent; border: 0; }
+.pin-emergencia span { display: grid; place-items: center; min-width: 28px; height: 22px; padding: 0 3px; border-radius: 11px; background: #dc2626; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 0.02em; border: 2px solid #fff; box-shadow: 0 1px 5px rgb(0 0 0 / 0.45); }
+.pin-emergencia.apagada span { background: #16a34a; }
+.pin-emergencia.llamada span { background: #2563eb; font-size: 12px; }
+.pin-emergencia.atascado span { background: #d97706; font-size: 13px; }
+.pin-emergencia.ignorado span { background: #64748b; opacity: 0.8; }
 .pin-detalle { margin: 6px 0 0; padding-left: 16px; display: flex; flex-direction: column; gap: 3px; font-size: 12px; }
 .pin-log { margin-top: 6px; background: #0b1220; color: #cbd5e1; border-radius: 6px; padding: 6px 8px; font: 11px/1.45 var(--mono); max-height: 200px; overflow-y: auto; }
 .pin-log div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -625,3 +641,7 @@ td.cerro { white-space: normal; max-width: 220px; }
 .consumo-saltos { position: sticky; top: -14px; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 8px 2px; background: var(--bg); border-bottom: 1px solid var(--line); }
 .consumo-tit { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-right: 6px; }
 .consumo-frame { width: 100%; border: 0; display: block; background: transparent; }
+.tabla-ses tbody tr.est-fijo { cursor: default; }
+.tabla-ses tbody tr.est-fijo:hover td { background: none; }
+.barra-celda { width: 100%; }
+.barra { display: block; height: 10px; min-width: 2px; border-radius: 3px; background: color-mix(in srgb, var(--a) 70%, #fff); }

@@ -1252,7 +1252,7 @@ function analizarImpresion(venta, tickets) {
   return {
     venta, toques, porResultado, impresas, fallas, toqueDe, porTicket, rebotes, rafagas: rafagasDeToques(toques),
     rapidos: toques.filter((e) => e.hueco != null && e.hueco >= REBOTE_MS && e.hueco < RAPIDO_MS),
-    sinVenta: toques.filter((e) => ["CORTO", "CANCELADO", "DESHABILITADO", "OCUPADA"].includes(e.resultado)),
+    sinVenta: toques.filter((e) => ["CORTO", "CANCELADO", "MULTITOQUE", "DESHABILITADO", "OCUPADA"].includes(e.resultado)),
     ocupadas: toques.filter((e) => e.resultado === "OCUPADA").length + venta.filter(esOcupada).length,
     reintentados: impresas.filter((e) => e.intentos > 1),
     nuncaImpresos: fallas.filter((f) => !f.luego && f.num != null),
@@ -1266,7 +1266,7 @@ const TAG_EVENTO = {
   TOQUE: "", ENCOLADA: "", IMPRIMIENDO: "", IMPRESA: "ok", ERROR_TRAS_IMPRIMIR: "warn", DIGITAL: "warn",
   NO_IMPRESA: "err", CANCELADA: "err", RECHAZADA: "err",
 };
-const TAG_TOQUE = { OK: "ok", CORTO: "warn", CANCELADO: "warn", DESHABILITADO: "err", OCUPADA: "warn", YAPE: "" };
+const TAG_TOQUE = { OK: "ok", CORTO: "warn", CANCELADO: "warn", MULTITOQUE: "err", DESHABILITADO: "err", OCUPADA: "warn", YAPE: "" };
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => `&#${c.charCodeAt(0)};`);
 
 function boletoTxt(e) {
@@ -1343,7 +1343,7 @@ function renderImpresion(x, versiones) {
         Actualiza el equipo a la <b>1.0.72</b> para ver aquí si el chofer presionó y por qué no imprimió.</p></div>` : "";
   }
   const r = (k) => x.porResultado.get(k) || 0;
-  const nOk = r("OK"), nCorto = r("CORTO"), nCanc = r("CANCELADO"), nBloq = r("DESHABILITADO"), nYape = r("YAPE");
+  const nOk = r("OK"), nCorto = r("CORTO"), nCanc = r("CANCELADO"), nMulti = r("MULTITOQUE"), nBloq = r("DESHABILITADO"), nYape = r("YAPE");
   const cuentaMotivos = [...x.fallas.reduce((m, f) => m.set(f.motivo || f.ev, (m.get(f.motivo || f.ev) || 0) + 1), new Map())]
     .sort((a, b) => b[1] - a[1]);
 
@@ -1362,6 +1362,9 @@ function renderImpresion(x, versiones) {
   if (nCorto) veredicto.push(`<span class="tag warn">${nCorto} toque(s) cortos</span> tocó y soltó antes del mínimo
     (mediana <b>${x.msCorto} ms</b>${x.minToque != null ? ` de <b>${x.minToque} ms</b> requeridos` : ""}): <b>no se intentó vender</b>.`);
   if (nCanc) veredicto.push(`<span class="tag warn">${nCanc} cancelado(s)</span> deslizó el dedo o el gesto se interrumpió: no vendió.`);
+  if (nMulti) veredicto.push(`<span class="tag err">${nMulti} con dos dedos</span> otro dedo o la palma tocaba las tarjetas a la vez
+    (1.1.6+): se cancelaron todos sin vender y salió <b>ERROR TÁCTIL</b>. Antes estos solapados vendían boletos de más
+    (se apaga con operation <code>multitoque off</code>).`);
   if (x.ocupadas) veredicto.push(`<span class="tag warn">${x.ocupadas} toque(s) mientras imprimía</span> venta directa (un boleto a la vez):
     se rechazaron sin vender. No es falla de la impresora; así se frenan los toques fantasma.`);
   if (nBloq) veredicto.push(`<span class="tag err">${nBloq} en tarjeta bloqueada</span> tocó un boleto deshabilitado.`);
@@ -1373,18 +1376,20 @@ function renderImpresion(x, versiones) {
   if (nReb) {
     const msReb = x.rebotes.map((e) => e.ms), umbral = Math.ceil((Math.max(...msReb) + 1) / 10) * 10;
     const pierden = x.toques.filter((e) => e.resultado === "OK" && e.ms < umbral && !x.rebotes.includes(e)).length;
+    const nSolap = x.rebotes.filter((e) => e.hueco < 0).length;
     veredicto.push(`<span class="tag err">${nReb} toque(s) fantasma</span> la pantalla registró un segundo toque con el dedo arriba solo
       <b>${rangoMs(x.rebotes.map((e) => e.hueco))} ms</b> (ningún dedo baja tan rápido: &lt; ${REBOTE_MS} ms) → <b>${nReb} boleto(s) de más</b>
       impresos y sumados, sin ningún error. Por eso «imprime doble/triple». Esos toques duraron <b>${rangoMs(msReb)} ms</b>
       ${x.minToque != null ? `con un mínimo configurado de <b>${x.minToque} ms</b>` : ""}: con mínimo de ${umbral} ms no habrían vendido
-      (${pierden} toque(s) normales también eran más cortos).`);
+      (${pierden} toque(s) normales también eran más cortos).${nSolap ? ` <b>${nSolap}</b> fueron <i>solapados</i> (dos dedos o palma):
+      con <code>multitoque</code> encendido (1.1.6+, operation <code>multitoque on</code>) no venden.` : ""}`);
   }
   if (x.rapidos?.length) veredicto.push(`<span class="tag warn">${x.rapidos.length} toque(s) muy rápidos</span> ${REBOTE_MS}–${RAPIDO_MS} ms con el
     dedo arriba (${rangoMs(x.rapidos.map((e) => e.hueco))} ms): al límite de lo humano, posible fantasma.`);
   const deChofer = (x.rafagas || []).filter((r) => r.tipo === "chofer").length;
   if (deChofer) veredicto.push(`<span class="tag">${deChofer} ráfaga(s) del chofer</span> 2+ boletos en ≤ 1 s con el dedo arriba ≥ ${RAPIDO_MS} ms
     o después de terminar el anterior: los tocó él (a propósito o insistiendo).`);
-  if (!x.fallas.length && !nDig && !nCorto && !nCanc && !nBloq && !nReb)
+  if (!x.fallas.length && !nDig && !nCorto && !nCanc && !nMulti && !nBloq && !nReb)
     veredicto.push(`<span class="tag ok">✓ Sin fallas</span> ${x.inferido ? "cada venta intentada" : "cada toque válido"} terminó impreso.`);
 
   const tablaFallas = x.fallas.map((f) => {
@@ -1406,7 +1411,7 @@ function renderImpresion(x, versiones) {
         ? `<div class="card"><div class="lbl">Ventas intentadas</div><div class="big">${intentadas}</div>
         <div class="sub">esta versión no registra toques</div></div>`
         : `<div class="card"><div class="lbl">Toques</div><div class="big">${x.toques.length}</div>
-        <div class="sub">OK ${nOk} · cortos ${nCorto} · cancelados ${nCanc}${x.ocupadas ? ` · mientras imprimía ${x.ocupadas}` : ""}${nBloq ? ` · bloqueada ${nBloq}` : ""}${nYape ? ` · Yape ${nYape}` : ""}</div></div>`}
+        <div class="sub">OK ${nOk} · cortos ${nCorto} · cancelados ${nCanc}${nMulti ? ` · dos dedos ${nMulti}` : ""}${x.ocupadas ? ` · mientras imprimía ${x.ocupadas}` : ""}${nBloq ? ` · bloqueada ${nBloq}` : ""}${nYape ? ` · Yape ${nYape}` : ""}</div></div>`}
       <div class="card"><div class="lbl">Impresos (suman)</div><div class="big">${x.impresas.length}</div>
         <div class="sub">${nDig ? `${nDig} en modo digital (sin papel) · ` : ""}${x.msImpresion != null ? `mediana ${fmtSeg(x.msImpresion)} por boleto` : ""}</div></div>
       <div class="card"><div class="lbl">Fallas de impresión</div><div class="big">${x.fallas.length}</div>
@@ -1414,7 +1419,7 @@ function renderImpresion(x, versiones) {
       <div class="card"><div class="lbl">Con reintento</div><div class="big">${x.reintentados.length}</div>
         <div class="sub">boletos que salieron al 2° intento o más</div></div>
       ${x.inferido ? "" : `<div class="card"><div class="lbl">Toques sin venta</div><div class="big">${x.sinVenta.length}</div>
-        <div class="sub">cortos, cancelados, bloqueados o mientras imprimía</div></div>`}
+        <div class="sub">cortos, cancelados, dos dedos, bloqueados o mientras imprimía</div></div>`}
       ${x.inferido ? "" : `<div class="card"><div class="lbl">Toques fantasma</div><div class="big">${nReb}</div>
         <div class="sub">boletos de más (dedo arriba &lt; ${REBOTE_MS} ms)${x.rapidos?.length ? ` · ${x.rapidos.length} muy rápidos` : ""}</div></div>`}
     </div>
@@ -1443,7 +1448,8 @@ function renderImpresion(x, versiones) {
       dejaba la fila guardada y <b>sumaba</b> igual; el n° se devolvía y la siguiente venta de esa tarifa lo reusaba
       (<i>después</i> dice si ese mismo n° salió impreso en los 3 min siguientes; si tardó más, lo tomó otra venta). No hay toques ni nombre del boleto, solo su tarifa.</p>`
     : `<p class="note"><b>TOQUE</b> = el chofer tocó una tarjeta: <b>OK</b> la mantuvo el tiempo mínimo y vendió; <b>CORTO</b> soltó antes
-      (no vende); <b>CANCELADO</b> deslizó o se interrumpió; <b>DESHABILITADO</b> tarjeta bloqueada; <b>OCUPADA</b> tocó mientras imprimía el anterior en
+      (no vende); <b>CANCELADO</b> deslizó o se interrumpió; <b>MULTITOQUE</b> otro dedo o la palma tocaba las tarjetas a la vez:
+      no vende ninguno de esos toques (1.1.6+); <b>DESHABILITADO</b> tarjeta bloqueada; <b>OCUPADA</b> tocó mientras imprimía el anterior en
       venta directa (impresora sin estado o <code>modo_venta=directa</code>): no vende. <b>IMPRESA</b> = salió en papel y
       es lo único que suma. <b>NO_IMPRESA</b> = falló la impresora: la fila se borra y el n° se devuelve, por eso la siguiente venta
       de esa tarifa reusa el mismo n° (<i>después</i> dice si ese mismo n° salió impreso en los 3 min siguientes; si tardó más, lo tomó otra venta). <b>CANCELADA</b> = estaba en cola cuando falló la
@@ -2957,7 +2963,8 @@ function informeHtml() {
       ${RAPIDO_MS} ms o más (o después de terminar el anterior): esos toques los hizo el conductor.</p>` : ""}`;
 
   // --- Toques sin venta (1.0.72+) ---
-  const TOQUE = { CORTO: "Toque muy corto: soltó antes de tiempo", CANCELADO: "Deslizó el dedo o se interrumpió", DESHABILITADO: "Tarjeta bloqueada",
+  const TOQUE = { CORTO: "Toque muy corto: soltó antes de tiempo", CANCELADO: "Deslizó el dedo o se interrumpió",
+    MULTITOQUE: "Dos dedos a la vez (otro dedo o la palma): se canceló sin vender", DESHABILITADO: "Tarjeta bloqueada",
     OCUPADA: "Imprimía el boleto anterior (venta directa): no vendió" };
   const secToq = d.toques.length ? `<h2>${secRep ? 7 : 6}. Toques en pantalla que no llegaron a venta (${d.toques.length})</h2>
     <p class="nota">El conductor tocó un boleto pero el equipo no intentó venderlo, así que no hay nada que imprimir ni cobrar.</p>

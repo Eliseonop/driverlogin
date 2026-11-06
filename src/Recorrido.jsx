@@ -57,6 +57,7 @@ export default function Recorrido({ rep, desde, hasta, t, ir, log }) {
         {!ancho && <div className="recorrido-log">{log}</div>}
       </div>
       <div className="recorrido-abajo">
+        <Emergencias em={r.emergencias} t={t} elegir={e => (ir(e.t), setFoco({ t: e.t, emergencia: true }))} />
         <Apagados apagados={r.apagados} elegir={a => (ir(a.t), setFoco({ t: a.t, apagado: true }))} />
         <Cortes cortes={r.cortes} t={t} elegir={elegirCorte} />
         <Buscador consulta={consulta} setConsulta={setConsulta} busqueda={busqueda} elegir={elegirPin} encuadrar={() => setFoco({ todos: Date.now() })} />
@@ -183,6 +184,97 @@ function Apagados({ apagados, elegir }) {
       </table>
     </div>
   )
+}
+
+const queEmergencia = e =>
+  e.tipo === 'atascado' ? 'Botón atascado'
+    : e.tipo === 'contestada' ? 'Contesta la llamada'
+    : e.tipo === 'llamada' ? (e.activa ? 'Pide llamada' : 'Cancela pedido de llamada')
+      : e.tipo === 'evento' ? `Evento ${e.report?.id ?? ''}=${e.activa ? 1 : 0}`
+        : e.ignorado ? `Ignorado: ya estaba ${e.activa ? 'activa' : 'apagada'}`
+          : e.activa ? 'Se ACTIVA la emergencia' : 'Se apaga la emergencia'
+const claseEmergencia = e => (e.tipo === 'atascado' ? 'atascado' : e.tipo !== 'emergencia' ? 'llamada' : e.ignorado ? 'ignorado' : e.activa ? 'activa' : 'apagada')
+
+/** "creado 20:58:26 (mismo segundo)" o "creado 26/10 21:44:13 (reenvío de hace 2 días)": comando nuevo o viejo. */
+function creacionPB(o, t) {
+  if (o.creado == null) return ''
+  const atras = t - o.creado
+  const cuando = fechaLog(o.creado) === fechaLog(t) ? horaLog(o.creado) : `${fechaLog(o.creado).slice(0, 5)} ${horaLog(o.creado)}`
+  return `creado en el servidor ${cuando} (${atras < 5000 ? 'comando nuevo' : `reenvío de hace ${duracion(atras)}`})`
+}
+
+function detalleOrigen(e) {
+  const o = e.origen
+  if (o.clase === 'llamada') return [o.quien, o.detalle, o.fin && `llamada hasta ${horaLog(o.fin)}`].filter(Boolean).join(' · ')
+  if (o.clase === 'servidor') return [o.detalle, creacionPB(o, e.t)].filter(Boolean).join(' · ')
+  return o.detalle
+}
+
+function centralEmergencia(e) {
+  if (e.tipo === 'atascado' || e.tipo === 'contestada') return <span className="sutil">no se envía</span>
+  if (e.ignorado) return <span className="sutil">no se envía (ya estaba)</span>
+  if (!e.report) return <b className="mal">sin report en el log</b>
+  return (
+    <>
+      report {horaLog(e.report.t)} <span className="sutil">evento {e.report.id}={e.report.value}</span>
+      {e.ack != null ? <span className="ok"> · ✓ ACK {horaLog(e.ack)}</span> : <b className="mal"> · sin ACK</b>}
+    </>
+  )
+}
+
+/** Cada vez que se activa o apaga la emergencia: hora, qué la disparó, si la central recibió el evento y dónde estaba el bus. */
+function Emergencias({ em, t, elegir }) {
+  const { eventos, tramos } = em
+  if (!eventos.length) return null
+  const actual = eventos.filter(e => e.t <= t).at(-1)
+  return (
+    <div className="card emergencias">
+      <h3>
+        Emergencias <span className="sutil">{tramos.length} activación{tramos.length === 1 ? '' : 'es'} · {duracion(tramos.reduce((a, x) => a + x.dura, 0))} activa en el rango</span>
+      </h3>
+      {tramos.map(x => (
+        <div key={x.desde.t} className="dato tramo-emergencia" onClick={() => elegir(x.desde)}>
+          🆘 <b>{horaLog(x.desde.t)}</b> {x.desde.origen.texto.toLowerCase()} → {x.hasta ? <><b>{horaLog(x.hasta.t)}</b> {x.hasta.origen.texto.toLowerCase()}</> : <b className="mal">sigue activa al final del rango</b>} · <b>{duracion(x.dura)}</b>
+        </div>
+      ))}
+      <div className="cortes-tabla">
+      <table className="tabla-geo">
+        <thead><tr><th>Hora</th><th>Qué pasó</th><th>Qué la disparó</th><th>Central</th><th>Bus</th></tr></thead>
+        <tbody>
+          {eventos.map(e => (
+            <tr key={`${e.t}-${e.i}`} className={`${claseEmergencia(e)} ${e === actual ? 'actual' : ''}`} onClick={() => elegir(e)} title={e.lineas.map(l => `${horaLog(l.t)} [${l.tag}] ${l.msg}`).join('\n')}>
+              <td>{horaLog(e.t)}</td>
+              <td className="nombre"><b>{queEmergencia(e)}</b></td>
+              <td className="nombre">
+                <b>{e.origen.texto}</b>{e.origen.deducido && <span className="sutil"> (deducido)</span>}
+                <div className="sutil">{detalleOrigen(e)}</div>
+              </td>
+              <td>{centralEmergencia(e)}</td>
+              <td>{e.p?.vel != null ? `${e.p.vel} km/h` : <span className="sutil">sin posición</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+      <p className="nota">
+        Hasta 1.1.5 el botón de la pantalla (tarjeta Soporte) no deja línea propia: si junto al envío no hay botón físico, orden del servidor, operation ni llamada, se deduce que fue la pantalla; desde 1.1.6 deja <code>Pantalla: botón …</code>.
+        Hasta 1.1.5 contestar una llamada apagaba la emergencia; desde 1.1.6 solo cierra el pedido de llamada.
+      </p>
+    </div>
+  )
+}
+
+function popupEmergencia(e) {
+  const fila = (a, b) => `<tr><td>${a}</td><td>${b}</td></tr>`
+  const color = { activa: '#dc2626', apagada: '#16a34a', llamada: '#2563eb', atascado: '#d97706', ignorado: '#64748b' }[claseEmergencia(e)]
+  const r = e.report
+  const lineas = e.lineas.map(l => `<div class="${l.propia ? 'propia' : ''}"><span>${horaLog(l.t)}</span> [${esc(l.tag)}] ${esc(corto(l.msg))}</div>`).join('')
+  return `<b style="color:${color}">${esc(queEmergencia(e))} · ${horaLog(e.t)}</b><table>
+    ${fila('Disparo', `<b>${esc(e.origen.texto)}</b>${e.origen.deducido ? ' <i>(deducido)</i>' : ''}`)}
+    ${fila('Detalle', esc(detalleOrigen(e) ?? ''))}
+    ${fila('Central', r ? `report ${horaLog(r.t)} · evento ${esc(r.id)}=${r.value} · ${e.ack != null ? `ACK ${horaLog(e.ack)}` : '<b style="color:#dc2626">sin ACK</b>'}` : e.ignorado ? 'no se envía' : '<b style="color:#dc2626">sin report en el log</b>')}
+    ${e.p ? fila('Bus', `${e.p.lat}, ${e.p.lng}${e.p.vel != null ? ` · ${e.p.vel} km/h` : ''}`) : ''}
+    </table><div class="pin-log">${lineas}</div>`
 }
 
 /** "[RECIBIDO]| #81 | SID:1 | 25B | mark [DATA]: {...}" → "← mark {...}" para que se lea lo importante. */
@@ -366,7 +458,7 @@ function popupGeocerca(g, r) {
 }
 
 function capas(r, ir) {
-  const c = { ruta: L.layerGroup(), puntos: L.layerGroup(), paraderos: L.layerGroup(), geo: L.layerGroup(), casi: L.layerGroup(), paradas: L.layerGroup(), huecos: L.layerGroup(), ventas: L.layerGroup(), cortes: L.layerGroup() }
+  const c = { ruta: L.layerGroup(), puntos: L.layerGroup(), paraderos: L.layerGroup(), geo: L.layerGroup(), casi: L.layerGroup(), paradas: L.layerGroup(), huecos: L.layerGroup(), ventas: L.layerGroup(), cortes: L.layerGroup(), emergencias: L.layerGroup() }
   const viajes = [...new Set(r.pos.map(p => p.trip))]
   viajes.forEach((trip, k) => {
     const color = COLOR_VIAJE[k % COLOR_VIAJE.length]
@@ -442,6 +534,23 @@ function capas(r, ir) {
       .on('click', () => ir(a.t))
       .addTo(c.cortes)
   }
+  for (const x of r.emergencias.tramos)
+    if (x.ruta.length > 1)
+      L.polyline(x.ruta.map(p => [p.lat, p.lng]), { color: '#dc2626', weight: 9, opacity: 0.55, lineCap: 'round' })
+        .bindTooltip(`emergencia activa ${horaLog(x.desde.t)} → ${x.hasta ? horaLog(x.hasta.t) : 'fin'} (${duracion(x.dura)})`, { sticky: true })
+        .on('click', () => ir(x.desde.t))
+        .addTo(c.emergencias)
+  for (const e of r.emergencias.eventos) {
+    if (!e.p) continue
+    const clase = claseEmergencia(e)
+    const icono = L.divIcon({ className: `pin-emergencia ${clase}`, html: `<span>${{ llamada: '📞', atascado: '!' }[clase] ?? 'SOS'}</span>`, iconSize: null, iconAnchor: [14, 14], popupAnchor: [0, -12] })
+    const m = L.marker([e.p.lat, e.p.lng], { icon: icono, zIndexOffset: clase === 'activa' ? 1200 : 1050 })
+      .bindPopup(popupEmergencia(e), { maxWidth: 560, minWidth: 360 })
+      .bindTooltip(`${horaLog(e.t)} ${queEmergencia(e)} · ${e.origen.texto}`, { direction: 'top', offset: [0, -12] })
+      .on('click', () => ir(e.t))
+      .addTo(c.emergencias)
+    refs[`emergencia${e.t}`] ??= m
+  }
   for (const x of r.cortes) {
     const grave = graveCorte(x)
     // Lo que recorrió el bus mientras estuvo sin socket.
@@ -472,7 +581,7 @@ function Mapa({ r, t, ir, foco, hallados, ancho, setAncho }) {
   const [seguir, setSeguir] = useState(false)
 
   const control = useRef(null)
-  const visibles = useRef(new Set(['Recorrido', 'Paraderos', 'Geocercas equipo vs central', 'Detenciones ≥ 1 min', 'Huecos GPS > 2 min', 'Cortes y apagados']))
+  const visibles = useRef(new Set(['Recorrido', 'Paraderos', 'Geocercas equipo vs central', 'Detenciones ≥ 1 min', 'Huecos GPS > 2 min', 'Cortes y apagados', 'Emergencias']))
 
   useEffect(() => {
     const m = L.map(div.current)
@@ -507,7 +616,7 @@ function Mapa({ r, t, ir, foco, hallados, ancho, setAncho }) {
     marcadores.current = refs
     const nombres = {
       Recorrido: c.ruta, 'Posiciones (puntos)': c.puntos, Paraderos: c.paraderos, 'Geocercas equipo vs central': c.geo,
-      'CASI marca': c.casi, 'Detenciones ≥ 1 min': c.paradas, 'Huecos GPS > 2 min': c.huecos, Ventas: c.ventas, 'Cortes y apagados': c.cortes,
+      'CASI marca': c.casi, 'Detenciones ≥ 1 min': c.paradas, 'Huecos GPS > 2 min': c.huecos, Ventas: c.ventas, 'Cortes y apagados': c.cortes, Emergencias: c.emergencias,
     }
     for (const [nombre, capa] of Object.entries(nombres)) {
       control.current.addOverlay(capa, nombre)
@@ -545,7 +654,7 @@ function Mapa({ r, t, ir, foco, hallados, ancho, setAncho }) {
       mapa.current.flyTo(pin.getLatLng(), Math.max(mapa.current.getZoom(), 16), { duration: 0.6 }).once('moveend', () => pin.openPopup())
       return
     }
-    const g = marcadores.current[foco.corte ? `corte${foco.t}` : foco.apagado ? `apagado${foco.t}` : foco.t]
+    const g = marcadores.current[foco.corte ? `corte${foco.t}` : foco.apagado ? `apagado${foco.t}` : foco.emergencia ? `emergencia${foco.t}` : foco.t]
     const p = r.pos[posicionEn(r.pos, foco.t)]
     if (g) mapa.current.flyTo(g.getLatLng(), 17, { duration: 0.6 }).once('moveend', () => g.openPopup())
     else if (p) mapa.current.flyTo([p.lat, p.lng], 17, { duration: 0.6 })
@@ -573,6 +682,7 @@ function Mapa({ r, t, ir, foco, hallados, ancho, setAncho }) {
         <span><i style={{ background: '#facc15', border: '2px solid #0f172a' }} /> bus en la hora elegida</span>
         {r.cortes.length > 0 && <span>⚡ se corta la conexión <span className="sutil">(punteado = tramo sin socket)</span></span>}
         {r.apagados.length > 0 && <span>⏻ equipo apagado / reiniciado</span>}
+        {r.emergencias.eventos.length > 0 && <span><i style={{ background: '#dc2626' }} /> SOS emergencia <span className="sutil">(rojo grueso = tramo con la emergencia activa)</span></span>}
         {hallados.length > 0 && <span><i style={{ background: '#7c3aed' }} /> búsqueda</span>}
       </div>
     </div>

@@ -1,0 +1,1000 @@
+2026-11-04 22:03:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:03:57 [SocketService] [RECIBIDO]| #1798 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:03:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9598639, busstop=0, angle=290, accuracy=3, time=2026-11-04T22:03:50.813238, lat=-12.1587163, speed=28, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:03:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 22:03:56 [LocationTrackingService] Posición a enviar lat:-12.158564 lng:-76.9602619 acc:3.9m vel:27km/h ang:290
+2026-11-04 22:03:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:03:51 [SocketService] [RECIBIDO]| #1797 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:03:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.959661, busstop=0, angle=291, accuracy=3, time=2026-11-04T22:03:47.805850, lat=-12.1587986, speed=28, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:03:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 22:03:50 [LocationTrackingService] Posición a enviar lat:-12.1587163 lng:-76.9598639 acc:3.9m vel:28km/h ang:290
+2026-11-04 22:03:47 [GeofenceManager] SALIDA geofence saved: HOSPITAL B - ID: 133759
+2026-11-04 22:03:47 [GeofenceManager] EXITING geofence: HOSPITAL B acc:3.9m
+2026-11-04 22:03:47 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:55m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:03:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:03:45 [SocketService] [RECIBIDO]| #1796 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:03:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9593048, busstop=0, angle=294, accuracy=3, time=2026-11-04T22:03:41.807344, lat=-12.158943, speed=21, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:03:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:03:41 [LocationTrackingService] Posición a enviar lat:-12.158943 lng:-76.9593048 acc:3.9m vel:21km/h ang:294
+2026-11-04 22:03:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:03:39 [SocketService] [RECIBIDO]| #1795 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:03:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9590479, busstop=0, angle=294, accuracy=3, time=2026-11-04T22:03:35.804308, lat=-12.1590558, speed=16, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:03:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:03:35 [LocationTrackingService] Posición a enviar lat:-12.1590558 lng:-76.9590479 acc:3.9m vel:16km/h ang:294
+2026-11-04 22:03:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:03:33 [SocketService] [RECIBIDO]| #1794 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:03:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9588887, busstop=0, angle=286, accuracy=3, time=2026-11-04T22:03:29.810055, lat=-12.1591193, speed=6, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:03:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:03:29 [LocationTrackingService] Posición a enviar lat:-12.1591193 lng:-76.9588887 acc:3.9m vel:6km/h ang:286
+2026-11-04 22:03:12 [SoundRepository] ✅ STATE_ENDED usage=4
+2026-11-04 22:03:09 [SocketService] [RECIBIDO]| #1793 | SID:37 | 29B | forward_datero [DATA]: {trip=56599, geofence=95, time=2026-11-04T22:03:05, dateros=[{delta=12, padron=347}, {delta=73, padron=321}, {delta=7, padron=308}, {delta=6, padron=396}]}
+2026-11-04 22:03:09 [SocketMessageDispatcher] Mensaje: Header: forward_datero, Data: {trip=56599, geofence=95, time=2026-11-04T22:03:05, dateros=[{delta=12, padron=347}, {delta=73, padron=321}, {delta=7, padron=308}, {delta=6, padron=396}]}
+2026-11-04 22:03:09 [GeoMarkViewModel] ⚠️ HOSPITAL B ya marcada (-4)
+2026-11-04 22:03:09 [SocketMessageDispatcher] Mensaje: Header: mark, Data: {volada=-4, trip=56599, geofence=95, id=1840781, state=M, timestamp=2026-11-04T22:03:05}
+2026-11-04 22:03:09 [SocketService] [RECIBIDO]| #1792 | SID:37 | 25B | mark [DATA]: {volada=-4, trip=56599, geofence=95, id=1840781, state=M, timestamp=2026-11-04T22:03:05}
+2026-11-04 22:03:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 22:03:09 [SocketService] [RECIBIDO]| #1791 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 22:03:08 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9586955, busstop=0, angle=295, accuracy=3, time=2026-11-04T22:03:05.821998, lat=-12.1591948, speed=12, mark=0}, {lng=-76.9587776, busstop=0, angle=290, accuracy=3, time=2026-11-04T22:03:08.805482, lat=-12.1591607, speed=8, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:03:08 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 22:03:08 [LocationTrackingService] Posición a enviar lat:-12.1591607 lng:-76.9587776 acc:3.9m vel:8km/h ang:290
+2026-11-04 22:03:06 [SoundRepository] ✅ ExoPlayer AUX play()
+2026-11-04 22:03:06 [SoundRepository] playOnAux device=h2w(3) file=/data/user/0/com.tcontur.login_tcontur/cache/tts_c4b65f44-2e43-44f5-85a9-feef43656b2d.wav
+2026-11-04 22:03:06 [SocketMessageDispatcher] Mensaje: Header: backward_datero, Data: {pad=329, geofence=92, delta=13, orden=0, id=2916221083}
+2026-11-04 22:03:06 [SocketService] [RECIBIDO]| #1790 | SID:37 | 19B | backward_datero [DATA]: {pad=329, geofence=92, delta=13, orden=0, id=2916221083}
+2026-11-04 22:03:05 [GeoMarkViewModel] 📍 Scroll a geocerca 14 -> V:12 H:13
+2026-11-04 22:03:05 [GeofenceManager] ENTRADA geofence saved: HOSPITAL B - ID: 133754
+2026-11-04 22:03:05 [GeofenceManager] ENTERING geofence: HOSPITAL B acc:3.9m
+2026-11-04 22:03:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 22:03:03 [SocketService] [RECIBIDO]| #1789 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 22:03:02 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9584817, busstop=0, angle=321, accuracy=3, time=2026-11-04T22:02:59.809583, lat=-12.1593067, speed=14, mark=0}, {lng=-76.9585766, busstop=0, angle=288, accuracy=3, time=2026-11-04T22:03:02.802294, lat=-12.1592325, speed=17, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:03:02 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 22:03:02 [LocationTrackingService] Posición a enviar lat:-12.1592325 lng:-76.9585766 acc:3.9m vel:17km/h ang:288
+2026-11-04 22:03:02 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:51m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:02:59 [GeofenceManager] ⚠️ CASI marca: HOSPITAL B dist:63m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:02:59 [LocationTrackingService] Posición a enviar lat:-12.1593067 lng:-76.9584817 acc:3.9m vel:14km/h ang:321
+2026-11-04 22:02:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:02:57 [SocketService] [RECIBIDO]| #1788 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:02:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.958568, busstop=0, angle=40, accuracy=3, time=2026-11-04T22:02:53.821802, lat=-12.1595178, speed=20, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:02:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:02:53 [LocationTrackingService] Posición a enviar lat:-12.1595178 lng:-76.958568 acc:3.9m vel:20km/h ang:40
+2026-11-04 22:02:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:02:51 [SocketService] [RECIBIDO]| #1787 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:02:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9587312, busstop=0, angle=35, accuracy=3, time=2026-11-04T22:02:47.816694, lat=-12.1596904, speed=11, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:02:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:02:47 [LocationTrackingService] Posición a enviar lat:-12.1596904 lng:-76.9587312 acc:3.9m vel:11km/h ang:35
+2026-11-04 22:02:47 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:72m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:02:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:02:45 [SocketService] [RECIBIDO]| #1786 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:02:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9587832, busstop=0, angle=179, accuracy=3, time=2026-11-04T22:02:38.796220, lat=-12.1597762, speed=0, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:02:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:02:38 [LocationTrackingService] Posición a enviar lat:-12.1597762 lng:-76.9587832 acc:3.9m vel:0km/h ang:179
+2026-11-04 22:02:35 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:78m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:02:23 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:78m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:02:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:02:15 [SocketService] [RECIBIDO]| #1785 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:02:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9587834, busstop=0, angle=359, accuracy=3, time=2026-11-04T22:02:08.796147, lat=-12.1597761, speed=0, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:02:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:02:11 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:78m radio:50m acc:3.845m modo:segmento
+2026-11-04 22:02:08 [LocationTrackingService] Posición a enviar lat:-12.1597761 lng:-76.9587834 acc:3.845m vel:0km/h ang:359
+2026-11-04 22:01:59 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:78m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:01:47 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:79m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:01:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:01:45 [SocketService] [RECIBIDO]| #1784 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:01:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9587831, busstop=0, angle=357, accuracy=3, time=2026-11-04T22:01:38.795564, lat=-12.1597764, speed=0, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:01:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:01:38 [LocationTrackingService] Posición a enviar lat:-12.1597764 lng:-76.9587831 acc:3.9m vel:0km/h ang:357
+2026-11-04 22:01:35 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:79m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:01:23 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:79m radio:50m acc:3.9m modo:segmento
+2026-11-04 22:01:11 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:78m radio:50m acc:3.845m modo:segmento
+2026-11-04 22:01:10 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=166}
+2026-11-04 22:01:10 [SocketService] [RECIBIDO]| #1783 | SID:37 | 8B | device_status [DATA]: {id=166}
+2026-11-04 22:01:10 [SocketService] [ENVIADO] | [NUEVO] (279B) [KEY]: device_status [DATA]: {ram_free=593, battery_voltage=3766, no_battery=false, printer_dev=-/T00, perm=111111111101001111, aux=Wired Headset - 3, yape=1110/-1, storage_free=7152, storage_total=15258, cell_signal=-64, screen=O:1789403113, battery=31, data_mb=0, view=home, sim=true, temperature=32.3, model=F310, id=166, state=R, power=O:1791554399, map=lima_map.mbtiles, signal=-127, lat=-12.1597679, wifi_ssid=<unknown ssid>, sim_operator=716_17, lng=-76.958764, net_type=4, ram_total=1783, printer=NONE, ip=10.244.94.100, charging=true, cpu=13.5#0.57/0.71/0.7#1305/2016, gps=1111/1/0, version=1.1.0, gps_acc=4, bluetooth=true, serial=F31Q60167700093, online=true, time=2026-11-04T22:01:10.433064, kiosk=12101, nodo=56/34.71.11.201}
+2026-11-04 22:01:10 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=166, time=2026-11-04T22:01:10.433064, version=1.1.0, state=R, view=home, power=O:1791554399, screen=O:1789403113, battery=31, temperature=32.3, charging=true, online=true, printer=NONE, aux=Wired Headset - 3, map=lima_map.mbtiles, lat=-12.1597679, lng=-76.958764, gps_acc=4, net_type=4, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=F310, serial=F31Q60167700093, battery_voltage=3766, ram_free=593, ram_total=1783, storage_free=7152, storage_total=15258, sim=true, sim_operator=716_17, wifi_ssid=<unknown ssid>, signal=-127, cell_signal=-64, ip=10.244.94.100, bluetooth=true, no_battery=false, cpu=13.5#0.57/0.71/0.7#1305/2016, perm=111111111101001111, gps=1111/1/0, kiosk=12101, yape=1110/-1}
+2026-11-04 22:01:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:01:09 [SocketService] [RECIBIDO]| #1782 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:01:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9587903, busstop=0, angle=27, accuracy=3, time=2026-11-04T22:01:05.805027, lat=-12.1598167, speed=11, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:01:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:01:05 [LocationTrackingService] Posición a enviar lat:-12.1598167 lng:-76.9587903 acc:3.845m vel:11km/h ang:27
+2026-11-04 22:01:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:01:03 [SocketService] [RECIBIDO]| #1781 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:01:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9588793, busstop=0, angle=22, accuracy=3, time=2026-11-04T22:00:59.794246, lat=-12.1599739, speed=5, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:01:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 22:00:59 [LocationTrackingService] Posición a enviar lat:-12.1599739 lng:-76.9588793 acc:3.845m vel:5km/h ang:22
+2026-11-04 22:00:59 [GeofenceManager] 📏 Geocerca cercana: HOSPITAL B dist:97m radio:50m acc:3.845m modo:segmento
+2026-11-04 22:00:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 22:00:51 [SocketService] [RECIBIDO]| #1780 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 22:00:50 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9589777, busstop=0, angle=23, accuracy=3, time=2026-11-04T22:00:44.804255, lat=-12.1602846, speed=16, mark=0}, {lng=-76.958906, busstop=0, angle=18, accuracy=3, time=2026-11-04T22:00:50.811985, lat=-12.1600899, speed=10, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:00:50 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 22:00:50 [LocationTrackingService] Posición a enviar lat:-12.1600899 lng:-76.958906 acc:3.9m vel:10km/h ang:18
+2026-11-04 22:00:46 [ProtectorVM] TEMP: 32.3C -> cap térmico 100%
+2026-11-04 22:00:46 [ProtectorVM] temp: 32.3C
+2026-11-04 22:00:44 [LocationTrackingService] Posición a enviar lat:-12.1602846 lng:-76.9589777 acc:3.9m vel:16km/h ang:23
+2026-11-04 22:00:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 22:00:39 [SocketService] [RECIBIDO]| #1779 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 22:00:38 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9591382, busstop=0, angle=21, accuracy=3, time=2026-11-04T22:00:32.800638, lat=-12.1606142, speed=14, mark=0}, {lng=-76.9590737, busstop=0, angle=27, accuracy=3, time=2026-11-04T22:00:38.803704, lat=-12.1604714, speed=10, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:00:38 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 22:00:38 [LocationTrackingService] Posición a enviar lat:-12.1604714 lng:-76.9590737 acc:3.9m vel:10km/h ang:27
+2026-11-04 22:00:32 [LocationTrackingService] Posición a enviar lat:-12.1606142 lng:-76.9591382 acc:3.9m vel:14km/h ang:21
+2026-11-04 22:00:29 [TrafficMonitor] 📊 hoy | movil ↑0.0KB ↓0.0KB | wifi ↑0.0KB ↓0.0KB | total 0.0KB (Δ10min 0.0KB)
+2026-11-04 22:00:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 22:00:27 [SocketService] [RECIBIDO]| #1778 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 22:00:26 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9594179, busstop=0, angle=21, accuracy=3, time=2026-11-04T22:00:20.801613, lat=-12.1612824, speed=29, mark=0}, {lng=-76.9592608, busstop=0, angle=22, accuracy=3, time=2026-11-04T22:00:26.793872, lat=-12.1609064, speed=23, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:00:26 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 22:00:26 [LocationTrackingService] Posición a enviar lat:-12.1609064 lng:-76.9592608 acc:3.845m vel:23km/h ang:22
+2026-11-04 22:00:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 22:00:21 [SocketService] [RECIBIDO]| #1777 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 22:00:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.959586, busstop=0, angle=20, accuracy=3, time=2026-11-04T22:00:14.813283, lat=-12.1616859, speed=30, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:00:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 22:00:20 [LocationTrackingService] Posición a enviar lat:-12.1612824 lng:-76.9594179 acc:3.845m vel:29km/h ang:21
+2026-11-04 22:00:14 [LocationTrackingService] Posición a enviar lat:-12.1616859 lng:-76.959586 acc:3.9m vel:30km/h ang:20
+2026-11-04 22:00:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 22:00:09 [SocketService] [RECIBIDO]| #1776 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 22:00:08 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9599017, busstop=0, angle=14, accuracy=3, time=2026-11-04T22:00:02.816422, lat=-12.1625314, speed=22, mark=0}, {lng=-76.9597601, busstop=0, angle=19, accuracy=3, time=2026-11-04T22:00:08.798111, lat=-12.1621269, speed=30, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 22:00:08 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 22:00:08 [LocationTrackingService] Posición a enviar lat:-12.1621269 lng:-76.9597601 acc:3.9m vel:30km/h ang:19
+2026-11-04 22:00:02 [LocationTrackingService] Posición a enviar lat:-12.1625314 lng:-76.9599017 acc:3.845m vel:22km/h ang:14
+2026-11-04 21:59:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=3}
+2026-11-04 21:59:57 [SocketService] [RECIBIDO]| #1775 | SID:37 | 3B | report [DATA]: {positions=3}
+2026-11-04 21:59:56 [SocketService] [ENVIADO] | [NUEVO] (80B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9600797, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:59:50.821433, lat=-12.1631893, speed=21, mark=0}, {lng=-76.9600406, busstop=0, angle=11, accuracy=3, time=2026-11-04T21:59:53.799165, lat=-12.1630254, speed=22, mark=0}, {lng=-76.9599966, busstop=0, angle=14, accuracy=3, time=2026-11-04T21:59:56.805953, lat=-12.1628586, speed=23, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:59:56 [PositionRepository] 📤 Enviando 3 (batch=40, pendientes=3)
+2026-11-04 21:59:56 [LocationTrackingService] Posición a enviar lat:-12.1628586 lng:-76.9599966 acc:3.9m vel:23km/h ang:14
+2026-11-04 21:59:53 [GeofenceManager] SALIDA geofence saved: BILLINGHURST B - ID: 133734
+2026-11-04 21:59:53 [GeofenceManager] 📏 Geocerca cercana: BILLINGHURST B dist:58m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:59:53 [GeofenceManager] EXITING geofence: BILLINGHURST B acc:3.9m
+2026-11-04 21:59:50 [LocationTrackingService] Posición a enviar lat:-12.1631893 lng:-76.9600797 acc:3.9m vel:21km/h ang:12
+2026-11-04 21:59:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:59:45 [SocketService] [RECIBIDO]| #1774 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:59:44 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9601633, busstop=0, angle=8, accuracy=3, time=2026-11-04T21:59:38.807789, lat=-12.1636172, speed=8, mark=0}, {lng=-76.9601252, busstop=0, angle=10, accuracy=3, time=2026-11-04T21:59:44.811553, lat=-12.1634467, speed=14, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:59:44 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:59:44 [LocationTrackingService] Posición a enviar lat:-12.1634467 lng:-76.9601252 acc:3.845m vel:14km/h ang:10
+2026-11-04 21:59:39 [SocketService] [RECIBIDO]| #1773 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:59:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:59:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9601837, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:59:32.811187, lat=-12.1637361, speed=8, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:59:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:59:38 [LocationTrackingService] Posición a enviar lat:-12.1636172 lng:-76.9601633 acc:3.9m vel:8km/h ang:8
+2026-11-04 21:59:32 [LocationTrackingService] Posición a enviar lat:-12.1637361 lng:-76.9601837 acc:3.9m vel:8km/h ang:12
+2026-11-04 21:59:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:59:21 [SocketService] [RECIBIDO]| #1772 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:59:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9602016, busstop=0, angle=10, accuracy=3, time=2026-11-04T21:59:17.816018, lat=-12.1638631, speed=6, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:59:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:59:17 [LocationTrackingService] Posición a enviar lat:-12.1638631 lng:-76.9602016 acc:3.9m vel:6km/h ang:10
+2026-11-04 21:59:16 [SoundRepository] ✅ STATE_ENDED usage=4
+2026-11-04 21:59:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:59:15 [SocketService] [RECIBIDO]| #1771 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:59:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9602646, busstop=0, angle=19, accuracy=3, time=2026-11-04T21:59:11.801643, lat=-12.1640354, speed=10, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:59:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:59:11 [LocationTrackingService] Posición a enviar lat:-12.1640354 lng:-76.9602646 acc:3.9m vel:10km/h ang:19
+2026-11-04 21:59:10 [SoundRepository] ✅ ExoPlayer AUX play()
+2026-11-04 21:59:10 [SoundRepository] playOnAux device=h2w(3) file=/data/user/0/com.tcontur.login_tcontur/cache/tts_e59e5344-0455-4ff5-a984-46cf2ce23406.wav
+2026-11-04 21:59:09 [SocketMessageDispatcher] Mensaje: Header: forward_datero, Data: {trip=56599, geofence=94, time=2026-11-04T21:59:08, dateros=[{delta=12, padron=347}, {delta=73, padron=321}, {delta=7, padron=308}, {delta=6, padron=396}]}
+2026-11-04 21:59:09 [SocketService] [RECIBIDO]| #1770 | SID:37 | 29B | forward_datero [DATA]: {trip=56599, geofence=94, time=2026-11-04T21:59:08, dateros=[{delta=12, padron=347}, {delta=73, padron=321}, {delta=7, padron=308}, {delta=6, padron=396}]}
+2026-11-04 21:59:09 [GeoMarkViewModel] ⚠️ BILLINGHURST B ya marcada (-4)
+2026-11-04 21:59:09 [SocketService] [RECIBIDO]| #1769 | SID:37 | 25B | mark [DATA]: {volada=-4, trip=56599, geofence=94, id=1840780, state=M, timestamp=2026-11-04T21:59:08}
+2026-11-04 21:59:09 [SocketMessageDispatcher] Mensaje: Header: mark, Data: {volada=-4, trip=56599, geofence=94, id=1840780, state=M, timestamp=2026-11-04T21:59:08}
+2026-11-04 21:59:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:59:09 [SocketService] [RECIBIDO]| #1768 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:59:08 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9603229, busstop=0, angle=9, accuracy=3, time=2026-11-04T21:59:02.810374, lat=-12.1643429, speed=17, mark=0}, {lng=-76.9602851, busstop=0, angle=8, accuracy=3, time=2026-11-04T21:59:08.805329, lat=-12.1641342, speed=14, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:59:08 [GeoMarkViewModel] 📍 Scroll a geocerca 13 -> V:11 H:12
+2026-11-04 21:59:08 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:59:08 [GeofenceManager] ENTRADA geofence saved: BILLINGHURST B - ID: 133727
+2026-11-04 21:59:08 [GeofenceManager] ENTERING geofence: BILLINGHURST B acc:3.9m
+2026-11-04 21:59:05 [GeofenceManager] ⚠️ CASI marca: BILLINGHURST B dist:59m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:59:02 [LocationTrackingService] Posición a enviar lat:-12.1643429 lng:-76.9603229 acc:3.9m vel:17km/h ang:9
+2026-11-04 21:58:59 [GeofenceManager] 📏 Geocerca cercana: BILLINGHURST B dist:93m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:58:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:58:57 [SocketService] [RECIBIDO]| #1767 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:58:56 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9605112, busstop=0, angle=14, accuracy=3, time=2026-11-04T21:58:50.809133, lat=-12.1651334, speed=22, mark=0}, {lng=-76.960413, busstop=0, angle=15, accuracy=3, time=2026-11-04T21:58:56.802569, lat=-12.1647579, speed=30, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:58:56 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:58:56 [LocationTrackingService] Posición a enviar lat:-12.1647579 lng:-76.960413 acc:3.9m vel:30km/h ang:15
+2026-11-04 21:58:50 [LocationTrackingService] Posición a enviar lat:-12.1651334 lng:-76.9605112 acc:3.9m vel:22km/h ang:14
+2026-11-04 21:58:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:58:45 [SocketService] [RECIBIDO]| #1766 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:58:44 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9606082, busstop=0, angle=10, accuracy=3, time=2026-11-04T21:58:38.803625, lat=-12.1655711, speed=12, mark=0}, {lng=-76.9605765, busstop=0, angle=10, accuracy=3, time=2026-11-04T21:58:44.819175, lat=-12.1654119, speed=12, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:58:44 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:58:44 [LocationTrackingService] Posición a enviar lat:-12.1654119 lng:-76.9605765 acc:3.9m vel:12km/h ang:10
+2026-11-04 21:58:38 [LocationTrackingService] Posición a enviar lat:-12.1655711 lng:-76.9606082 acc:3.9m vel:12km/h ang:10
+2026-11-04 21:58:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:58:33 [SocketService] [RECIBIDO]| #1765 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:58:32 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9607634, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:58:26.813915, lat=-12.1662133, speed=31, mark=0}, {lng=-76.9606703, busstop=0, angle=14, accuracy=3, time=2026-11-04T21:58:32.816681, lat=-12.1658078, speed=22, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:58:32 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:58:32 [LocationTrackingService] Posición a enviar lat:-12.1658078 lng:-76.9606703 acc:3.9m vel:22km/h ang:14
+2026-11-04 21:58:26 [LocationTrackingService] Posición a enviar lat:-12.1662133 lng:-76.9607634 acc:3.9m vel:31km/h ang:12
+2026-11-04 21:58:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:58:21 [SocketService] [RECIBIDO]| #1764 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:58:20 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9609762, busstop=0, angle=11, accuracy=3, time=2026-11-04T21:58:14.808503, lat=-12.1672225, speed=34, mark=0}, {lng=-76.9608703, busstop=0, angle=11, accuracy=3, time=2026-11-04T21:58:20.806763, lat=-12.1667136, speed=34, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:58:20 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:58:20 [LocationTrackingService] Posición a enviar lat:-12.1667136 lng:-76.9608703 acc:3.9m vel:34km/h ang:11
+2026-11-04 21:58:14 [LocationTrackingService] Posición a enviar lat:-12.1672225 lng:-76.9609762 acc:3.9m vel:34km/h ang:11
+2026-11-04 21:58:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:58:09 [SocketService] [RECIBIDO]| #1763 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:58:08 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9612138, busstop=0, angle=10, accuracy=3, time=2026-11-04T21:58:02.798676, lat=-12.1682407, speed=32, mark=0}, {lng=-76.9610946, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:58:08.804990, lat=-12.167738, speed=34, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:58:08 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:58:08 [LocationTrackingService] Posición a enviar lat:-12.167738 lng:-76.9610946 acc:3.9m vel:34km/h ang:12
+2026-11-04 21:58:02 [LocationTrackingService] Posición a enviar lat:-12.1682407 lng:-76.9612138 acc:3.845m vel:32km/h ang:10
+2026-11-04 21:57:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:57:57 [SocketService] [RECIBIDO]| #1762 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:57:56 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9614157, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:57:50.811679, lat=-12.1691803, speed=32, mark=0}, {lng=-76.9613227, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:57:56.818517, lat=-12.1687236, speed=31, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:57:56 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:57:56 [LocationTrackingService] Posición a enviar lat:-12.1687236 lng:-76.9613227 acc:3.9m vel:31km/h ang:12
+2026-11-04 21:57:50 [LocationTrackingService] Posición a enviar lat:-12.1691803 lng:-76.9614157 acc:3.9m vel:32km/h ang:12
+2026-11-04 21:57:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:57:45 [SocketService] [RECIBIDO]| #1761 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:57:44 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9615826, busstop=0, angle=5, accuracy=3, time=2026-11-04T21:57:38.791165, lat=-12.1699677, speed=16, mark=0}, {lng=-76.961514, busstop=0, angle=11, accuracy=3, time=2026-11-04T21:57:44.807163, lat=-12.1696305, speed=26, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:57:44 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:57:44 [LocationTrackingService] Posición a enviar lat:-12.1696305 lng:-76.961514 acc:3.9m vel:26km/h ang:11
+2026-11-04 21:57:38 [LocationTrackingService] Posición a enviar lat:-12.1699677 lng:-76.9615826 acc:3.9m vel:16km/h ang:5
+2026-11-04 21:57:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:57:33 [SocketService] [RECIBIDO]| #1760 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:57:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9616251, busstop=0, angle=14, accuracy=3, time=2026-11-04T21:57:32.814835, lat=-12.1702019, speed=13, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:57:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:57:32 [LocationTrackingService] Posición a enviar lat:-12.1702019 lng:-76.9616251 acc:3.9m vel:13km/h ang:14
+2026-11-04 21:57:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:57:21 [SocketService] [RECIBIDO]| #1759 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:57:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9616549, busstop=0, angle=11, accuracy=3, time=2026-11-04T21:57:17.801285, lat=-12.1703558, speed=11, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:57:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:57:17 [LocationTrackingService] Posición a enviar lat:-12.1703558 lng:-76.9616549 acc:3.9m vel:11km/h ang:11
+2026-11-04 21:57:15 [SocketService] [RECIBIDO]| #1758 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:57:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:57:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9617131, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:57:11.802897, lat=-12.1705777, speed=15, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:57:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:57:11 [LocationTrackingService] Posición a enviar lat:-12.1705777 lng:-76.9617131 acc:3.9m vel:15km/h ang:12
+2026-11-04 21:57:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:57:09 [SocketService] [RECIBIDO]| #1757 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:57:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9617677, busstop=0, angle=14, accuracy=3, time=2026-11-04T21:57:05.798009, lat=-12.1708011, speed=14, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:57:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:57:05 [LocationTrackingService] Posición a enviar lat:-12.1708011 lng:-76.9617677 acc:3.845m vel:14km/h ang:14
+2026-11-04 21:57:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:57:03 [SocketService] [RECIBIDO]| #1756 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:57:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9618405, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:56:59.812629, lat=-12.1710959, speed=21, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:57:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:56:59 [LocationTrackingService] Posición a enviar lat:-12.1710959 lng:-76.9618405 acc:3.9m vel:21km/h ang:12
+2026-11-04 21:56:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:56:57 [SocketService] [RECIBIDO]| #1755 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:56:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9618969, busstop=0, angle=15, accuracy=3, time=2026-11-04T21:56:53.807434, lat=-12.1713611, speed=14, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:56:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:56:53 [LocationTrackingService] Posición a enviar lat:-12.1713611 lng:-76.9618969 acc:3.9m vel:14km/h ang:15
+2026-11-04 21:56:51 [SocketService] [RECIBIDO]| #1754 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:56:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:56:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9619532, busstop=0, angle=10, accuracy=3, time=2026-11-04T21:56:47.827633, lat=-12.1715778, speed=16, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:56:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:56:47 [LocationTrackingService] Posición a enviar lat:-12.1715778 lng:-76.9619532 acc:3.9m vel:16km/h ang:10
+2026-11-04 21:56:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:56:45 [SocketService] [RECIBIDO]| #1753 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:56:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9620088, busstop=0, angle=11, accuracy=3, time=2026-11-04T21:56:41.800892, lat=-12.1717973, speed=14, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:56:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:56:41 [LocationTrackingService] Posición a enviar lat:-12.1717973 lng:-76.9620088 acc:3.9m vel:14km/h ang:11
+2026-11-04 21:56:39 [SocketService] [RECIBIDO]| #1752 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:56:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:56:38 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9621311, busstop=0, angle=11, accuracy=3, time=2026-11-04T21:56:32.809350, lat=-12.1723221, speed=28, mark=0}, {lng=-76.9620883, busstop=0, angle=10, accuracy=3, time=2026-11-04T21:56:35.814180, lat=-12.1721164, speed=23, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:56:38 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:56:35 [LocationTrackingService] Posición a enviar lat:-12.1721164 lng:-76.9620883 acc:3.9m vel:23km/h ang:10
+2026-11-04 21:56:32 [GeofenceManager] SALIDA geofence saved: CAPILLA B - ID: 133702
+2026-11-04 21:56:32 [GeofenceManager] EXITING geofence: CAPILLA B acc:3.9m
+2026-11-04 21:56:32 [GeofenceManager] 📏 Geocerca cercana: CAPILLA B dist:68m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:56:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:56:27 [SocketService] [RECIBIDO]| #1751 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:56:26 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9622755, busstop=0, angle=6, accuracy=3, time=2026-11-04T21:56:20.814744, lat=-12.1730063, speed=14, mark=0}, {lng=-76.9622298, busstop=0, angle=12, accuracy=3, time=2026-11-04T21:56:26.799206, lat=-12.1727329, speed=23, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:56:26 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:56:26 [LocationTrackingService] Posición a enviar lat:-12.1727329 lng:-76.9622298 acc:3.9m vel:23km/h ang:12
+2026-11-04 21:56:20 [LocationTrackingService] Posición a enviar lat:-12.1730063 lng:-76.9622755 acc:3.9m vel:14km/h ang:6
+2026-11-04 21:56:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:56:15 [SocketService] [RECIBIDO]| #1750 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:56:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9622876, busstop=0, angle=11, accuracy=3, time=2026-11-04T21:56:11.807511, lat=-12.1731063, speed=10, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:56:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:56:11 [LocationTrackingService] Posición a enviar lat:-12.1731063 lng:-76.9622876 acc:3.9m vel:10km/h ang:11
+2026-11-04 21:56:10 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=166}
+2026-11-04 21:56:10 [SocketService] [RECIBIDO]| #1749 | SID:37 | 8B | device_status [DATA]: {id=166}
+2026-11-04 21:56:10 [SocketService] [ENVIADO] | [NUEVO] (279B) [KEY]: device_status [DATA]: {ram_free=620, battery_voltage=3766, no_battery=false, printer_dev=-/T00, perm=111111111101001111, aux=Wired Headset - 3, yape=1110/-1, storage_free=7154, storage_total=15258, cell_signal=-88, screen=O:1789403113, battery=31, data_mb=0, view=home, sim=true, temperature=32.3, model=F310, id=166, state=R, power=O:1791554399, map=lima_map.mbtiles, signal=-127, lat=-12.17315, wifi_ssid=<unknown ssid>, sim_operator=716_17, lng=-76.9622923, net_type=4, ram_total=1783, printer=NONE, ip=10.244.94.100, charging=true, cpu=9.7#1.31/0.93/0.74#2016/2016, gps=1111/1/0, version=1.1.0, gps_acc=4, bluetooth=true, serial=F31Q60167700093, online=true, time=2026-11-04T21:56:10.324581, kiosk=12101, nodo=56/34.71.11.201}
+2026-11-04 21:56:10 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=166, time=2026-11-04T21:56:10.324581, version=1.1.0, state=R, view=home, power=O:1791554399, screen=O:1789403113, battery=31, temperature=32.3, charging=true, online=true, printer=NONE, aux=Wired Headset - 3, map=lima_map.mbtiles, lat=-12.17315, lng=-76.9622923, gps_acc=4, net_type=4, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=F310, serial=F31Q60167700093, battery_voltage=3766, ram_free=620, ram_total=1783, storage_free=7154, storage_total=15258, sim=true, sim_operator=716_17, wifi_ssid=<unknown ssid>, signal=-127, cell_signal=-88, ip=10.244.94.100, bluetooth=true, no_battery=false, cpu=9.7#1.31/0.93/0.74#2016/2016, perm=111111111101001111, gps=1111/1/0, kiosk=12101, yape=1110/-1}
+2026-11-04 21:56:10 [SoundRepository] ✅ STATE_ENDED usage=4
+2026-11-04 21:56:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:56:09 [SocketService] [RECIBIDO]| #1748 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:56:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9623252, busstop=0, angle=15, accuracy=3, time=2026-11-04T21:56:05.799279, lat=-12.1732745, speed=19, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:56:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:56:05 [LocationTrackingService] Posición a enviar lat:-12.1732745 lng:-76.9623252 acc:3.9m vel:19km/h ang:15
+2026-11-04 21:56:03 [SoundRepository] ✅ ExoPlayer AUX play()
+2026-11-04 21:56:03 [SoundRepository] playOnAux device=h2w(3) file=/data/user/0/com.tcontur.login_tcontur/cache/tts_e162d223-5518-4c4b-b877-d59a88c199c2.wav
+2026-11-04 21:56:03 [SocketMessageDispatcher] Mensaje: Header: forward_datero, Data: {trip=56599, geofence=93, time=2026-11-04T21:56:02, dateros=[{delta=12, padron=347}, {delta=73, padron=321}, {delta=5, padron=308}, {delta=8, padron=396}]}
+2026-11-04 21:56:03 [SocketService] [RECIBIDO]| #1747 | SID:37 | 29B | forward_datero [DATA]: {trip=56599, geofence=93, time=2026-11-04T21:56:02, dateros=[{delta=12, padron=347}, {delta=73, padron=321}, {delta=5, padron=308}, {delta=8, padron=396}]}
+2026-11-04 21:56:03 [GeoMarkViewModel] ⚠️ CAPILLA B ya marcada (-3)
+2026-11-04 21:56:03 [SocketMessageDispatcher] Mensaje: Header: mark, Data: {volada=-3, trip=56599, geofence=93, id=1840779, state=M, timestamp=2026-11-04T21:56:02}
+2026-11-04 21:56:03 [SocketService] [RECIBIDO]| #1746 | SID:37 | 25B | mark [DATA]: {volada=-3, trip=56599, geofence=93, id=1840779, state=M, timestamp=2026-11-04T21:56:02}
+2026-11-04 21:56:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:56:03 [SocketService] [RECIBIDO]| #1745 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:56:02 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624253, busstop=0, angle=13, accuracy=3, time=2026-11-04T21:55:59.803900, lat=-12.1736041, speed=27, mark=0}, {lng=-76.9623716, busstop=0, angle=14, accuracy=3, time=2026-11-04T21:56:02.805931, lat=-12.1734263, speed=21, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:56:02 [GeoMarkViewModel] 📍 Scroll a geocerca 12 -> V:10 H:11
+2026-11-04 21:56:02 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:56:02 [GeofenceManager] ENTRADA geofence saved: CAPILLA B - ID: 133697
+2026-11-04 21:56:02 [GeofenceManager] ENTERING geofence: CAPILLA B acc:3.9m
+2026-11-04 21:55:59 [LocationTrackingService] Posición a enviar lat:-12.1736041 lng:-76.9624253 acc:3.9m vel:27km/h ang:13
+2026-11-04 21:55:59 [GeofenceManager] ⚠️ CASI marca: CAPILLA B dist:52m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:55:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:57 [SocketService] [RECIBIDO]| #1744 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624588, busstop=0, angle=0, accuracy=3, time=2026-11-04T21:55:53.801616, lat=-12.1740014, speed=25, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:55:53 [LocationTrackingService] Posición a enviar lat:-12.1740014 lng:-76.9624588 acc:3.9m vel:25km/h ang:0
+2026-11-04 21:55:53 [GeofenceManager] 📏 Geocerca cercana: CAPILLA B dist:96m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:55:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:51 [SocketService] [RECIBIDO]| #1743 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624581, busstop=0, angle=1, accuracy=3, time=2026-11-04T21:55:47.797211, lat=-12.174364, speed=20, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:55:47 [LocationTrackingService] Posición a enviar lat:-12.174364 lng:-76.9624581 acc:3.9m vel:20km/h ang:1
+2026-11-04 21:55:46 [ProtectorVM] TEMP: 32.3C -> cap térmico 100%
+2026-11-04 21:55:46 [ProtectorVM] temp: 32.3C
+2026-11-04 21:55:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:45 [SocketService] [RECIBIDO]| #1742 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.962473, busstop=0, angle=356, accuracy=3, time=2026-11-04T21:55:41.803115, lat=-12.1745502, speed=11, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:55:41 [LocationTrackingService] Posición a enviar lat:-12.1745502 lng:-76.962473 acc:3.845m vel:11km/h ang:356
+2026-11-04 21:55:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:39 [SocketService] [RECIBIDO]| #1741 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624675, busstop=0, angle=0, accuracy=3, time=2026-11-04T21:55:35.797337, lat=-12.1749259, speed=34, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:55:36 [SocketMessageDispatcher] Mensaje: Header: backward_datero, Data: {pad=329, geofence=91, delta=13, orden=0, id=3859235309}
+2026-11-04 21:55:36 [SocketService] [RECIBIDO]| #1740 | SID:37 | 19B | backward_datero [DATA]: {pad=329, geofence=91, delta=13, orden=0, id=3859235309}
+2026-11-04 21:55:35 [LocationTrackingService] Posición a enviar lat:-12.1749259 lng:-76.9624675 acc:3.9m vel:34km/h ang:0
+2026-11-04 21:55:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:33 [SocketService] [RECIBIDO]| #1739 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624587, busstop=0, angle=359, accuracy=3, time=2026-11-04T21:55:29.808186, lat=-12.1755097, speed=40, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:55:29 [LocationTrackingService] Posición a enviar lat:-12.1755097 lng:-76.9624587 acc:3.9m vel:40km/h ang:359
+2026-11-04 21:55:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:27 [SocketService] [RECIBIDO]| #1738 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:26 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624534, busstop=0, angle=0, accuracy=3, time=2026-11-04T21:55:23.818264, lat=-12.1760902, speed=32, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:26 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:55:23 [LocationTrackingService] Posición a enviar lat:-12.1760902 lng:-76.9624534 acc:3.9m vel:32km/h ang:0
+2026-11-04 21:55:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:21 [SocketService] [RECIBIDO]| #1737 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624671, busstop=0, angle=2, accuracy=3, time=2026-11-04T21:55:17.809196, lat=-12.1764394, speed=15, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:55:17 [LocationTrackingService] Posición a enviar lat:-12.1764394 lng:-76.9624671 acc:3.9m vel:15km/h ang:2
+2026-11-04 21:55:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:15 [SocketService] [RECIBIDO]| #1736 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624743, busstop=0, angle=9, accuracy=3, time=2026-11-04T21:55:08.806077, lat=-12.1765976, speed=3, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:55:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:55:09 [SocketService] [RECIBIDO]| #1735 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:55:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.962486, busstop=0, angle=16, accuracy=3, time=2026-11-04T21:55:02.817285, lat=-12.1767128, speed=8, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:55:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:55:08 [LocationTrackingService] Posición a enviar lat:-12.1765976 lng:-76.9624743 acc:3.9m vel:3km/h ang:9
+2026-11-04 21:55:02 [LocationTrackingService] Posición a enviar lat:-12.1767128 lng:-76.962486 acc:3.9m vel:8km/h ang:16
+2026-11-04 21:54:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:54:57 [SocketService] [RECIBIDO]| #1734 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:54:56 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624993, busstop=0, angle=1, accuracy=3, time=2026-11-04T21:54:50.811056, lat=-12.1772672, speed=27, mark=0}, {lng=-76.9624962, busstop=0, angle=350, accuracy=3, time=2026-11-04T21:54:56.820918, lat=-12.1768894, speed=18, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:54:56 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:54:56 [LocationTrackingService] Posición a enviar lat:-12.1768894 lng:-76.9624962 acc:3.9m vel:18km/h ang:350
+2026-11-04 21:54:50 [LocationTrackingService] Posición a enviar lat:-12.1772672 lng:-76.9624993 acc:3.9m vel:27km/h ang:1
+2026-11-04 21:54:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:54:45 [SocketService] [RECIBIDO]| #1733 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:54:44 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9625273, busstop=0, angle=5, accuracy=3, time=2026-11-04T21:54:38.804303, lat=-12.178, speed=12, mark=0}, {lng=-76.9625144, busstop=0, angle=1, accuracy=3, time=2026-11-04T21:54:44.802081, lat=-12.1776943, speed=24, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:54:44 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:54:44 [LocationTrackingService] Posición a enviar lat:-12.1776943 lng:-76.9625144 acc:3.9m vel:24km/h ang:1
+2026-11-04 21:54:38 [LocationTrackingService] Posición a enviar lat:-12.178 lng:-76.9625273 acc:3.9m vel:12km/h ang:5
+2026-11-04 21:54:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:54:27 [SocketService] [RECIBIDO]| #1732 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:54:26 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9625313, busstop=0, angle=3, accuracy=3, time=2026-11-04T21:54:23.816066, lat=-12.1781614, speed=10, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:54:26 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:54:23 [LocationTrackingService] Posición a enviar lat:-12.1781614 lng:-76.9625313 acc:3.9m vel:10km/h ang:3
+2026-11-04 21:54:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:54:21 [SocketService] [RECIBIDO]| #1731 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:54:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9625404, busstop=0, angle=14, accuracy=3, time=2026-11-04T21:54:17.808505, lat=-12.1782806, speed=6, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:54:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:54:17 [LocationTrackingService] Posición a enviar lat:-12.1782806 lng:-76.9625404 acc:3.9m vel:6km/h ang:14
+2026-11-04 21:54:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:54:15 [SocketService] [RECIBIDO]| #1730 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:54:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9625607, busstop=0, angle=357, accuracy=3, time=2026-11-04T21:54:11.797863, lat=-12.1784184, speed=15, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:54:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:54:11 [LocationTrackingService] Posición a enviar lat:-12.1784184 lng:-76.9625607 acc:3.9m vel:15km/h ang:357
+2026-11-04 21:54:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:54:09 [SocketService] [RECIBIDO]| #1729 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:54:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9625794, busstop=0, angle=1, accuracy=3, time=2026-11-04T21:54:05.798914, lat=-12.1787611, speed=27, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:54:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:54:05 [LocationTrackingService] Posición a enviar lat:-12.1787611 lng:-76.9625794 acc:3.9m vel:27km/h ang:1
+2026-11-04 21:54:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:54:03 [SocketService] [RECIBIDO]| #1728 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:54:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9626, busstop=0, angle=2, accuracy=3, time=2026-11-04T21:53:59.809649, lat=-12.1792013, speed=29, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:54:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:59 [LocationTrackingService] Posición a enviar lat:-12.1792013 lng:-76.9626 acc:3.9m vel:29km/h ang:2
+2026-11-04 21:53:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:57 [SocketService] [RECIBIDO]| #1727 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9626244, busstop=0, angle=3, accuracy=3, time=2026-11-04T21:53:53.822106, lat=-12.1796008, speed=25, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:53 [LocationTrackingService] Posición a enviar lat:-12.1796008 lng:-76.9626244 acc:3.9m vel:25km/h ang:3
+2026-11-04 21:53:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:51 [SocketService] [RECIBIDO]| #1726 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9626014, busstop=0, angle=353, accuracy=3, time=2026-11-04T21:53:47.807064, lat=-12.1800456, speed=33, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:47 [LocationTrackingService] Posición a enviar lat:-12.1800456 lng:-76.9626014 acc:3.9m vel:33km/h ang:353
+2026-11-04 21:53:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:45 [SocketService] [RECIBIDO]| #1725 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9625327, busstop=0, angle=350, accuracy=3, time=2026-11-04T21:53:41.804293, lat=-12.180537, speed=32, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:41 [LocationTrackingService] Posición a enviar lat:-12.180537 lng:-76.9625327 acc:3.9m vel:32km/h ang:350
+2026-11-04 21:53:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:39 [SocketService] [RECIBIDO]| #1724 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9624389, busstop=0, angle=343, accuracy=3, time=2026-11-04T21:53:35.807498, lat=-12.1810245, speed=31, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:35 [LocationTrackingService] Posición a enviar lat:-12.1810245 lng:-76.9624389 acc:3.9m vel:31km/h ang:343
+2026-11-04 21:53:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:33 [SocketService] [RECIBIDO]| #1723 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9622923, busstop=0, angle=338, accuracy=3, time=2026-11-04T21:53:29.809956, lat=-12.1814587, speed=25, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:29 [LocationTrackingService] Posición a enviar lat:-12.1814587 lng:-76.9622923 acc:3.9m vel:25km/h ang:338
+2026-11-04 21:53:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:27 [SocketService] [RECIBIDO]| #1722 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:26 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9621551, busstop=0, angle=324, accuracy=3, time=2026-11-04T21:53:23.813761, lat=-12.1816892, speed=11, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:26 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:23 [LocationTrackingService] Posición a enviar lat:-12.1816892 lng:-76.9621551 acc:3.9m vel:11km/h ang:324
+2026-11-04 21:53:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:21 [SocketService] [RECIBIDO]| #1721 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9621011, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:53:17.798774, lat=-12.1817804, speed=15, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:17 [LocationTrackingService] Posición a enviar lat:-12.1817804 lng:-76.9621011 acc:3.9m vel:15km/h ang:329
+2026-11-04 21:53:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:15 [SocketService] [RECIBIDO]| #1720 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9619416, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:53:11.822684, lat=-12.1820492, speed=27, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:11 [LocationTrackingService] Posición a enviar lat:-12.1820492 lng:-76.9619416 acc:3.9m vel:27km/h ang:329
+2026-11-04 21:53:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:09 [SocketService] [RECIBIDO]| #1719 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9616831, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:53:05.809393, lat=-12.1824648, speed=35, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:53:05 [LocationTrackingService] Posición a enviar lat:-12.1824648 lng:-76.9616831 acc:3.9m vel:35km/h ang:328
+2026-11-04 21:53:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:53:03 [SocketService] [RECIBIDO]| #1718 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:53:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9614153, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:52:59.811789, lat=-12.1829139, speed=29, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:53:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:59 [LocationTrackingService] Posición a enviar lat:-12.1829139 lng:-76.9614153 acc:3.9m vel:29km/h ang:330
+2026-11-04 21:52:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:57 [SocketService] [RECIBIDO]| #1717 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9612299, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:52:53.808170, lat=-12.1832262, speed=17, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:53 [LocationTrackingService] Posición a enviar lat:-12.1832262 lng:-76.9612299 acc:3.9m vel:17km/h ang:327
+2026-11-04 21:52:51 [SocketService] [RECIBIDO]| #1716 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9611671, busstop=0, angle=331, accuracy=3, time=2026-11-04T21:52:47.809258, lat=-12.1833183, speed=5, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:47 [LocationTrackingService] Posición a enviar lat:-12.1833183 lng:-76.9611671 acc:3.9m vel:5km/h ang:331
+2026-11-04 21:52:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:45 [SocketService] [RECIBIDO]| #1715 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9611033, busstop=0, angle=331, accuracy=3, time=2026-11-04T21:52:41.814363, lat=-12.1834235, speed=22, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:41 [LocationTrackingService] Posición a enviar lat:-12.1834235 lng:-76.9611033 acc:3.9m vel:22km/h ang:331
+2026-11-04 21:52:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:39 [SocketService] [RECIBIDO]| #1714 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9608896, busstop=0, angle=331, accuracy=3, time=2026-11-04T21:52:35.805574, lat=-12.1838421, speed=33, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:35 [LocationTrackingService] Posición a enviar lat:-12.1838421 lng:-76.9608896 acc:3.9m vel:33km/h ang:331
+2026-11-04 21:52:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:33 [SocketService] [RECIBIDO]| #1713 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9606302, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:52:29.807118, lat=-12.1842858, speed=31, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:29 [LocationTrackingService] Posición a enviar lat:-12.1842858 lng:-76.9606302 acc:3.9m vel:31km/h ang:327
+2026-11-04 21:52:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:27 [SocketService] [RECIBIDO]| #1712 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:26 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9604193, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:52:23.800281, lat=-12.1846339, speed=26, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:26 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:23 [LocationTrackingService] Posición a enviar lat:-12.1846339 lng:-76.9604193 acc:3.9m vel:26km/h ang:329
+2026-11-04 21:52:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:21 [SocketService] [RECIBIDO]| #1711 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9601854, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:52:17.809595, lat=-12.1850281, speed=34, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:17 [LocationTrackingService] Posición a enviar lat:-12.1850281 lng:-76.9601854 acc:3.9m vel:34km/h ang:328
+2026-11-04 21:52:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:15 [SocketService] [RECIBIDO]| #1710 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9599148, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:52:11.814749, lat=-12.1854684, speed=35, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:11 [LocationTrackingService] Posición a enviar lat:-12.1854684 lng:-76.9599148 acc:3.9m vel:35km/h ang:329
+2026-11-04 21:52:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:09 [SocketService] [RECIBIDO]| #1709 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9596375, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:52:05.805925, lat=-12.185931, speed=30, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:52:05 [LocationTrackingService] Posición a enviar lat:-12.185931 lng:-76.9596375 acc:3.9m vel:30km/h ang:327
+2026-11-04 21:52:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:52:03 [SocketService] [RECIBIDO]| #1708 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:52:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9594605, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:51:59.810554, lat=-12.1862351, speed=18, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:52:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:51:59 [LocationTrackingService] Posición a enviar lat:-12.1862351 lng:-76.9594605 acc:3.9m vel:18km/h ang:328
+2026-11-04 21:51:57 [SocketService] [RECIBIDO]| #1707 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:51:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:51:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9593557, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:51:53.795171, lat=-12.1864085, speed=21, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:51:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:51:53 [LocationTrackingService] Posición a enviar lat:-12.1864085 lng:-76.9593557 acc:3.845m vel:21km/h ang:328
+2026-11-04 21:51:51 [SocketService] [RECIBIDO]| #1706 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:51:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:51:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9590978, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:51:47.807076, lat=-12.1868259, speed=39, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:51:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:51:47 [LocationTrackingService] Posición a enviar lat:-12.1868259 lng:-76.9590978 acc:3.9m vel:39km/h ang:329
+2026-11-04 21:51:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:51:45 [SocketService] [RECIBIDO]| #1705 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:51:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.958766, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:51:41.810254, lat=-12.1873771, speed=42, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:51:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:51:41 [LocationTrackingService] Posición a enviar lat:-12.1873771 lng:-76.958766 acc:3.845m vel:42km/h ang:329
+2026-11-04 21:51:39 [SocketService] [RECIBIDO]| #1704 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:51:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:51:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9584416, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:51:35.817202, lat=-12.1879238, speed=39, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:51:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:51:35 [LocationTrackingService] Posición a enviar lat:-12.1879238 lng:-76.9584416 acc:3.9m vel:39km/h ang:328
+2026-11-04 21:51:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:51:33 [SocketService] [RECIBIDO]| #1703 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:51:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9581451, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:51:29.830586, lat=-12.1884098, speed=33, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:51:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:51:29 [LocationTrackingService] Posición a enviar lat:-12.1884098 lng:-76.9581451 acc:3.9m vel:33km/h ang:329
+2026-11-04 21:51:29 [GeofenceManager] 📏 Geocerca cercana: COMERCIAL B dist:79m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:51:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:51:27 [SocketService] [RECIBIDO]| #1702 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:51:26 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9579226, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:51:23.810090, lat=-12.1887635, speed=23, mark=0}, {lng=-76.9580249, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:51:26.810435, lat=-12.1886031, speed=26, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:51:26 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:51:26 [GeofenceManager] SALIDA geofence saved: COMERCIAL B - ID: 133652
+2026-11-04 21:51:26 [GeofenceManager] EXITING geofence: COMERCIAL B acc:3.9m
+2026-11-04 21:51:26 [GeofenceManager] ⚠️ CASI marca: COMERCIAL B dist:58m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:51:23 [LocationTrackingService] Posición a enviar lat:-12.1887635 lng:-76.9579226 acc:3.9m vel:23km/h ang:328
+2026-11-04 21:51:21 [SocketService] [RECIBIDO]| #1701 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:51:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:51:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9578388, busstop=0, angle=336, accuracy=3, time=2026-11-04T21:51:17.815103, lat=-12.1890176, speed=15, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:51:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:51:17 [LocationTrackingService] Posición a enviar lat:-12.1890176 lng:-76.9578388 acc:3.845m vel:15km/h ang:336
+2026-11-04 21:51:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:51:15 [SocketService] [RECIBIDO]| #1700 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:51:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9577635, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:51:11.806394, lat=-12.189141, speed=8, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:51:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:51:12 [SocketService] [RECIBIDO]| #1699 | SID:37 | 18B | backward_datero [DATA]: {pad=329, geofence=90, delta=14, orden=0, id=885716560}
+2026-11-04 21:51:12 [SocketMessageDispatcher] Mensaje: Header: backward_datero, Data: {pad=329, geofence=90, delta=14, orden=0, id=885716560}
+2026-11-04 21:51:11 [LocationTrackingService] Posición a enviar lat:-12.189141 lng:-76.9577635 acc:3.9m vel:8km/h ang:329
+2026-11-04 21:51:10 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=166}
+2026-11-04 21:51:10 [SocketService] [RECIBIDO]| #1698 | SID:37 | 8B | device_status [DATA]: {id=166}
+2026-11-04 21:51:10 [SocketService] [ENVIADO] | [NUEVO] (280B) [KEY]: device_status [DATA]: {ram_free=597, battery_voltage=3767, no_battery=false, printer_dev=-/T00, perm=111111111101001111, aux=Wired Headset - 3, yape=1110/-1, storage_free=7158, storage_total=15258, cell_signal=-72, screen=O:1789403113, battery=32, data_mb=0, view=home, sim=true, temperature=32.8, model=F310, id=166, state=R, power=O:1791554399, map=lima_map.mbtiles, signal=-127, lat=-12.1891828, wifi_ssid=<unknown ssid>, sim_operator=716_17, lng=-76.9577433, net_type=4, ram_total=1783, printer=NONE, ip=10.244.94.100, charging=true, cpu=12.7#0.58/0.65/0.62#2016/2016, gps=1111/1/0, version=1.1.0, gps_acc=4, bluetooth=true, serial=F31Q60167700093, online=true, time=2026-11-04T21:51:10.248892, kiosk=12101, nodo=56/34.71.11.201}
+2026-11-04 21:51:10 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=166, time=2026-11-04T21:51:10.248892, version=1.1.0, state=R, view=home, power=O:1791554399, screen=O:1789403113, battery=32, temperature=32.8, charging=true, online=true, printer=NONE, aux=Wired Headset - 3, map=lima_map.mbtiles, lat=-12.1891828, lng=-76.9577433, gps_acc=4, net_type=4, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=F310, serial=F31Q60167700093, battery_voltage=3767, ram_free=597, ram_total=1783, storage_free=7158, storage_total=15258, sim=true, sim_operator=716_17, wifi_ssid=<unknown ssid>, signal=-127, cell_signal=-72, ip=10.244.94.100, bluetooth=true, no_battery=false, cpu=12.7#0.58/0.65/0.62#2016/2016, perm=111111111101001111, gps=1111/1/0, kiosk=12101, yape=1110/-1}
+2026-11-04 21:50:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:50:51 [SocketService] [RECIBIDO]| #1697 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:50:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9577074, busstop=0, angle=332, accuracy=3, time=2026-11-04T21:50:47.813870, lat=-12.1892162, speed=19, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:50:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:50:47 [LocationTrackingService] Posición a enviar lat:-12.1892162 lng:-76.9577074 acc:3.9m vel:19km/h ang:332
+2026-11-04 21:50:46 [ProtectorVM] temp: 32.8C
+2026-11-04 21:50:46 [ProtectorVM] TEMP: 32.8C -> cap térmico 100%
+2026-11-04 21:50:45 [SoundRepository] ✅ STATE_ENDED usage=4
+2026-11-04 21:50:45 [SocketService] [RECIBIDO]| #1696 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:50:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:50:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.95759, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:50:41.800849, lat=-12.1894564, speed=24, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:50:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:50:41 [LocationTrackingService] Posición a enviar lat:-12.1894564 lng:-76.95759 acc:3.9m vel:24km/h ang:330
+2026-11-04 21:50:39 [SoundRepository] ✅ ExoPlayer AUX play()
+2026-11-04 21:50:39 [SoundRepository] playOnAux device=h2w(3) file=/data/user/0/com.tcontur.login_tcontur/cache/tts_cab763b6-c566-49c4-8300-7d9c97172230.wav
+2026-11-04 21:50:39 [GeoMarkViewModel] ⚠️ COMERCIAL B ya marcada (-3)
+2026-11-04 21:50:39 [SocketService] [RECIBIDO]| #1695 | SID:37 | 29B | forward_datero [DATA]: {trip=56599, geofence=92, time=2026-11-04T21:50:38, dateros=[{delta=11, padron=347}, {delta=75, padron=321}, {delta=5, padron=308}, {delta=8, padron=396}]}
+2026-11-04 21:50:39 [SocketMessageDispatcher] Mensaje: Header: mark, Data: {volada=-3, trip=56599, geofence=92, id=1840778, state=M, timestamp=2026-11-04T21:50:38}
+2026-11-04 21:50:39 [SocketMessageDispatcher] Mensaje: Header: forward_datero, Data: {trip=56599, geofence=92, time=2026-11-04T21:50:38, dateros=[{delta=11, padron=347}, {delta=75, padron=321}, {delta=5, padron=308}, {delta=8, padron=396}]}
+2026-11-04 21:50:39 [SocketService] [RECIBIDO]| #1694 | SID:37 | 25B | mark [DATA]: {volada=-3, trip=56599, geofence=92, id=1840778, state=M, timestamp=2026-11-04T21:50:38}
+2026-11-04 21:50:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:50:39 [SocketService] [RECIBIDO]| #1693 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:50:38 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.957311, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:50:32.812135, lat=-12.1899559, speed=23, mark=0}, {lng=-76.9574912, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:50:38.801911, lat=-12.1896315, speed=29, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:50:38 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:50:38 [GeoMarkViewModel] 📍 Scroll a geocerca 11 -> V:9 H:10
+2026-11-04 21:50:38 [GeofenceManager] ENTRADA geofence saved: COMERCIAL B - ID: 133646
+2026-11-04 21:50:38 [GeofenceManager] ENTERING geofence: COMERCIAL B acc:3.9m
+2026-11-04 21:50:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:50:33 [SocketService] [RECIBIDO]| #1692 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:50:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9571351, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:50:26.810790, lat=-12.1902652, speed=21, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:50:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:50:32 [LocationTrackingService] Posición a enviar lat:-12.1899559 lng:-76.957311 acc:3.9m vel:23km/h ang:330
+2026-11-04 21:50:32 [GeofenceManager] 📏 Geocerca cercana: COMERCIAL B dist:90m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:50:30 [SoundRepository] ✅ STATE_ENDED usage=4
+2026-11-04 21:50:29 [TrafficMonitor] 📊 hoy | movil ↑0.0KB ↓0.0KB | wifi ↑0.0KB ↓0.0KB | total 0.0KB (Δ10min 0.0KB)
+2026-11-04 21:50:29 [SoundRepository] ✅ ExoPlayer AUX play()
+2026-11-04 21:50:29 [SoundRepository] playOnAux device=h2w(3) file=/data/user/0/com.tcontur.login_tcontur/cache/tts_90cfba2c-2f21-4c1a-98f2-9a4f8bb306e2.wav
+2026-11-04 21:50:27 [CallViewModel] 📞 Procesando fin de llamada activa
+2026-11-04 21:50:27 [CallViewModel] ⏱️ Stopping call timer
+2026-11-04 21:50:27 [CallViewModel] 🔄 State change: ACTIVE -> ENDED
+2026-11-04 21:50:27 [CallViewModel] Previous: ACTIVE -> New: ENDED
+2026-11-04 21:50:27 [CallRepository] New state: ENDED - Phone : ''
+2026-11-04 21:50:27 [ProtectorVM] monitorCallState: hasActiveCall=false
+2026-11-04 21:50:27 [ProtectorVM] monitorCallState: llamada finalizada → state=R, delegando a monitorScreenState
+2026-11-04 21:50:27 [CallRepository] New state: ENDED - Phone : ''
+2026-11-04 21:50:26 [LocationTrackingService] Posición a enviar lat:-12.1902652 lng:-76.9571351 acc:3.9m vel:21km/h ang:328
+2026-11-04 21:50:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:50:21 [SocketService] [RECIBIDO]| #1691 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:50:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.956986, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:50:20.807767, lat=-12.1905128, speed=22, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:50:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:50:20 [LocationTrackingService] Posición a enviar lat:-12.1905128 lng:-76.956986 acc:3.9m vel:22km/h ang:328
+2026-11-04 21:50:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:50:15 [SocketService] [RECIBIDO]| #1690 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:50:14 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9566225, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:50:08.810028, lat=-12.1911524, speed=25, mark=0}, {lng=-76.9568039, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:50:14.803721, lat=-12.1908175, speed=23, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:50:14 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:50:14 [LocationTrackingService] Posición a enviar lat:-12.1908175 lng:-76.9568039 acc:3.9m vel:23km/h ang:329
+2026-11-04 21:50:08 [LocationTrackingService] Posición a enviar lat:-12.1911524 lng:-76.9566225 acc:3.9m vel:25km/h ang:330
+2026-11-04 21:50:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:50:03 [SocketService] [RECIBIDO]| #1689 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:50:02 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9564106, busstop=0, angle=326, accuracy=3, time=2026-11-04T21:49:56.804581, lat=-12.1915052, speed=9, mark=0}, {lng=-76.9564779, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:50:02.809111, lat=-12.1913993, speed=15, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:50:02 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:50:02 [LocationTrackingService] Posición a enviar lat:-12.1913993 lng:-76.9564779 acc:3.9m vel:15km/h ang:327
+2026-11-04 21:49:56 [LocationTrackingService] Posición a enviar lat:-12.1915052 lng:-76.9564106 acc:3.9m vel:9km/h ang:326
+2026-11-04 21:49:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:49:51 [SocketService] [RECIBIDO]| #1688 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:49:50 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9559868, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:49:44.807027, lat=-12.1922045, speed=27, mark=0}, {lng=-76.9562254, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:49:50.817700, lat=-12.1918174, speed=30, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:49:50 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:49:50 [LocationTrackingService] Posición a enviar lat:-12.1918174 lng:-76.9562254 acc:3.9m vel:30km/h ang:328
+2026-11-04 21:49:44 [LocationTrackingService] Posición a enviar lat:-12.1922045 lng:-76.9559868 acc:3.9m vel:27km/h ang:329
+2026-11-04 21:49:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:49:39 [SocketService] [RECIBIDO]| #1687 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:49:38 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9555592, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:49:32.804597, lat=-12.1929169, speed=21, mark=0}, {lng=-76.955759, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:49:38.805633, lat=-12.1925728, speed=28, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:49:38 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:49:38 [LocationTrackingService] Posición a enviar lat:-12.1925728 lng:-76.955759 acc:3.9m vel:28km/h ang:329
+2026-11-04 21:49:32 [LocationTrackingService] Posición a enviar lat:-12.1929169 lng:-76.9555592 acc:3.9m vel:21km/h ang:328
+2026-11-04 21:49:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:49:27 [SocketService] [RECIBIDO]| #1686 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:49:26 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9552461, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:49:20.805230, lat=-12.1934287, speed=15, mark=0}, {lng=-76.9553945, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:49:26.814897, lat=-12.193192, speed=19, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:49:26 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:49:26 [LocationTrackingService] Posición a enviar lat:-12.193192 lng:-76.9553945 acc:3.9m vel:19km/h ang:328
+2026-11-04 21:49:20 [LocationTrackingService] Posición a enviar lat:-12.1934287 lng:-76.9552461 acc:3.9m vel:15km/h ang:329
+2026-11-04 21:49:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:49:15 [SocketService] [RECIBIDO]| #1685 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:49:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9551954, busstop=0, angle=146, accuracy=3, time=2026-11-04T21:49:11.800148, lat=-12.193513, speed=0, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:49:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:49:11 [LocationTrackingService] Posición a enviar lat:-12.193513 lng:-76.9551954 acc:3.9m vel:0km/h ang:146
+2026-11-04 21:48:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:48:45 [SocketService] [RECIBIDO]| #1684 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:48:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9551587, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:48:38.809303, lat=-12.1935597, speed=12, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:48:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:48:38 [LocationTrackingService] Posición a enviar lat:-12.1935597 lng:-76.9551587 acc:3.9m vel:12km/h ang:329
+2026-11-04 21:48:33 [SocketService] [RECIBIDO]| #1683 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:48:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:48:32 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9548372, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:48:26.817661, lat=-12.1940767, speed=27, mark=0}, {lng=-76.955042, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:48:32.819274, lat=-12.193747, speed=23, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:48:32 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:48:32 [LocationTrackingService] Posición a enviar lat:-12.193747 lng:-76.955042 acc:3.9m vel:23km/h ang:329
+2026-11-04 21:48:26 [LocationTrackingService] Posición a enviar lat:-12.1940767 lng:-76.9548372 acc:3.9m vel:27km/h ang:328
+2026-11-04 21:48:24 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:48:24 [SocketService] [RECIBIDO]| #1682 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:48:24 [CallViewModel] ⏱️ Starting call timer
+2026-11-04 21:48:24 [CallViewModel] Previous: RINGING -> New: ACTIVE
+2026-11-04 21:48:24 [CallViewModel] ⏳ Esperando 2000ms antes de anunciar llamada activa
+2026-11-04 21:48:24 [CallViewModel] 🔊 Anunciando llamada activa: Llamada conectada con MONITOREO 1 SANTO CRISTO DE PACHACAMILLA
+2026-11-04 21:48:24 [CallViewModel] 🔄 State change: RINGING -> ACTIVE
+2026-11-04 21:48:24 [SocketService] [ENVIADO] | [NUEVO] (39B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.954727, busstop=0, angle=0, accuracy=3, time=2026-11-04T21:48:24.463424, lat=-12.1942678, speed=8, mark=0}], state=R, sales=0, events=[{value=0, id=7}], direction=true}
+2026-11-04 21:48:24 [EmergencyRepository] send(deactivate=true) called
+2026-11-04 21:48:24 [ProtectorVM] monitorCallState: hasActiveCall=true
+2026-11-04 21:48:24 [CallRepository] New state: ACTIVE - Phone : '+51900000000'
+2026-11-04 21:48:23 [SoundRepository] ✅ STATE_ENDED usage=4
+2026-11-04 21:48:23 [SocketService] [RECIBIDO]| #1681 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:48:23 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:48:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9543836, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:48:14.803624, lat=-12.1948584, speed=25, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:48:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:48:20 [LocationTrackingService] Posición a enviar lat:-12.1944742 lng:-76.954609 acc:3.9m vel:31km/h ang:328
+2026-11-04 21:48:18 [SoundRepository] ✅ ExoPlayer AUX play()
+2026-11-04 21:48:18 [SoundRepository] playOnAux device=h2w(3) file=/data/user/0/com.tcontur.login_tcontur/cache/tts_a0aa15f0-1e91-457b-9a72-4c1dc28fc50b.wav
+2026-11-04 21:48:18 [CallViewModel] Previous: ENDED -> New: RINGING
+2026-11-04 21:48:18 [CallViewModel] 🔊 Anunciando llamada entrante: Recibiendo llamada de MONITOREO 1 SANTO CRISTO DE PACHACAMILLA
+2026-11-04 21:48:18 [CallViewModel] 🔄 State change: ENDED -> RINGING
+2026-11-04 21:48:17 [CallRepository] New state: RINGING - Phone : '+51900000000'
+2026-11-04 21:48:17 [CallRepository] Number +51900000000 is whitelisted: true
+2026-11-04 21:48:14 [LocationTrackingService] Posición a enviar lat:-12.1948584 lng:-76.9543836 acc:3.9m vel:25km/h ang:328
+2026-11-04 21:48:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:48:09 [SocketService] [RECIBIDO]| #1680 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:48:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.954215, busstop=0, angle=320, accuracy=3, time=2026-11-04T21:48:08.806073, lat=-12.1951161, speed=11, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:48:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:48:08 [LocationTrackingService] Posición a enviar lat:-12.1951161 lng:-76.954215 acc:3.9m vel:11km/h ang:320
+2026-11-04 21:48:07 [GeoMarkViewModel] 🎯 Scroll vertical: 8 (geocerca: 10/40)
+2026-11-04 21:48:00 [SocketMessageDispatcher] ⚠️ No hay tickets. Mostrando últimos 5 para referencia...
+2026-11-04 21:48:00 [SocketMessageDispatcher] 📊 Total a enviar: 0 tickets
+2026-11-04 21:48:00 [SocketMessageDispatcher] 📤 Obteniendo tickets PENDIENTES sin sincronizar...
+2026-11-04 21:47:59 [DriverLoginRepository] Lado login=B por P. INICIAL B (id=47) gps=-12.1952002,-76.9541553 acc=3m fix=true
+2026-11-04 21:47:59 [ADS] Cola detenida
+2026-11-04 21:47:59 [SoundRepository] BT detenido
+2026-11-04 21:47:59 [SocketMessageDispatcher] Mensaje: Header: login, Data: {voice=true, orientation=true, contactless=false, data=null, ticket=false, geofence=91, gps=true, schedule=21:26, ads=false, route=2, trip=56599, driver=null, calls=true, padron=347, id=166, state=R, map=false, placa=AZC921, direction=true, order=1}
+2026-11-04 21:47:59 [SocketService] [RECIBIDO]| #1679 | SID:37 | 35B | login [DATA]: {voice=true, orientation=true, contactless=false, data=null, ticket=false, geofence=91, gps=true, schedule=21:26, ads=false, route=2, trip=56599, driver=null, calls=true, padron=347, id=166, state=R, map=false, placa=AZC921, direction=true, order=1}
+2026-11-04 21:47:59 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:47:59 [SocketService] [RECIBIDO]| #1678 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:47:58 [SocketService] [ENVIADO] | [NUEVO] (39B) [KEY]: report [DATA]: {trip=0, route=0, positions=[{lng=-76.9541553, busstop=0, angle=0, accuracy=3, time=2026-11-04T21:47:58.657706, lat=-12.1952002, speed=1, mark=0}], state=, sales=0, events=[{value=1, id=6}], direction=true}
+2026-11-04 21:47:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:47:57 [SocketService] [RECIBIDO]| #1677 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:47:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9541311, busstop=0, angle=326, accuracy=3, time=2026-11-04T21:47:50.809431, lat=-12.1952303, speed=12, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:47:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:47:55 [GeoMarkViewModel] 🎯 Scroll vertical: 8 (geocerca: 10/40)
+2026-11-04 21:47:50 [LocationTrackingService] Posición a enviar lat:-12.1952303 lng:-76.9541311 acc:3.9m vel:12km/h ang:326
+2026-11-04 21:47:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:47:45 [SocketService] [RECIBIDO]| #1676 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:47:44 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9537802, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:47:38.804909, lat=-12.1958899, speed=20, mark=0}, {lng=-76.9539706, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:47:44.815506, lat=-12.1955635, speed=29, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:47:44 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:47:44 [LocationTrackingService] Posición a enviar lat:-12.1955635 lng:-76.9539706 acc:3.9m vel:29km/h ang:327
+2026-11-04 21:47:38 [LocationTrackingService] Posición a enviar lat:-12.1958899 lng:-76.9537802 acc:3.9m vel:20km/h ang:327
+2026-11-04 21:47:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:47:33 [SocketService] [RECIBIDO]| #1675 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:47:32 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9535143, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:47:26.816163, lat=-12.1963058, speed=9, mark=0}, {lng=-76.9536101, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:47:32.809183, lat=-12.1961546, speed=20, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:47:32 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:47:32 [LocationTrackingService] Posición a enviar lat:-12.1961546 lng:-76.9536101 acc:3.9m vel:20km/h ang:327
+2026-11-04 21:47:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:47:27 [SocketService] [RECIBIDO]| #1674 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:47:26 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9533765, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:47:20.802225, lat=-12.1965359, speed=29, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:47:26 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:47:26 [LocationTrackingService] Posición a enviar lat:-12.1963058 lng:-76.9535143 acc:3.9m vel:9km/h ang:330
+2026-11-04 21:47:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:47:21 [SocketService] [RECIBIDO]| #1673 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:47:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9530863, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:47:14.814593, lat=-12.1970163, speed=38, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:47:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:47:20 [LocationTrackingService] Posición a enviar lat:-12.1965359 lng:-76.9533765 acc:3.9m vel:29km/h ang:328
+2026-11-04 21:47:14 [LocationTrackingService] Posición a enviar lat:-12.1970163 lng:-76.9530863 acc:3.9m vel:38km/h ang:328
+2026-11-04 21:47:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:47:09 [SocketService] [RECIBIDO]| #1672 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:47:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9527977, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:47:08.803102, lat=-12.1974998, speed=34, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:47:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:47:08 [LocationTrackingService] Posición a enviar lat:-12.1974998 lng:-76.9527977 acc:3.9m vel:34km/h ang:328
+2026-11-04 21:47:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:47:03 [SocketService] [RECIBIDO]| #1671 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:47:02 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9523907, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:46:56.800137, lat=-12.1981676, speed=15, mark=0}, {lng=-76.9525438, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:47:02.800812, lat=-12.1979166, speed=26, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:47:02 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:47:02 [LocationTrackingService] Posición a enviar lat:-12.1979166 lng:-76.9525438 acc:3.9m vel:26km/h ang:327
+2026-11-04 21:46:56 [LocationTrackingService] Posición a enviar lat:-12.1981676 lng:-76.9523907 acc:3.9m vel:15km/h ang:327
+2026-11-04 21:46:53 [SocketService] [RECIBIDO]| #1670 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:46:53 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:46:53 [SocketService] [ENVIADO] | [NUEVO] (39B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9522941, busstop=0, angle=0, accuracy=3, time=2026-11-04T21:46:53.531722, lat=-12.198344, speed=3, mark=0}], state=R, sales=0, events=[{value=1, id=7}], direction=true}
+2026-11-04 21:46:53 [GeoMarkViewModel] 🎯 Scroll vertical: 8 (geocerca: 10/40)
+2026-11-04 21:46:53 [EmergencyRepository] send(deactivate=false) called
+2026-11-04 21:46:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:46:51 [SocketService] [RECIBIDO]| #1669 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:46:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9521983, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:46:44.799308, lat=-12.1984937, speed=6, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:46:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:46:50 [LocationTrackingService] Posición a enviar lat:-12.198344 lng:-76.9522941 acc:3.9m vel:13km/h ang:329
+2026-11-04 21:46:44 [LocationTrackingService] Posición a enviar lat:-12.1984937 lng:-76.9521983 acc:3.9m vel:6km/h ang:327
+2026-11-04 21:46:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:46:39 [SocketService] [RECIBIDO]| #1668 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:46:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9521401, busstop=0, angle=326, accuracy=3, time=2026-11-04T21:46:32.808124, lat=-12.1985716, speed=5, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:46:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:46:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:46:33 [SocketService] [RECIBIDO]| #1667 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:46:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9520097, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:46:26.814179, lat=-12.1987623, speed=30, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:46:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:46:32 [LocationTrackingService] Posición a enviar lat:-12.1985716 lng:-76.9521401 acc:3.9m vel:5km/h ang:326
+2026-11-04 21:46:26 [LocationTrackingService] Posición a enviar lat:-12.1987623 lng:-76.9520097 acc:3.9m vel:30km/h ang:328
+2026-11-04 21:46:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:46:21 [SocketService] [RECIBIDO]| #1666 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:46:20 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9515521, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:46:14.804362, lat=-12.1995108, speed=19, mark=0}, {lng=-76.9517401, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:46:20.795299, lat=-12.1991857, speed=28, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:46:20 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:46:20 [LocationTrackingService] Posición a enviar lat:-12.1991857 lng:-76.9517401 acc:3.9m vel:28km/h ang:329
+2026-11-04 21:46:14 [LocationTrackingService] Posición a enviar lat:-12.1995108 lng:-76.9515521 acc:3.845m vel:19km/h ang:327
+2026-11-04 21:46:10 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=166}
+2026-11-04 21:46:10 [SocketService] [RECIBIDO]| #1665 | SID:37 | 8B | device_status [DATA]: {id=166}
+2026-11-04 21:46:10 [SocketService] [ENVIADO] | [NUEVO] (278B) [KEY]: device_status [DATA]: {ram_free=609, battery_voltage=3765, no_battery=false, printer_dev=-/T00, perm=111111111101001111, aux=Wired Headset - 3, yape=1110/-1, storage_free=7160, storage_total=15258, cell_signal=-86, screen=O:1789403113, battery=32, data_mb=0, view=home, sim=true, temperature=32.2, model=F310, id=166, state=R, power=O:1791554399, map=lima_map.mbtiles, signal=-127, lat=-12.1996795, wifi_ssid=<unknown ssid>, sim_operator=716_17, lng=-76.9514509, net_type=4, ram_total=1783, printer=NONE, ip=10.244.94.100, charging=true, cpu=9.5#0.91/0.64/0.6#2016/2016, gps=1111/1/0, version=1.1.0, gps_acc=4, bluetooth=true, serial=F31Q60167700093, online=true, time=2026-11-04T21:46:10.132408, kiosk=12101, nodo=56/34.71.11.201}
+2026-11-04 21:46:10 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=166, time=2026-11-04T21:46:10.132408, version=1.1.0, state=R, view=home, power=O:1791554399, screen=O:1789403113, battery=32, temperature=32.2, charging=true, online=true, printer=NONE, aux=Wired Headset - 3, map=lima_map.mbtiles, lat=-12.1996795, lng=-76.9514509, gps_acc=4, net_type=4, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=F310, serial=F31Q60167700093, battery_voltage=3765, ram_free=609, ram_total=1783, storage_free=7160, storage_total=15258, sim=true, sim_operator=716_17, wifi_ssid=<unknown ssid>, signal=-127, cell_signal=-86, ip=10.244.94.100, bluetooth=true, no_battery=false, cpu=9.5#0.91/0.64/0.6#2016/2016, perm=111111111101001111, gps=1111/1/0, kiosk=12101, yape=1110/-1}
+2026-11-04 21:46:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:46:03 [SocketService] [RECIBIDO]| #1664 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:46:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9514446, busstop=0, angle=142, accuracy=3, time=2026-11-04T21:46:02.813134, lat=-12.1996911, speed=0, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:46:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:46:02 [LocationTrackingService] Posición a enviar lat:-12.1996911 lng:-76.9514446 acc:3.9m vel:0km/h ang:142
+2026-11-04 21:45:46 [ProtectorVM] TEMP: 32.3C -> cap térmico 100%
+2026-11-04 21:45:46 [ProtectorVM] temp: 32.3C
+2026-11-04 21:45:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:45:33 [SocketService] [RECIBIDO]| #1663 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:45:32 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.951282, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:45:26.822354, lat=-12.1999576, speed=33, mark=0}, {lng=-76.9514407, busstop=0, angle=322, accuracy=3, time=2026-11-04T21:45:32.805022, lat=-12.1996901, speed=4, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:45:32 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:45:32 [LocationTrackingService] Posición a enviar lat:-12.1996901 lng:-76.9514407 acc:3.9m vel:4km/h ang:322
+2026-11-04 21:45:26 [LocationTrackingService] Posición a enviar lat:-12.1999576 lng:-76.951282 acc:3.9m vel:33km/h ang:330
+2026-11-04 21:45:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:45:21 [SocketService] [RECIBIDO]| #1662 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:45:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9509983, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:45:20.814432, lat=-12.2004657, speed=36, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:45:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:45:20 [LocationTrackingService] Posición a enviar lat:-12.2004657 lng:-76.9509983 acc:3.9m vel:36km/h ang:330
+2026-11-04 21:45:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:45:15 [SocketService] [RECIBIDO]| #1661 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:45:14 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9506741, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:45:08.807446, lat=-12.2009993, speed=11, mark=0}, {lng=-76.9507696, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:45:14.808951, lat=-12.2008429, speed=21, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:45:14 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:45:14 [LocationTrackingService] Posición a enviar lat:-12.2008429 lng:-76.9507696 acc:3.9m vel:21km/h ang:327
+2026-11-04 21:45:08 [LocationTrackingService] Posición a enviar lat:-12.2009993 lng:-76.9506741 acc:3.9m vel:11km/h ang:330
+2026-11-04 21:45:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:45:03 [SocketService] [RECIBIDO]| #1660 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:45:02 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9503668, busstop=0, angle=331, accuracy=3, time=2026-11-04T21:44:56.816777, lat=-12.2015293, speed=27, mark=0}, {lng=-76.950558, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:45:02.820641, lat=-12.2012149, speed=24, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:45:02 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:45:02 [LocationTrackingService] Posición a enviar lat:-12.2012149 lng:-76.950558 acc:3.9m vel:24km/h ang:329
+2026-11-04 21:44:56 [LocationTrackingService] Posición a enviar lat:-12.2015293 lng:-76.9503668 acc:3.9m vel:27km/h ang:331
+2026-11-04 21:44:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:44:51 [SocketService] [RECIBIDO]| #1659 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:44:50 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9499057, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:44:44.813818, lat=-12.2023171, speed=34, mark=0}, {lng=-76.9501494, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:44:50.809931, lat=-12.2019106, speed=29, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:44:50 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:44:50 [LocationTrackingService] Posición a enviar lat:-12.2019106 lng:-76.9501494 acc:3.9m vel:29km/h ang:329
+2026-11-04 21:44:44 [LocationTrackingService] Posición a enviar lat:-12.2023171 lng:-76.9499057 acc:3.9m vel:34km/h ang:328
+2026-11-04 21:44:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:44:39 [SocketService] [RECIBIDO]| #1658 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:44:38 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9493221, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:44:32.828200, lat=-12.2033096, speed=35, mark=0}, {lng=-76.9496129, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:44:38.804935, lat=-12.2028061, speed=37, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:44:38 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:44:38 [LocationTrackingService] Posición a enviar lat:-12.2028061 lng:-76.9496129 acc:3.9m vel:37km/h ang:329
+2026-11-04 21:44:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:44:33 [SocketService] [RECIBIDO]| #1657 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:44:32 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9491264, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:44:26.816598, lat=-12.2036628, speed=20, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:44:32 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:44:32 [LocationTrackingService] Posición a enviar lat:-12.2033096 lng:-76.9493221 acc:3.9m vel:35km/h ang:330
+2026-11-04 21:44:26 [LocationTrackingService] Posición a enviar lat:-12.2036628 lng:-76.9491264 acc:3.9m vel:20km/h ang:328
+2026-11-04 21:43:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:43:57 [SocketService] [RECIBIDO]| #1656 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:43:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.949054, busstop=0, angle=37, accuracy=3, time=2026-11-04T21:43:53.817619, lat=-12.2037863, speed=0, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:43:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:43:53 [LocationTrackingService] Posición a enviar lat:-12.2037863 lng:-76.949054 acc:3.9m vel:0km/h ang:37
+2026-11-04 21:43:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:43:27 [SocketService] [RECIBIDO]| #1655 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:43:26 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9490312, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:43:23.806238, lat=-12.2037677, speed=1, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:43:26 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:43:23 [LocationTrackingService] Posición a enviar lat:-12.2037677 lng:-76.9490312 acc:3.845m vel:1km/h ang:327
+2026-11-04 21:43:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:43:21 [SocketService] [RECIBIDO]| #1654 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:43:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9489369, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:43:17.817425, lat=-12.2039105, speed=24, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:43:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:43:17 [LocationTrackingService] Posición a enviar lat:-12.2039105 lng:-76.9489369 acc:3.9m vel:24km/h ang:330
+2026-11-04 21:43:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:43:15 [SocketService] [RECIBIDO]| #1653 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:43:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9486633, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:43:11.793303, lat=-12.2043584, speed=39, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:43:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:43:11 [LocationTrackingService] Posición a enviar lat:-12.2043584 lng:-76.9486633 acc:3.9m vel:39km/h ang:329
+2026-11-04 21:43:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:43:09 [SocketService] [RECIBIDO]| #1652 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:43:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9483201, busstop=0, angle=327, accuracy=3, time=2026-11-04T21:43:05.818353, lat=-12.2049248, speed=42, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:43:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:43:05 [LocationTrackingService] Posición a enviar lat:-12.2049248 lng:-76.9483201 acc:3.9m vel:42km/h ang:327
+2026-11-04 21:43:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:43:03 [SocketService] [RECIBIDO]| #1651 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:43:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9479862, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:42:59.807499, lat=-12.205487, speed=41, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:43:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:42:59 [LocationTrackingService] Posición a enviar lat:-12.205487 lng:-76.9479862 acc:3.9m vel:41km/h ang:329
+2026-11-04 21:42:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:42:57 [SocketService] [RECIBIDO]| #1650 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:42:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9477113, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:42:53.797831, lat=-12.2059595, speed=28, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:42:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:42:53 [LocationTrackingService] Posición a enviar lat:-12.2059595 lng:-76.9477113 acc:3.9m vel:28km/h ang:329
+2026-11-04 21:42:51 [SocketService] [RECIBIDO]| #1649 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:42:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:42:50 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9475638, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:42:47.801835, lat=-12.2061974, speed=13, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:42:50 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:42:47 [LocationTrackingService] Posición a enviar lat:-12.2061974 lng:-76.9475638 acc:3.9m vel:13km/h ang:329
+2026-11-04 21:42:45 [SocketService] [RECIBIDO]| #1648 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:42:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:42:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9473595, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:42:41.823469, lat=-12.2065334, speed=37, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:42:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:42:41 [LocationTrackingService] Posición a enviar lat:-12.2065334 lng:-76.9473595 acc:3.845m vel:37km/h ang:330
+2026-11-04 21:42:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:42:39 [SocketService] [RECIBIDO]| #1647 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:42:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9470413, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:42:35.801455, lat=-12.2070688, speed=39, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:42:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:42:35 [LocationTrackingService] Posición a enviar lat:-12.2070688 lng:-76.9470413 acc:3.9m vel:39km/h ang:329
+2026-11-04 21:42:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:42:33 [SocketService] [RECIBIDO]| #1646 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:42:32 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9465798, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:42:26.800470, lat=-12.2078392, speed=34, mark=0}, {lng=-76.9468823, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:42:32.820524, lat=-12.2073395, speed=41, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:42:32 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:42:32 [GeofenceManager] SALIDA geofence saved: CHFA B - ID: 133586
+2026-11-04 21:42:32 [GeofenceManager] 📏 Geocerca cercana: CHFA B dist:62m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:42:32 [GeofenceManager] EXITING geofence: CHFA B acc:3.9m
+2026-11-04 21:42:26 [LocationTrackingService] Posición a enviar lat:-12.2078392 lng:-76.9465798 acc:3.9m vel:34km/h ang:328
+2026-11-04 21:42:24 [SoundRepository] ✅ STATE_ENDED usage=4
+2026-11-04 21:42:21 [GeoMarkViewModel] ⚠️ CHFA B ya marcada (-3)
+2026-11-04 21:42:21 [SocketMessageDispatcher] Mensaje: Header: forward_datero, Data: {trip=56599, geofence=91, time=2026-11-04T21:42:17, dateros=[{delta=10, padron=347}, {delta=78, padron=321}, {delta=5, padron=308}, {delta=8, padron=396}]}
+2026-11-04 21:42:21 [SocketMessageDispatcher] Mensaje: Header: mark, Data: {volada=-3, trip=56599, geofence=91, id=1840777, state=M, timestamp=2026-11-04T21:42:17}
+2026-11-04 21:42:21 [SocketService] [RECIBIDO]| #1645 | SID:37 | 29B | forward_datero [DATA]: {trip=56599, geofence=91, time=2026-11-04T21:42:17, dateros=[{delta=10, padron=347}, {delta=78, padron=321}, {delta=5, padron=308}, {delta=8, padron=396}]}
+2026-11-04 21:42:21 [SocketService] [RECIBIDO]| #1644 | SID:37 | 25B | mark [DATA]: {volada=-3, trip=56599, geofence=91, id=1840777, state=M, timestamp=2026-11-04T21:42:17}
+2026-11-04 21:42:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=3}
+2026-11-04 21:42:21 [SocketService] [RECIBIDO]| #1643 | SID:37 | 3B | report [DATA]: {positions=3}
+2026-11-04 21:42:20 [SocketService] [ENVIADO] | [NUEVO] (80B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9461801, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:42:14.810670, lat=-12.2084991, speed=11, mark=0}, {lng=-76.9462473, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:42:17.813270, lat=-12.2083957, speed=17, mark=0}, {lng=-76.9463318, busstop=0, angle=326, accuracy=3, time=2026-11-04T21:42:20.826666, lat=-12.208258, speed=26, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:42:20 [PositionRepository] 📤 Enviando 3 (batch=40, pendientes=3)
+2026-11-04 21:42:20 [LocationTrackingService] Posición a enviar lat:-12.208258 lng:-76.9463318 acc:3.9m vel:26km/h ang:326
+2026-11-04 21:42:18 [SoundRepository] ✅ ExoPlayer AUX play()
+2026-11-04 21:42:18 [SoundRepository] playOnAux device=h2w(3) file=/data/user/0/com.tcontur.login_tcontur/cache/tts_757e8c7a-7a42-4665-8d35-7087354c481f.wav
+2026-11-04 21:42:17 [GeoMarkViewModel] 📍 Scroll a geocerca 10 -> V:8 H:9
+2026-11-04 21:42:17 [GeofenceManager] ENTRADA geofence saved: CHFA B - ID: 133583
+2026-11-04 21:42:17 [GeofenceManager] ENTERING geofence: CHFA B acc:3.9m
+2026-11-04 21:42:14 [LocationTrackingService] Posición a enviar lat:-12.2084991 lng:-76.9461801 acc:3.9m vel:11km/h ang:328
+2026-11-04 21:42:14 [GeofenceManager] 📏 Geocerca cercana: CHFA B dist:54m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:42:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:42:03 [SocketService] [RECIBIDO]| #1642 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:42:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9461218, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:41:56.821187, lat=-12.2085917, speed=7, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:42:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:42:02 [GeofenceManager] 📏 Geocerca cercana: CHFA B dist:62m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:41:59 [GeofenceManager] ⚠️ CASI marca: CHFA B dist:62m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:41:56 [LocationTrackingService] Posición a enviar lat:-12.2085917 lng:-76.9461218 acc:3.9m vel:7km/h ang:330
+2026-11-04 21:41:54 [SocketMessageDispatcher] Mensaje: Header: backward_datero, Data: {pad=329, geofence=89, delta=17, orden=0, id=8505888370}
+2026-11-04 21:41:54 [SocketService] [RECIBIDO]| #1641 | SID:37 | 19B | backward_datero [DATA]: {pad=329, geofence=89, delta=17, orden=0, id=8505888370}
+2026-11-04 21:41:51 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:41:51 [SocketService] [RECIBIDO]| #1640 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:41:50 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9456551, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:41:44.799965, lat=-12.2093594, speed=44, mark=0}, {lng=-76.9459687, busstop=0, angle=330, accuracy=3, time=2026-11-04T21:41:50.817773, lat=-12.2088399, speed=30, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:41:50 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:41:50 [LocationTrackingService] Posición a enviar lat:-12.2088399 lng:-76.9459687 acc:3.9m vel:30km/h ang:330
+2026-11-04 21:41:50 [GeofenceManager] 📏 Geocerca cercana: CHFA B dist:98m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:41:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:41:45 [SocketService] [RECIBIDO]| #1639 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:41:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.945312, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:41:38.804388, lat=-12.2099287, speed=37, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:41:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:41:44 [LocationTrackingService] Posición a enviar lat:-12.2093594 lng:-76.9456551 acc:3.9m vel:44km/h ang:329
+2026-11-04 21:41:38 [LocationTrackingService] Posición a enviar lat:-12.2099287 lng:-76.945312 acc:3.9m vel:37km/h ang:328
+2026-11-04 21:41:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:41:33 [SocketService] [RECIBIDO]| #1638 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:41:32 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9449058, busstop=0, angle=329, accuracy=3, time=2026-11-04T21:41:26.817124, lat=-12.210636, speed=13, mark=0}, {lng=-76.9450592, busstop=0, angle=328, accuracy=3, time=2026-11-04T21:41:32.818137, lat=-12.2103563, speed=26, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:41:32 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:41:32 [LocationTrackingService] Posición a enviar lat:-12.2103563 lng:-76.9450592 acc:3.9m vel:26km/h ang:328
+2026-11-04 21:41:26 [LocationTrackingService] Posición a enviar lat:-12.210636 lng:-76.9449058 acc:3.9m vel:13km/h ang:329
+2026-11-04 21:41:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:41:21 [SocketService] [RECIBIDO]| #1637 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:41:20 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9448353, busstop=0, angle=275, accuracy=3, time=2026-11-04T21:41:14.804265, lat=-12.2108568, speed=8, mark=0}, {lng=-76.944852, busstop=0, angle=332, accuracy=3, time=2026-11-04T21:41:20.816923, lat=-12.2107641, speed=6, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:41:20 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:41:20 [LocationTrackingService] Posición a enviar lat:-12.2107641 lng:-76.944852 acc:3.9m vel:6km/h ang:332
+2026-11-04 21:41:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:41:15 [SocketService] [RECIBIDO]| #1636 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:41:14 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9447049, busstop=0, angle=239, accuracy=3, time=2026-11-04T21:41:08.805634, lat=-12.2108439, speed=13, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:41:14 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:41:14 [LocationTrackingService] Posición a enviar lat:-12.2108568 lng:-76.9448353 acc:3.845m vel:8km/h ang:275
+2026-11-04 21:41:10 [SocketService] [RECIBIDO]| #1635 | SID:37 | 8B | device_status [DATA]: {id=166}
+2026-11-04 21:41:10 [SocketMessageDispatcher] Mensaje: Header: device_status, Data: {id=166}
+2026-11-04 21:41:10 [SocketService] [ENVIADO] | [NUEVO] (279B) [KEY]: device_status [DATA]: {ram_free=599, battery_voltage=3767, no_battery=false, printer_dev=-/T00, perm=111111111101001111, aux=Wired Headset - 3, yape=1110/-1, storage_free=7163, storage_total=15258, cell_signal=-88, screen=O:1789403113, battery=32, data_mb=0, view=home, sim=true, temperature=32.3, model=F310, id=166, state=R, power=O:1791554399, map=lima_map.mbtiles, signal=-127, lat=-12.2108439, wifi_ssid=<unknown ssid>, sim_operator=716_17, lng=-76.9447049, net_type=4, ram_total=1783, printer=NONE, ip=10.244.94.100, charging=true, cpu=8.5#0.14/0.52/0.58#1305/2016, gps=1111/1/0, version=1.1.0, gps_acc=4, bluetooth=true, serial=F31Q60167700093, online=true, time=2026-11-04T21:41:09.999634, kiosk=12101, nodo=56/34.71.11.201}
+2026-11-04 21:41:10 [DeviceStatus] 📡 device_status [disparo: periodico-5min] → {id=166, time=2026-11-04T21:41:09.999634, version=1.1.0, state=R, view=home, power=O:1791554399, screen=O:1789403113, battery=32, temperature=32.3, charging=true, online=true, printer=NONE, aux=Wired Headset - 3, map=lima_map.mbtiles, lat=-12.2108439, lng=-76.9447049, gps_acc=4, net_type=4, data_mb=0, nodo=56/34.71.11.201, printer_dev=-/T00, model=F310, serial=F31Q60167700093, battery_voltage=3767, ram_free=599, ram_total=1783, storage_free=7163, storage_total=15258, sim=true, sim_operator=716_17, wifi_ssid=<unknown ssid>, signal=-127, cell_signal=-88, ip=10.244.94.100, bluetooth=true, no_battery=false, cpu=8.5#0.14/0.52/0.58#1305/2016, perm=111111111101001111, gps=1111/1/0, kiosk=12101, yape=1110/-1}
+2026-11-04 21:41:08 [LocationTrackingService] Posición a enviar lat:-12.2108439 lng:-76.9447049 acc:3.9m vel:13km/h ang:239
+2026-11-04 21:41:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:41:03 [SocketService] [RECIBIDO]| #1634 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:41:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9445803, busstop=0, angle=244, accuracy=3, time=2026-11-04T21:41:02.813662, lat=-12.2107662, speed=3, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:41:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:41:02 [LocationTrackingService] Posición a enviar lat:-12.2107662 lng:-76.9445803 acc:3.9m vel:3km/h ang:244
+2026-11-04 21:40:46 [ProtectorVM] TEMP: 32.3C -> cap térmico 100%
+2026-11-04 21:40:46 [ProtectorVM] temp: 32.3C
+2026-11-04 21:40:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:40:45 [SocketService] [RECIBIDO]| #1633 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:40:44 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9444866, busstop=0, angle=243, accuracy=3, time=2026-11-04T21:40:38.806068, lat=-12.2107159, speed=10, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:40:44 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:40:39 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:40:39 [SocketService] [RECIBIDO]| #1632 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:40:38 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9442854, busstop=0, angle=237, accuracy=3, time=2026-11-04T21:40:32.807315, lat=-12.2106067, speed=19, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:40:38 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:40:38 [LocationTrackingService] Posición a enviar lat:-12.2107159 lng:-76.9444866 acc:3.9m vel:10km/h ang:243
+2026-11-04 21:40:32 [LocationTrackingService] Posición a enviar lat:-12.2106067 lng:-76.9442854 acc:3.845m vel:19km/h ang:237
+2026-11-04 21:40:29 [TrafficMonitor] 📊 hoy | movil ↑0.0KB ↓0.0KB | wifi ↑0.0KB ↓0.0KB | total 0.0KB (Δ10min 0.0KB)
+2026-11-04 21:40:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:40:27 [SocketService] [RECIBIDO]| #1631 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:40:26 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9435529, busstop=0, angle=239, accuracy=3, time=2026-11-04T21:40:20.820199, lat=-12.2101857, speed=34, mark=0}, {lng=-76.9439648, busstop=0, angle=238, accuracy=3, time=2026-11-04T21:40:26.828627, lat=-12.2104171, speed=25, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:40:26 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:40:26 [LocationTrackingService] Posición a enviar lat:-12.2104171 lng:-76.9439648 acc:3.9m vel:25km/h ang:238
+2026-11-04 21:40:20 [LocationTrackingService] Posición a enviar lat:-12.2101857 lng:-76.9435529 acc:3.9m vel:34km/h ang:239
+2026-11-04 21:40:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:40:15 [SocketService] [RECIBIDO]| #1630 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:40:14 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9427453, busstop=0, angle=235, accuracy=3, time=2026-11-04T21:40:08.799445, lat=-12.20974, speed=24, mark=0}, {lng=-76.9431395, busstop=0, angle=240, accuracy=3, time=2026-11-04T21:40:14.805328, lat=-12.2099661, speed=30, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:40:14 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:40:14 [LocationTrackingService] Posición a enviar lat:-12.2099661 lng:-76.9431395 acc:3.9m vel:30km/h ang:240
+2026-11-04 21:40:08 [LocationTrackingService] Posición a enviar lat:-12.20974 lng:-76.9427453 acc:3.845m vel:24km/h ang:235
+2026-11-04 21:40:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:40:03 [SocketService] [RECIBIDO]| #1629 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:40:02 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9422758, busstop=0, angle=240, accuracy=3, time=2026-11-04T21:39:56.813198, lat=-12.2094346, speed=12, mark=0}, {lng=-76.9424612, busstop=0, angle=237, accuracy=3, time=2026-11-04T21:40:02.804948, lat=-12.2095427, speed=18, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:40:02 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:40:02 [LocationTrackingService] Posición a enviar lat:-12.2095427 lng:-76.9424612 acc:3.9m vel:18km/h ang:237
+2026-11-04 21:39:56 [LocationTrackingService] Posición a enviar lat:-12.2094346 lng:-76.9422758 acc:3.9m vel:12km/h ang:240
+2026-11-04 21:39:33 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:39:33 [SocketService] [RECIBIDO]| #1628 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:39:32 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9419322, busstop=0, angle=237, accuracy=3, time=2026-11-04T21:39:26.814899, lat=-12.2092291, speed=19, mark=0}, {lng=-76.9421627, busstop=0, angle=239, accuracy=3, time=2026-11-04T21:39:32.828589, lat=-12.2093603, speed=8, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:39:32 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:39:32 [LocationTrackingService] Posición a enviar lat:-12.2093603 lng:-76.9421627 acc:3.9m vel:8km/h ang:239
+2026-11-04 21:39:26 [LocationTrackingService] Posición a enviar lat:-12.2092291 lng:-76.9419322 acc:3.9m vel:19km/h ang:237
+2026-11-04 21:39:21 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:39:21 [SocketService] [RECIBIDO]| #1627 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:39:20 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9416647, busstop=0, angle=238, accuracy=3, time=2026-11-04T21:39:20.806508, lat=-12.2090671, speed=19, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:39:20 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=1)
+2026-11-04 21:39:20 [LocationTrackingService] Posición a enviar lat:-12.2090671 lng:-76.9416647 acc:3.9m vel:19km/h ang:238
+2026-11-04 21:39:15 [SocketService] [RECIBIDO]| #1626 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:39:15 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:39:14 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9413597, busstop=0, angle=238, accuracy=3, time=2026-11-04T21:39:08.807614, lat=-12.208893, speed=11, mark=0}, {lng=-76.9414627, busstop=0, angle=240, accuracy=3, time=2026-11-04T21:39:14.811644, lat=-12.2089514, speed=9, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:39:14 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:39:14 [LocationTrackingService] Posición a enviar lat:-12.2089514 lng:-76.9414627 acc:3.9m vel:9km/h ang:240
+2026-11-04 21:39:09 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:39:09 [SocketService] [RECIBIDO]| #1625 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:39:08 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9411542, busstop=0, angle=237, accuracy=3, time=2026-11-04T21:39:02.820932, lat=-12.2087706, speed=17, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:39:08 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:39:08 [LocationTrackingService] Posición a enviar lat:-12.208893 lng:-76.9413597 acc:3.9m vel:11km/h ang:238
+2026-11-04 21:39:03 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:39:03 [SocketService] [RECIBIDO]| #1624 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:39:02 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9409298, busstop=0, angle=240, accuracy=3, time=2026-11-04T21:38:56.814671, lat=-12.2086434, speed=18, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:39:02 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:39:02 [LocationTrackingService] Posición a enviar lat:-12.2087706 lng:-76.9411542 acc:3.9m vel:17km/h ang:237
+2026-11-04 21:38:57 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}
+2026-11-04 21:38:57 [SocketService] [RECIBIDO]| #1623 | SID:37 | 3B | report [DATA]: {positions=1}
+2026-11-04 21:38:56 [SocketService] [ENVIADO] | [NUEVO] (36B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9406372, busstop=0, angle=236, accuracy=3, time=2026-11-04T21:38:50.814061, lat=-12.2084812, speed=20, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:38:56 [PositionRepository] 📤 Enviando 1 (batch=40, pendientes=2)
+2026-11-04 21:38:56 [LocationTrackingService] Posición a enviar lat:-12.2086434 lng:-76.9409298 acc:3.9m vel:18km/h ang:240
+2026-11-04 21:38:50 [LocationTrackingService] Posición a enviar lat:-12.2084812 lng:-76.9406372 acc:3.9m vel:20km/h ang:236
+2026-11-04 21:38:45 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=2}
+2026-11-04 21:38:45 [SocketService] [RECIBIDO]| #1622 | SID:37 | 3B | report [DATA]: {positions=2}
+2026-11-04 21:38:44 [SocketService] [ENVIADO] | [NUEVO] (58B) [KEY]: report [DATA]: {trip=56599, route=2, positions=[{lng=-76.9402232, busstop=0, angle=238, accuracy=3, time=2026-11-04T21:38:38.806452, lat=-12.2082624, speed=7, mark=0}, {lng=-76.9403843, busstop=0, angle=239, accuracy=3, time=2026-11-04T21:38:44.807879, lat=-12.2083403, speed=16, mark=0}], state=R, sales=0, events=[], direction=true}
+2026-11-04 21:38:44 [PositionRepository] 📤 Enviando 2 (batch=40, pendientes=2)
+2026-11-04 21:38:44 [LocationTrackingService] Posición a enviar lat:-12.2083403 lng:-76.9403843 acc:3.9m vel:16km/h ang:239
+2026-11-04 21:38:44 [GeofenceManager] 📏 Geocerca cercana: OV. MUJER B dist:77m radio:50m acc:3.9m modo:segmento
+2026-11-04 21:38:38 [LocationTrackingService] Posición a enviar lat:-12.2082624 lng:-76.9402232 acc:3.9m vel:7km/h ang:238
+2026-11-04 21:38:36 [SocketMessageDispatcher] Mensaje: Header: backward_datero, Data: {pad=329, geofence=88, delta=18, orden=0, id=2096053870}
+2026-11-04 21:38:36 [SocketService] [RECIBIDO]| #1621 | SID:37 | 19B | backward_datero [DATA]: {pad=329, geofence=88, delta=18, orden=0, id=2096053870}
+2026-11-04 21:38:32 [GeofenceManager] 📏 Geocerca cercana: OV. MUJER B dist:64m radio:50m acc:3.845m modo:segmento
+2026-11-04 21:38:27 [SocketMessageDispatcher] Mensaje: Header: report, Data: {positions=1}

@@ -6,7 +6,7 @@
 //
 // Un boleto es correlativo + hora: tras un reinicio que pierde escrituras de SQLite el mismo correlativo vuelve a salir
 // con otro boleto, y la central guarda los dos.
-import { horaLog, parseStamp } from './leer.js'
+import { horaDato, horaLog, parseStamp } from './leer.js'
 
 /** driver_logout.event → quién cerró (CierreSesion del APK). */
 export const CIERRE = { C: 'el conductor', T: 'llegada al terminal', D: 'despacho (remoto)', B: 'batería baja', S: 'soporte (remoto)', N: 'cierre nocturno', P: 'sesión de otro día' }
@@ -50,7 +50,7 @@ function liquidacion(e) {
     t: e.t,
     i: e.i,
     sesion: num(d.session ?? d.sesion),
-    fin: parseStamp(String(d.end_time ?? d.fin ?? '')) ?? e.t,
+    fin: horaDato(d.end_time ?? d.fin, e) ?? e.t,
     evento: d.event ?? null,
     total: cash + digital || porTarifas,
     porTarifas,
@@ -94,7 +94,7 @@ function fuentes(rep) {
       for (const b of e.data.tickets ?? []) {
         const c = num(b.correlative ?? b.correlativo)
         if (c == null) continue
-        const t = parseStamp(String(b.time ?? '')) ?? e.t
+        const t = horaDato(b.time, e) ?? e.t
         const k = `${c}|${t}`
         const x = clave.get(k)
         if (x) {

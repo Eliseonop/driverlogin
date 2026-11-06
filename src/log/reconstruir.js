@@ -4,7 +4,8 @@
 import { cuadrar, hallazgosCuadre } from './cuadre.js'
 import { hallazgosInspector, informeInspector } from './inspector.js'
 import { apagadosDe } from './energia.js'
-import { duracion, horaLog, leerLog, parseStamp } from './leer.js'
+import { duracion, fechaLog, horaDato, horaLog, leerLog, parseStamp } from './leer.js'
+import { informeVenta } from './venta.js'
 
 const SESION = new Set(['driver_login', 'driver_logout', 'operation', 'android_command', 'uid_driver'])
 const ESPERA_LOGOUT = 60_000 // executeLogout: tope esperando la respuesta
@@ -15,6 +16,11 @@ const GPS_MUDO = 7 * 60_000 // en modo pulso el log solo deja rastro del callbac
 const GPS_HALLAZGO = 10 * 60_000
 
 export const ladoTxt = l => (l == null ? '?' : l ? 'B' : 'A')
+const anterior = (v, ref) => {
+  const [a, b] = [v, ref].map(x => x.split('.').map(Number))
+  for (let k = 0; k < 3; k++) if ((a[k] ?? 0) !== (b[k] ?? 0)) return (a[k] ?? 0) < (b[k] ?? 0)
+  return false
+}
 const soles = centimos => `S/ ${(centimos / 100).toFixed(2)}`
 
 /** Tramos continuos a partir de cambios [{t, v}] (v null = nada). */
@@ -271,7 +277,7 @@ function leerBoletos(eventos) {
           vistos.get(c).envios++
           continue
         }
-        vistos.set(c, { t: parseStamp(String(b.time ?? '')) ?? e.t, i: e.i, sesion: Number(b.session ?? b.sesion), correlativo: c, precio: Number(b.price ?? 0), envios: 1 })
+        vistos.set(c, { t: horaDato(b.time, e) ?? e.t, i: e.i, sesion: Number(b.session ?? b.sesion), correlativo: c, precio: Number(b.price ?? 0), envios: 1 })
       }
     }
     if (e.tipo === 'rx' && e.header === 'tickets') for (const b of e.data.tickets ?? []) acks.add(Number(b.correlative))
@@ -371,7 +377,7 @@ function posicionesBus(eventos, cat, viaje) {
   }
   for (const e of eventos) {
     if (e.tipo === 'tx' && e.header === 'report') {
-      for (const q of e.data.positions ?? []) agregar(parseStamp(String(q.time ?? '')) ?? e.t, Number(q.lat), Number(q.lng), 'report', typeof e.data.direction === 'boolean' ? e.data.direction : null)
+      for (const q of e.data.positions ?? []) agregar(horaDato(q.time, e) ?? e.t, Number(q.lat), Number(q.lng), 'report', typeof e.data.direction === 'boolean' ? e.data.direction : null)
     } else if (e.tipo === 'estado' && e.data.lat != null) agregar(e.t, Number(e.data.lat), Number(e.data.lng), 'device_status')
     else if (e.tipo === 'cercano' && e.paradero) agregar(e.t, e.paradero.lat, e.paradero.lng, 'paradero')
     else if (e.tipo === 'paraderoActual' && cat.porId.has(e.id)) {
@@ -396,7 +402,7 @@ function carrilGps(eventos, entradas, desde, hasta) {
       if (e.lat != null) ult = coordTxt(e.lat, e.lng)
     } else if (e.tipo === 'tx' && e.header === 'report') {
       for (const q of e.data.positions ?? []) {
-        fixes.push({ t: parseStamp(String(q.time ?? '')) ?? e.t, i: e.i, fuente: 'report' })
+        fixes.push({ t: horaDato(q.time, e) ?? e.t, i: e.i, fuente: 'report' })
         ult = coordTxt(q.lat, q.lng)
       }
     } else if (e.tipo === 'estado' && e.data.lat != null && Number(e.data.lat) !== 0) {
@@ -599,7 +605,16 @@ function hallazgosDe(rep) {
     out.push({ nivel: a.tipo === 'reinicio' || a.tipo === 'ordenado' ? 'aviso' : 'error', t: a.t, i: a.i, titulo: `${a.titulo} · ${duracion(a.fuera)} sin equipo`, detalle: a.detalle })
   for (const e of eventos.filter(x => x.tipo === 'forzado')) out.push({ nivel: 'aviso', t: e.t, i: e.i, titulo: `Logout forzado ${e.motivo} (#${e.sesion})`, detalle: [] })
 
-  if (!eventos.some(e => e.tipo === 'sesionActivada' || e.tipo === 'logoutConfirmado') && info.versiones.length)
+  const corridas = rep.entradas.filter(e => e.horaCorregida)
+  if (corridas.length)
+    out.push({
+      nivel: 'info',
+      t: corridas[0].t,
+      i: corridas[0].i,
+      titulo: `${corridas.length} líneas con la fecha del equipo atrasada`,
+      detalle: [`El log las trae con fecha ${fechaLog(corridas[0].t - corridas[0].horaCorregida)}: se corrieron ${duracion(corridas[0].horaCorregida)}, lo que dice la línea HORA que corrigió la hora.`],
+    })
+  if (!eventos.some(e => e.tipo === 'sesionActivada' || e.tipo === 'logoutConfirmado') && info.versiones.length && info.versiones.every(v => anterior(v, '1.0.69')))
     out.push({
       nivel: 'info',
       t: rep.desde,
@@ -639,6 +654,7 @@ export function reconstruir(texto, archivo = 'log') {
   rep.hitos = hitosDe(mensajes, conexion, viaje, eventos, gps, rep.apagados)
   rep.cuadre = cuadrar(rep)
   rep.inspector = informeInspector(rep)
+  rep.venta = informeVenta(rep)
   rep.hallazgos = hallazgosDe(rep)
   return rep
 }

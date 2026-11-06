@@ -1,6 +1,7 @@
 // Recorrido del bus y marcas de geocerca: lo que vio el equipo (ENTERING/EXITING) contra lo que estampó
 // la central (header "mark"). El equipo no marca: manda posiciones con events=[] y la central calcula la marca.
-import { parseStamp } from './leer.js'
+import { horaDato, parseStamp } from './leer.js'
+import { emergencias } from './emergencia.js'
 
 const OK_MAX = 60_000 // diferencia tolerada entre la entrada del equipo y la hora de la central
 const HUECO = 120_000 // sin posiciones por más de esto = hueco GPS
@@ -30,7 +31,7 @@ function posiciones(eventos) {
   for (const e of eventos) {
     if (e.tipo !== 'tx' || !Array.isArray(e.data?.positions)) continue
     for (const p of e.data.positions) {
-      const t = parseStamp(p.time)
+      const t = horaDato(p.time, e)
       if (t == null || vistas.has(p.time)) continue
       vistas.add(p.time)
       out.push({ t, enviada: e.t, lat: p.lat, lng: p.lng, vel: p.speed, acc: p.accuracy, ang: p.angle, trip: e.data.trip, estado: e.data.state })
@@ -176,6 +177,21 @@ function cortesConexion(rep, pos) {
   return out
 }
 
+/** Emergencias con su lugar (la posición que viajó con el evento o la del bus más cercana) y las líneas que las explican. */
+function emergenciasEnMapa(rep, pos) {
+  const em = emergencias(rep)
+  for (const e of em.eventos) {
+    const r = e.report
+    e.p = r && Number.isFinite(r.lat) && (r.lat || r.lng) ? { lat: r.lat, lng: r.lng, t: r.hora ?? r.t, vel: r.vel } : pos[posicionEn(pos, e.t, 5 * 60_000)] ?? null
+    const desde = Math.min(e.origen.i ?? e.i, e.i) - 2
+    const hasta = Math.min(Math.max(r?.i ?? e.i, e.i) + 2, desde + 16)
+    const propias = new Set([e.i, e.origen.i, r?.i])
+    e.lineas = rep.entradas.slice(Math.max(0, desde), hasta + 1).map(x => ({ t: x.t, tag: x.tag, msg: x.msg.split('\n')[0].slice(0, 220), propia: propias.has(x.i) }))
+  }
+  for (const x of em.tramos) x.ruta = pos.filter(p => p.t >= x.desde.t && p.t <= x.desde.t + x.dura)
+  return em
+}
+
 function veredicto(marcas, pos) {
   const conHora = marcas.filter(m => m.delta != null)
   const malas = conHora.filter(m => Math.abs(m.delta) > OK_MAX)
@@ -245,6 +261,7 @@ export function recorrido(rep) {
     paraderos: paraderos(eventos),
     ventas: vendidas,
     cortes: cortesConexion(rep, pos),
+    emergencias: emergenciasEnMapa(rep, pos),
     apagados: (rep.apagados ?? []).map(a => ({ ...a, p: a.lat != null ? { lat: a.lat, lng: a.lng, t: a.t, vel: null } : pos[posicionEn(pos, a.ultima, 10 * 60_000)] ?? null })),
     ...detenciones(pos),
     veredicto: veredicto(marcas, pos),
@@ -343,6 +360,7 @@ export function recortar(r, desde, hasta) {
     sinMarca: r.sinMarca.filter(dentro),
     ventas: r.ventas.filter(dentro),
     cortes: r.cortes.filter(dentro),
+    emergencias: { ...r.emergencias, eventos: r.emergencias.eventos.filter(dentro), tramos: r.emergencias.tramos.filter(x => x.desde.t <= hasta && x.desde.t + x.dura >= desde) },
     apagados: r.apagados.filter(a => a.vuelve >= desde && a.t <= hasta),
     paradas: r.paradas.filter(d => d.b.t >= desde && d.a.t <= hasta),
     huecos: r.huecos.filter(h => h.b.t >= desde && h.a.t <= hasta),
